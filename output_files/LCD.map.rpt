@@ -1,5 +1,5 @@
 Analysis & Synthesis report for LCD
-Fri Mar 04 09:25:25 2016
+Tue Mar 08 18:32:32 2016
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 
 
@@ -10,7 +10,22 @@ Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |pi|lcd_controller:lcd_control|state
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
+ 16. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
+ 17. Port Connectivity Checks: "lcd_controller:lcd_control"
+ 18. Post-Synthesis Netlist Statistics for Top Partition
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
 
 
 
@@ -37,20 +52,20 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Fri Mar 04 09:25:25 2016           ;
+; Analysis & Synthesis Status        ; Successful - Tue Mar 08 18:32:32 2016       ;
 ; Quartus Prime Version              ; 15.1.0 Build 185 10/21/2015 SJ Lite Edition ;
 ; Revision Name                      ; LCD                                         ;
 ; Top-level Entity Name              ; pi                                          ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 408                                         ;
+;     Total combinational functions  ; 408                                         ;
+;     Dedicated logic registers      ; 94                                          ;
+; Total registers                    ; 94                                          ;
+; Total pins                         ; 23                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -150,11 +165,260 @@ agreement for further details.
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ; < 0.1%      ;
 +----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                            ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------+---------+
+; pi.vhd                           ; yes             ; User VHDL File               ; //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd                               ;         ;
+; lcd_controller.vhd               ; yes             ; User VHDL File               ; //Mac/Home/Documents/PI/FPGA/LCD_2/lcd_controller.vhd                   ;         ;
+; clock_1hz.vhd                    ; yes             ; Auto-Found VHDL File         ; //Mac/Home/Documents/PI/FPGA/LCD_2/clock_1hz.vhd                        ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal151.inc                   ; yes             ; Megafunction                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/aglobal151.inc      ;         ;
+; db/lpm_divide_ihm.tdf            ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/PI/FPGA/LCD_2/db/lpm_divide_ihm.tdf                ;         ;
+; db/sign_div_unsign_akh.tdf       ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/PI/FPGA/LCD_2/db/sign_div_unsign_akh.tdf           ;         ;
+; db/alt_u_div_84f.tdf             ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/PI/FPGA/LCD_2/db/alt_u_div_84f.tdf                 ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/PI/FPGA/LCD_2/db/add_sub_7pc.tdf                   ;         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/PI/FPGA/LCD_2/db/add_sub_8pc.tdf                   ;         ;
+; db/lpm_divide_o9m.tdf            ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/PI/FPGA/LCD_2/db/lpm_divide_o9m.tdf                ;         ;
+; db/sign_div_unsign_dkh.tdf       ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/PI/FPGA/LCD_2/db/sign_div_unsign_dkh.tdf           ;         ;
+; db/alt_u_div_e4f.tdf             ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/PI/FPGA/LCD_2/db/alt_u_div_e4f.tdf                 ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 408       ;
+;                                             ;           ;
+; Total combinational functions               ; 408       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 167       ;
+;     -- 3 input functions                    ; 57        ;
+;     -- <=2 input functions                  ; 184       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 309       ;
+;     -- arithmetic mode                      ; 99        ;
+;                                             ;           ;
+; Total registers                             ; 94        ;
+;     -- Dedicated logic registers            ; 94        ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 23        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 94        ;
+; Total fan-out                               ; 1431      ;
+; Average fan-out                             ; 2.61      ;
++---------------------------------------------+-----------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                     ;
++----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node             ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                 ; Library Name ;
++----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+--------------+
+; |pi                                    ; 408 (73)          ; 94 (15)      ; 0           ; 0            ; 0       ; 0         ; 23   ; 0            ; |pi                                                                                                 ; work         ;
+;    |clock_1hz:clock1|                  ; 70 (70)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|clock_1hz:clock1                                                                                ; work         ;
+;    |lcd_controller:lcd_control|        ; 167 (167)         ; 47 (47)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lcd_controller:lcd_control                                                                      ; work         ;
+;    |lpm_divide:Div0|                   ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lpm_divide:Div0                                                                                 ; work         ;
+;       |lpm_divide_ihm:auto_generated|  ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lpm_divide:Div0|lpm_divide_ihm:auto_generated                                                   ; work         ;
+;          |sign_div_unsign_akh:divider| ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lpm_divide:Div0|lpm_divide_ihm:auto_generated|sign_div_unsign_akh:divider                       ; work         ;
+;             |alt_u_div_84f:divider|    ; 43 (43)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lpm_divide:Div0|lpm_divide_ihm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_84f:divider ; work         ;
+;    |lpm_divide:Mod0|                   ; 55 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lpm_divide:Mod0                                                                                 ; work         ;
+;       |lpm_divide_o9m:auto_generated|  ; 55 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lpm_divide:Mod0|lpm_divide_o9m:auto_generated                                                   ; work         ;
+;          |sign_div_unsign_dkh:divider| ; 55 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lpm_divide:Mod0|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider                       ; work         ;
+;             |alt_u_div_e4f:divider|    ; 55 (55)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lpm_divide:Mod0|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider ; work         ;
++----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------+
+; State Machine - |pi|lcd_controller:lcd_control|state                            ;
++------------------+------------+-------------+------------------+----------------+
+; Name             ; state.send ; state.ready ; state.initialize ; state.power_up ;
++------------------+------------+-------------+------------------+----------------+
+; state.power_up   ; 0          ; 0           ; 0                ; 0              ;
+; state.initialize ; 0          ; 0           ; 1                ; 1              ;
+; state.ready      ; 0          ; 1           ; 0                ; 1              ;
+; state.send       ; 1          ; 0           ; 0                ; 1              ;
++------------------+------------+-------------+------------------+----------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; clock_1hz:clock1|clk_out                           ; GND                 ; yes                    ;
+; Number of user-specified and inferred latches = 1  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; lcd_bus[8]                            ; Stuck at GND due to stuck port data_in ;
+; lcd_controller:lcd_control|rw         ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 2 ;                                        ;
++---------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                        ;
++---------------+---------------------------+----------------------------------------+
+; Register name ; Reason for Removal        ; Registers Removed due to This Register ;
++---------------+---------------------------+----------------------------------------+
+; lcd_bus[8]    ; Stuck at GND              ; lcd_controller:lcd_control|rw          ;
+;               ; due to stuck port data_in ;                                        ;
++---------------+---------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 94    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 21    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; lcd_controller:lcd_control|busy        ; 2       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |pi|lcd_controller:lcd_control|rw            ;
+; 32:1               ; 2 bits    ; 42 LEs        ; 16 LEs               ; 26 LEs                 ; Yes        ; |pi|lcd_bus[9]                               ;
+; 32:1               ; 4 bits    ; 84 LEs        ; 52 LEs               ; 32 LEs                 ; Yes        ; |pi|lcd_bus[4]                               ;
+; 32:1               ; 4 bits    ; 84 LEs        ; 60 LEs               ; 24 LEs                 ; Yes        ; |pi|lcd_bus[3]                               ;
+; 7:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |pi|lcd_controller:lcd_control|clk_count[21] ;
+; 14:1               ; 8 bits    ; 72 LEs        ; 56 LEs               ; 16 LEs                 ; Yes        ; |pi|lcd_controller:lcd_control|lcd_data[0]   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_ihm ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                ;
+; LPM_WIDTHD             ; 7              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_o9m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; Port Connectivity Checks: "lcd_controller:lcd_control" ;
++---------+-------+----------+---------------------------+
+; Port    ; Type  ; Severity ; Details                   ;
++---------+-------+----------+---------------------------+
+; reset_n ; Input ; Info     ; Stuck at VCC              ;
++---------+-------+----------+---------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 23                          ;
+; cycloneiii_ff         ; 94                          ;
+;     ENA               ; 21                          ;
+;     plain             ; 73                          ;
+; cycloneiii_lcell_comb ; 409                         ;
+;     arith             ; 99                          ;
+;         2 data inputs ; 72                          ;
+;         3 data inputs ; 27                          ;
+;     normal            ; 310                         ;
+;         0 data inputs ; 9                           ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 101                         ;
+;         3 data inputs ; 30                          ;
+;         4 data inputs ; 167                         ;
+;                       ;                             ;
+; Max LUT depth         ; 12.80                       ;
+; Average LUT depth     ; 9.24                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -163,20 +427,73 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
-    Info: Processing started: Fri Mar 04 09:25:11 2016
+    Info: Processing started: Tue Mar 08 18:32:13 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off LCD -c LCD
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file pi.vhd
-    Info (12022): Found design unit 1: pi-behavior File: Z:/Documents/PI/FPGA/LCD_2/pi.vhd Line: 38
-    Info (12023): Found entity 1: pi File: Z:/Documents/PI/FPGA/LCD_2/pi.vhd Line: 30
+    Info (12022): Found design unit 1: pi-behavior File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 42
+    Info (12023): Found entity 1: pi File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 31
 Info (12021): Found 2 design units, including 1 entities, in source file lcd_controller.vhd
-    Info (12022): Found design unit 1: lcd_controller-controller File: Z:/Documents/PI/FPGA/LCD_2/lcd_controller.vhd Line: 62
-    Info (12023): Found entity 1: lcd_controller File: Z:/Documents/PI/FPGA/LCD_2/lcd_controller.vhd Line: 51
-Error (10405): VHDL error at pi.vhd(65): can't determine type of object at or near identifier "conv_integer" -- found 0 possible types File: Z:/Documents/PI/FPGA/LCD_2/pi.vhd Line: 65
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 0 warnings
-    Error: Peak virtual memory: 814 megabytes
-    Error: Processing ended: Fri Mar 04 09:25:25 2016
-    Error: Elapsed time: 00:00:14
-    Error: Total CPU time (on all processors): 00:00:24
+    Info (12022): Found design unit 1: lcd_controller-controller File: //Mac/Home/Documents/PI/FPGA/LCD_2/lcd_controller.vhd Line: 62
+    Info (12023): Found entity 1: lcd_controller File: //Mac/Home/Documents/PI/FPGA/LCD_2/lcd_controller.vhd Line: 51
+Info (12127): Elaborating entity "pi" for the top level hierarchy
+Warning (10542): VHDL Variable Declaration warning at pi.vhd(79): used initial value expression for variable "temp_turn_on_cooler" because variable was never assigned a value File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 79
+Warning (10492): VHDL Process Statement warning at pi.vhd(86): signal "TEMP_IN" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 86
+Info (12128): Elaborating entity "lcd_controller" for hierarchy "lcd_controller:lcd_control" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 69
+Warning (12125): Using design file clock_1hz.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: clock_1hz-controller File: //Mac/Home/Documents/PI/FPGA/LCD_2/clock_1hz.vhd Line: 11
+    Info (12023): Found entity 1: clock_1hz File: //Mac/Home/Documents/PI/FPGA/LCD_2/clock_1hz.vhd Line: 4
+Info (12128): Elaborating entity "clock_1hz" for hierarchy "clock_1hz:clock1" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 72
+Warning (10631): VHDL Process Statement warning at clock_1hz.vhd(15): inferring latch(es) for signal or variable "clk_out", which holds its previous value in one or more paths through the process File: //Mac/Home/Documents/PI/FPGA/LCD_2/clock_1hz.vhd Line: 15
+Info (10041): Inferred latch for "clk_out" at clock_1hz.vhd(15) File: //Mac/Home/Documents/PI/FPGA/LCD_2/clock_1hz.vhd Line: 15
+Info (278001): Inferred 2 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 94
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 95
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 94
+Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 94
+    Info (12134): Parameter "LPM_WIDTHN" = "7"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_ihm.tdf
+    Info (12023): Found entity 1: lpm_divide_ihm File: //Mac/Home/Documents/PI/FPGA/LCD_2/db/lpm_divide_ihm.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_akh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_akh File: //Mac/Home/Documents/PI/FPGA/LCD_2/db/sign_div_unsign_akh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_84f.tdf
+    Info (12023): Found entity 1: alt_u_div_84f File: //Mac/Home/Documents/PI/FPGA/LCD_2/db/alt_u_div_84f.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info (12023): Found entity 1: add_sub_7pc File: //Mac/Home/Documents/PI/FPGA/LCD_2/db/add_sub_7pc.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info (12023): Found entity 1: add_sub_8pc File: //Mac/Home/Documents/PI/FPGA/LCD_2/db/add_sub_8pc.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 95
+Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter: File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 95
+    Info (12134): Parameter "LPM_WIDTHN" = "7"
+    Info (12134): Parameter "LPM_WIDTHD" = "7"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_o9m.tdf
+    Info (12023): Found entity 1: lpm_divide_o9m File: //Mac/Home/Documents/PI/FPGA/LCD_2/db/lpm_divide_o9m.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_dkh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_dkh File: //Mac/Home/Documents/PI/FPGA/LCD_2/db/sign_div_unsign_dkh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_e4f.tdf
+    Info (12023): Found entity 1: alt_u_div_e4f File: //Mac/Home/Documents/PI/FPGA/LCD_2/db/alt_u_div_e4f.tdf Line: 27
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "rw" is stuck at GND File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 34
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "buttom_plus" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 36
+    Warning (15610): No output dependent on input pin "buttom_minus" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 36
+    Warning (15610): No output dependent on input pin "TEMP_IN[0]" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 37
+Info (21057): Implemented 460 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
+    Info (21059): Implemented 12 output pins
+    Info (21061): Implemented 437 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
+    Info: Peak virtual memory: 839 megabytes
+    Info: Processing ended: Tue Mar 08 18:32:32 2016
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:26
 
 

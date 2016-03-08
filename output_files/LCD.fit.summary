@@ -1,15 +1,15 @@
-Fitter Status : Successful - Thu Mar 03 22:51:28 2016
+Fitter Status : Successful - Tue Mar 08 18:32:45 2016
 Quartus Prime Version : 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 Revision Name : LCD
 Top-level Entity Name : pi
 Family : Cyclone IV E
 Device : EP4CE6E22C8
 Timing Models : Final
-Total logic elements : 225 / 6,272 ( 4 % )
-    Total combinational functions : 225 / 6,272 ( 4 % )
-    Dedicated logic registers : 62 / 6,272 ( < 1 % )
-Total registers : 62
-Total pins : 12 / 92 ( 13 % )
+Total logic elements : 408 / 6,272 ( 7 % )
+    Total combinational functions : 408 / 6,272 ( 7 % )
+    Dedicated logic registers : 94 / 6,272 ( 1 % )
+Total registers : 94
+Total pins : 23 / 92 ( 25 % )
 Total virtual pins : 0
 Total memory bits : 0 / 276,480 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 30 ( 0 % )
