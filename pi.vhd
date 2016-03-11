@@ -1,145 +1,224 @@
---------------------------------------------------------------------------------
---
---   FileName:         lcd_example.vhd
---   Dependencies:     none
---   Design Software:  Quartus II 32-bit Version 11.1 Build 173 SJ Full Version
---
---   HDL CODE IS PROVIDED "AS IS."  DIGI-KEY EXPRESSLY DISCLAIMS ANY
---   WARRANTY OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING BUT NOT
---   LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
---   PARTICULAR PURPOSE, OR NON-INFRINGEMENT. IN NO EVENT SHALL DIGI-KEY
---   BE LIABLE FOR ANY INCIDENTAL, SPECIAL, INDIRECT OR CONSEQUENTIAL
---   DAMAGES, LOST PROFITS OR LOST DATA, HARM TO YOUR EQUIPMENT, COST OF
---   PROCUREMENT OF SUBSTITUTE GOODS, TECHNOLOGY OR SERVICES, ANY CLAIMS
---   BY THIRD PARTIES (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF),
---   ANY CLAIMS FOR INDEMNITY OR CONTRIBUTION, OR OTHER SIMILAR COSTS.
---
---   Version History
---   Version 1.0 6/13/2012 Scott Larson
---     Initial Public Release
---
---   Prints "123456789" on a HD44780 compatible 8-bit interface character LCD 
---   module using the lcd_controller.vhd component.
---
---------------------------------------------------------------------------------
+---------------------------------------
+  --
+  -- Projeto Integrador 1
+  -- Vinicius Cardoso e Yuri Soika
+  -- Sistemas Eletrônicos
+  -- IFSC Florianópolis
+  --
+  -------------------------------------
 
-LIBRARY ieee;
-USE ieee.std_logic_1164.all;
-USE ieee.std_logic_arith.all;
-USE ieee.std_logic_unsigned.ALL;
+-- Bibliotecas
+  library ieee;
+  use ieee.std_logic_1164.all;
+  use ieee.std_logic_arith.all;
+  use ieee.std_logic_unsigned.all;
 
-ENTITY pi IS
-  PORT(
-      clk                         : IN    STD_LOGIC;                      -- Clock e Botão de troca
-      rw, rs, e                   : OUT   STD_LOGIC;                      --read/write, setup/data, and enable for lcd
-      lcd_data                    : OUT   STD_LOGIC_VECTOR(7 DOWNTO 0);  --data signals for lcd
-      buttom_plus, buttom_minus   : IN    STD_LOGIC;
-      TEMP_IN                     : IN    STD_LOGIC_VECTOR(7 DOWNTO 0);
-      clk_out                     : OUT   STD_LOGIC
-  );
-END pi;
-
-ARCHITECTURE behavior OF pi IS
-
-  SIGNAL   lcd_enable : STD_LOGIC;
-  SIGNAL   lcd_bus    : STD_LOGIC_VECTOR(9 DOWNTO 0);
-  SIGNAL   lcd_busy   : STD_LOGIC;
-
-  COMPONENT lcd_controller IS
-    PORT(
-       clk        : IN    STD_LOGIC;                        --system clock
-       reset_n    : IN    STD_LOGIC;                        --active low reinitializes lcd
-       lcd_enable : IN    STD_LOGIC;                        --latches data into lcd controller
-       lcd_bus    : IN    STD_LOGIC_VECTOR(9 DOWNTO 0);     --data and control signals
-       busy       : OUT   STD_LOGIC;                        --lcd controller busy/idle feedback
-       rw, rs, e  : OUT   STD_LOGIC;                        --read/write, setup/data, and enable for lcd
-       lcd_data   : OUT   STD_LOGIC_VECTOR(7 DOWNTO 0));    --data signals for lcd
-  END COMPONENT;
-
-  COMPONENT clock_1hz IS
-    PORT(
-      clk_in        : IN    STD_LOGIC;
-      clk_out       : OUT    STD_LOGIC
+-- Entidades
+  entity pi is
+    port(
+        clk                                         : in    std_logic;                      -- Clock de 12 MHz
+        rw, rs, e                                   : out   std_logic;                      -- read/write, setup/data, e enable do LCD
+        lcd_data                                    : out   std_logic_vector(7 downto 0);   -- Sinal de dados do Display
+        buttom_plus, buttom_minus, buttom_change    : in    std_logic;                      -- Botões +, - e alterar do gabinete
+        temp_in                                     : in    std_logic_vector(7 downto 0);   -- Entrada binário da temperatura
+        clk_out, turn_on_cooler                     : out   std_logic;                      -- Sinal para ligar cooler
+        led_8                                       : out   std_logic_vector(7 downto 0);
+        led_5                                       : out   std_logic_vector(4 downto 0)
     );
-  END COMPONENT;
+  end pi;
 
-BEGIN
+architecture behavior of pi is
 
-  --instantiate the lcd controller
-  lcd_control: lcd_controller
-    PORT MAP(clk => clk, reset_n => '1', lcd_enable => lcd_enable, lcd_bus => lcd_bus, busy => lcd_busy, rw => rw, rs => rs, e => e, lcd_data => lcd_data);
+-- ~~~~~~~~~~~~~~~ Componentes ~~~~~~~~~~~~~~~ --
+
+  -- LCD Controller 
+  component lcd_controller is
+    port(
+       clk        : in    std_logic;                        -- Clock
+       reset_n    : in    std_logic;                        -- active low reinitializes lcd
+       lcd_enable : in    std_logic;                        -- latches data into lcd controller
+       lcd_bus    : in    std_logic_vector(9 downto 0);     -- data and control signals
+       busy       : out   std_logic;                        -- lcd controller busy/idle feedback
+       rw, rs, e  : out   std_logic;                        -- read/write, setup/data, and enable for lcd
+       lcd_data   : out   std_logic_vector(7 downto 0));    -- data signals for lcd
+  end component;
+
+  -- Clock de 1 Hz
+  component clock_1hz is
+    port(
+      clk_in    : in      std_logic;    -- Entrada de 12MHz
+      clk_out   : out     std_logic     -- Saída de 1Hz
+    );
+  end component;
+
+  -- Temperatura e Cooler
+  component temperature is
+    port(
+      clock_in                                                : in    std_logic;                      -- Entrade de 1Hz 
+      temperature_in                                          : in    std_logic_vector(7 downto 0);   -- Entrade da temperatura em biário
+      turn_on_cooler                                          : out   std_logic;                      -- Saída para ligar cooller
+      temp_display_cem, temp_display_dez, temp_display_um     : out   std_logic_vector(9 downto 0);   -- Números para mostrar display temperatura atual
+      level_display_cem, level_display_dez, level_display_um  : out   std_logic_vector(9 downto 0)    -- Números para mostrar display nível de temperatura
+    );
+  end component;
+
+-- ~~~~~~~~~~~~~~~ Sinais ~~~~~~~~~~~~~~~ --
+
+  signal  lcd_enable                                              : std_logic;
+  signal  lcd_bus                                                 : std_logic_vector(9 downto 0);
+  signal  lcd_busy                                                : std_logic;
+  signal  temp_display_cem, temp_display_dez, temp_display_um     : std_logic_vector(9 downto 0);
+  signal  level_display_cem, level_display_dez, level_display_um  : std_logic_vector(9 downto 0);
+
+begin
+
+-- ~~~~~~~~~~~~~~~ Port Map ~~~~~~~~~~~~~~~ --
   
-  clock1: clock_1hz
-    PORT MAP(clk, clk_out);
+  lcd_control:  lcd_controller  port map(clk => clk, reset_n => '1', lcd_enable => lcd_enable, lcd_bus => lcd_bus, busy => lcd_busy, rw => rw, rs => rs, e => e, lcd_data => lcd_data);
+  clock1:       clock_1hz       port map(clk, clk_out);
 
-  PROCESS(clk)
 
-    VARIABLE char                                         :   INTEGER RANGE 0 TO 30 := 0;
-    VARIABLE temperatura                                  :   STD_LOGIC_VECTOR(7 DOWNTO 0);
-    VARIABLE temp_turn_on_cooler                          :   INTEGER := 30;
-    VARIABLE um, dez, cooler_um, cooler_dez               :   STD_LOGIC_VECTOR(7 DOWNTO 0);
-    VARIABLE temperatura_int, temp_dez_int, temp_um_int   :   INTEGER;
-    VARIABLE cooler_dez_int, cooler_um_int                :   INTEGER;
+  process(clk)
 
-  BEGIN
+-- ~~~~~~~~~~~~~~~ Variables ~~~~~~~~~~~~~~~ --
+  
+    -- Display
+      variable  char                                                      : integer range 0 to 30 := 0;
 
-    temperatura := TEMP_IN;    
+    -- Temperature
+      variable  temp_display_cem, temp_display_dez, temp_display_um       : std_logic_vector(9 downto 0);
+      variable  lvl_display_cem, lvl_display_dez, lvl_display_um          : std_logic_vector(9 downto 0);
+      variable  temperature_int, temp_cem_int, temp_dez_int, temp_um_int  : integer;
+      variable  lvl_cem_int, lvl_dez_int, lvl_um_int                      : integer;
+      variable  temp_cem_bin, temp_dez_bin, temp_um_bin                   : std_logic_vector(7 downto 0);
+      variable  lvl_cem_bin, lvl_dez_bin, lvl_um_bin                      : std_logic_vector(7 downto 0);
+      variable  temp_turn_cool_on                                         : integer := 25;
+      constant  debounce_delay                                            : integer := 2000000;
+      variable  debounce_cont_plus, debounce_cont_minus                   : integer := 0;
 
-    IF(clk'EVENT AND clk = '1') THEN
+  begin 
 
-    
-      -- Converte Temperatura de Entrada
-      temperatura_int         := conv_integer(temperatura);
-      temperatura_int         := temperatura_int / 2;
-      temp_dez_int            := temperatura_int / 10;
-      temp_um_int             := temperatura_int mod 10;
-      dez                     := conv_std_logic_vector(temp_dez_int,8);
-      um                      := conv_std_logic_vector(temp_um_int,8);
+    if(clk'event and clk = '1') then
 
-      -- Converte Temperatura de Ligar Cooler
-      cooler_dez_int           := temp_turn_on_cooler / 10;
-      cooler_um_int            := temp_turn_on_cooler  mod 10;
-      cooler_dez               := conv_std_logic_vector(cooler_dez_int,8);
-      cooler_um                := conv_std_logic_vector(cooler_um_int,8);
+    -- ~~~~~~~~~~~~~~~ Start Temperature Modele ~~~~~~~~~~~~~~~ --
 
-      IF(lcd_busy = '0' AND lcd_enable = '0') THEN
+    -- Calculos e Conversões da Temperatura
+      temperature_int     := conv_integer(temp_in);
+      temperature_int     := temperature_int / 2;
+      -- Decimal
+      temp_cem_int        := temperature_int / 100;         
+      temp_dez_int        := (temperature_int mod 100) / 10;
+      temp_um_int         := (temperature_int mod 100) mod 10;
+      -- Binário
+      temp_cem_bin        := conv_std_logic_vector(temp_cem_int,8);
+      temp_dez_bin        := conv_std_logic_vector(temp_dez_int,8);
+      temp_um_bin         := conv_std_logic_vector(temp_um_int,8);
+
+      temp_display_cem    := "10" & (conv_std_logic_vector(character'pos('0'),8) + temp_cem_bin);
+      temp_display_dez    := "10" & (conv_std_logic_vector(character'pos('0'),8) + temp_dez_bin);
+      temp_display_um     := "10" & (conv_std_logic_vector(character'pos('0'),8) + temp_um_bin);
+
+      lvl_cem_int         := temp_turn_cool_on / 100;         
+      lvl_dez_int         := (temp_turn_cool_on mod 100) / 10;
+      lvl_um_int          := (temp_turn_cool_on mod 100) mod 10;
+      -- Binário
+      lvl_cem_bin         := conv_std_logic_vector(lvl_cem_int,8);
+      lvl_dez_bin         := conv_std_logic_vector(lvl_dez_int,8);
+      lvl_um_bin          := conv_std_logic_vector(lvl_um_int,8);
+
+      lvl_display_cem     := "10" & (conv_std_logic_vector(character'pos('0'),8) + lvl_cem_bin);
+      lvl_display_dez     := "10" & (conv_std_logic_vector(character'pos('0'),8) + lvl_dez_bin);
+      lvl_display_um      := "10" & (conv_std_logic_vector(character'pos('0'),8) + lvl_um_bin);
+
+      if(temperature_int > temp_turn_cool_on) then
+        turn_on_cooler <= '1';
+      elsif(temperature_int < temp_turn_cool_on) then
+        turn_on_cooler <= '0';
+      end if;
+
+    -- Botões de Temperatura
+      if(buttom_plus = '0') then
+        debounce_cont_plus := debounce_cont_plus + 1;
+      elsif(buttom_plus = '1') then
+        debounce_cont_plus := 0;
+      end if;
+
+      if(debounce_cont_plus = debounce_delay) then
+        temp_turn_cool_on := temp_turn_cool_on + 1;
+        debounce_cont_plus := 0;
+      end if;
+
+
+      if(buttom_minus = '0') then
+        debounce_cont_minus := debounce_cont_minus + 1;
+      elsif(buttom_minus = '1') then
+        debounce_cont_minus := 0;
+      end if;
+
+      if(debounce_cont_minus = debounce_delay) then
+        temp_turn_cool_on := temp_turn_cool_on - 1;
+        debounce_cont_minus := 0;
+      end if;
+      
+
+    -- ~~~~~~~~~~~~~~~ End Temperature Module ~~~~~~~~~~~~~~~ --
+
+    -- ~~~~~~~~~~~~~~~ Start LED Module ~~~~~~~~~~~~~~~ --
+
+        led_8 <= "00000011";
+        led_5 <= "00011";
+
+    -- ~~~~~~~~~~~~~~~ END LED Module ~~~~~~~~~~~~~~~ --
+
+    -- ~~~~~~~~~~~~~~~ Start Display Module ~~~~~~~~~~~~~~~ --
+      if(lcd_busy = '0' and lcd_enable = '0') then
         lcd_enable <= '1';
-        IF(char < 30) THEN
+
+        if(char < 30) then
           char := char + 1;
-        END IF;
-        CASE char IS
-          WHEN 1    =>  lcd_bus   <=  "10" & conv_std_logic_vector(character'pos('T'),8);
-          WHEN 2    =>  lcd_bus   <=  "10" & conv_std_logic_vector(character'pos('e'),8);
-          WHEN 3    =>  lcd_bus   <=  "10" & conv_std_logic_vector(character'pos('m'),8);
-          WHEN 4    =>  lcd_bus   <=  "10" & conv_std_logic_vector(character'pos('p'),8);
-          WHEN 5    =>  lcd_bus   <=  "10" & conv_std_logic_vector(character'pos('.'),8);
-          WHEN 6    =>  lcd_bus   <=  "0010001100"; -- Mover para fim da linha;
-          WHEN 7    =>  lcd_bus   <=  "10" & (conv_std_logic_vector(character'pos('0'),8) + dez);
-          WHEN 8    =>  lcd_bus   <=  "10" & (conv_std_logic_vector(character'pos('0'),8) + um);
-          WHEN 9    =>  lcd_bus   <=  "1011011111"; -- Bola do ºC;
-          WHEN 10   =>  lcd_bus   <=  "10" & conv_std_logic_vector(character'pos('C'),8);
-          WHEN 11   =>  lcd_bus   <=  "0011000000"; -- Pular Linha;
-          WHEN 12   =>  lcd_bus   <=  "10" & conv_std_logic_vector(character'pos('L'),8);
-          WHEN 13   =>  lcd_bus   <=  "10" & conv_std_logic_vector(character'pos('i'),8);
-          WHEN 14   =>  lcd_bus   <=  "10" & conv_std_logic_vector(character'pos('g'),8);
-          WHEN 15   =>  lcd_bus   <=  "10" & conv_std_logic_vector(character'pos('a'),8);
-          WHEN 16   =>  lcd_bus   <=  "10" & conv_std_logic_vector(character'pos(' '),8);
-          WHEN 17   =>  lcd_bus   <=  "10" & conv_std_logic_vector(character'pos('c'),8);
-          WHEN 18   =>  lcd_bus   <=  "10" & conv_std_logic_vector(character'pos('o'),8);
-          WHEN 19   =>  lcd_bus   <=  "10" & conv_std_logic_vector(character'pos('o'),8);
-          WHEN 20   =>  lcd_bus   <=  "10" & conv_std_logic_vector(character'pos('l'),8);
-          WHEN 21   =>  lcd_bus   <=  "10" & conv_std_logic_vector(character'pos('.'),8);
-          WHEN 22   =>  lcd_bus   <=  "0011001100"; -- Mover Final da Segunda Linha
-          WHEN 23   =>  lcd_bus   <=  "10" & (conv_std_logic_vector(character'pos('0'),8) + cooler_dez);
-          WHEN 24   =>  lcd_bus   <=  "10" & (conv_std_logic_vector(character'pos('0'),8) + cooler_um);
-          WHEN 25   =>  lcd_bus   <=  "1011011111"; -- Bola do ºC;
-          WHEN 26   =>  lcd_bus   <=  "10" & conv_std_logic_vector(character'pos('C'),8);
-          WHEN OTHERS => lcd_enable <= '0';
-        END CASE;
-      ELSE
-        lcd_enable <= '0';
-      END IF;
-    END IF;
-  END PROCESS;
+        end if;
+
+        if(char = 30) then
+          char := 0;
+        end if;
+
+        case char is
+          when 1        =>  lcd_bus     <=  "10" & conv_std_logic_vector(character'pos('T'),8);
+          when 2        =>  lcd_bus     <=  "10" & conv_std_logic_vector(character'pos('e'),8);
+          when 3        =>  lcd_bus     <=  "10" & conv_std_logic_vector(character'pos('m'),8);
+          when 4        =>  lcd_bus     <=  "10" & conv_std_logic_vector(character'pos('p'),8);
+          when 5        =>  lcd_bus     <=  "10" & conv_std_logic_vector(character'pos('.'),8);
+          when 6        =>  lcd_bus     <=  "0010001011"; -- Mover para fim da linha;
+          when 7        =>  lcd_bus     <=  temp_display_cem;
+          when 8        =>  lcd_bus     <=  temp_display_dez;
+          when 9        =>  lcd_bus     <=  temp_display_um;
+          when 10       =>  lcd_bus     <=  "1011011111"; -- Bola do ºC;
+          when 11       =>  lcd_bus     <=  "10" & conv_std_logic_vector(character'pos('C'),8);
+          when 12       =>  lcd_bus     <=  "0011000000"; -- Pular Linha;
+          when 13       =>  lcd_bus     <=  "10" & conv_std_logic_vector(character'pos('L'),8);
+          when 14       =>  lcd_bus     <=  "10" & conv_std_logic_vector(character'pos('i'),8);
+          when 15       =>  lcd_bus     <=  "10" & conv_std_logic_vector(character'pos('g'),8);
+          when 16       =>  lcd_bus     <=  "10" & conv_std_logic_vector(character'pos('a'),8);
+          when 17       =>  lcd_bus     <=  "10" & conv_std_logic_vector(character'pos(' '),8);
+          when 18       =>  lcd_bus     <=  "10" & conv_std_logic_vector(character'pos('c'),8);
+          when 19       =>  lcd_bus     <=  "10" & conv_std_logic_vector(character'pos('o'),8);
+          when 20       =>  lcd_bus     <=  "10" & conv_std_logic_vector(character'pos('o'),8);
+          when 21       =>  lcd_bus     <=  "10" & conv_std_logic_vector(character'pos('l'),8);
+          when 22       =>  lcd_bus     <=  "10" & conv_std_logic_vector(character'pos('.'),8);
+          when 23       =>  lcd_bus     <=  "0011001011"; -- Mover Final da Segunda Linha
+          when 24       =>  lcd_bus     <=  lvl_display_cem;
+          when 25       =>  lcd_bus     <=  lvl_display_dez;
+          when 26       =>  lcd_bus     <=  lvl_display_um;
+          when 27       =>  lcd_bus     <=  "1011011111"; -- Bola do ºC;
+          when 28       =>  lcd_bus     <=  "10" & conv_std_logic_vector(character'pos('C'),8);
+          when others   =>  lcd_enable  <= '0';
+        end case;
+        else
+          lcd_enable <= '0';
+        end if;
+    -- ~~~~~~~~~~~~~~~ Start Display Module ~~~~~~~~~~~~~~~ --
+
+    end if;
+  end process;
   
-END behavior;
+end behavior;
