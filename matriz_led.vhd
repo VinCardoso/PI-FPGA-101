@@ -3,9 +3,10 @@ use ieee.std_logic_1164.all;
 
 entity matriz_led is
   port(
-    clk_in        : in      std_logic;
+    clk_in        : in    std_logic;
     led_8         : out   std_logic_vector(7 downto 0);
-    led_5         : out   std_logic_vector(4 downto 0)
+    led_5         : out   std_logic_vector(4 downto 0);
+    num_efect     : in    integer
   );
 end matriz_led;
 
