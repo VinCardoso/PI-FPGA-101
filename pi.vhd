@@ -54,16 +54,16 @@ architecture behavior of pi is
     end component;
 
   -- Temperatura e Cooler
-    --component temperatura is
-    --  port(
-    --    clock_in                                  : in    std_logic;                      -- Entrade de 12MHz 
-    --    temperature_in                            : in    std_logic_vector(7 downto 0);   -- Entrada temperatura em biário
-    --    buttom_plus, buttom_minus                 : in    std_logic;                      -- Botões p/ Aumentar e Diminuir Nível
-    --    temp_cem_asc, temp_dez_asc, temp_um_asc   : out   character;                      -- Saída de númeres temperatura em ASCII 
-    --    lvl_cem_asc, lvl_dez_asc, lvl_um_asc      : out   character;                      -- Saída de númeres level em ASCII
-    --    turn_on_cooler                            : out   std_logic                       -- Ligar ou Desligar Cooler
-    --  );
-    --end component;
+    component temperatura is
+      port(
+        clock_in                                  : in    std_logic;                      -- Entrade de 12MHz 
+        temperature_in                            : in    std_logic_vector(7 downto 0);   -- Entrada temperatura em biário
+        buttom_plus, buttom_minus                 : in    std_logic;                      -- Botões p/ Aumentar e Diminuir Nível
+        temp_cem_asc, temp_dez_asc, temp_um_asc   : out   character;                      -- Saída de númeres temperatura em ASCII 
+        lvl_cem_asc, lvl_dez_asc, lvl_um_asc      : out   character;                      -- Saída de númeres level em ASCII
+        turn_on_cooler                            : out   std_logic                       -- Ligar ou Desligar Cooler
+      );
+    end component;
 
   -- Matriz LED
     component matriz_led is
@@ -75,67 +75,33 @@ architecture behavior of pi is
     end component;
 
 -- Sinais
+  signal  lcd_enable                                : std_logic;
+  signal  lcd_bus                                   : std_logic_vector(9 downto 0);
+  signal  lcd_busy                                  : std_logic;
 
-  signal  lcd_enable                                              : std_logic;
-  signal  lcd_bus                                                 : std_logic_vector(9 downto 0);
-  signal  lcd_busy                                                : std_logic;
-  signal  temp_display_cem, temp_display_dez, temp_display_um     : std_logic_vector(9 downto 0);
-  signal  level_display_cem, level_display_dez, level_display_um  : std_logic_vector(9 downto 0);
+  signal  temp_cem_asc, temp_dez_asc, temp_um_asc   : character;
+  signal  lvl_cem_asc, lvl_dez_asc, lvl_um_asc      : character;
 
--- Funcão de conversão
-  function int_to_asc (int : integer) return character is
-    variable asc : character;
-    begin
-    case int is
-      when 0 => asc := '0';
-      when 1 => asc := '1';
-      when 2 => asc := '2';
-      when 3 => asc := '3';
-      when 4 => asc := '4';
-      when 5 => asc := '5';
-      when 6 => asc := '6';
-      when 7 => asc := '7';
-      when 8 => asc := '8';
-      when 9 => asc := '9';
-      when others => asc := '0';
-    end case;
-
-    return asc;
-
-  end int_to_asc;
+  signal  buttom_plus_temp, buttom_minus_temp       : std_logic;
 
 begin
 
 -- Port Map
-  
   lcd_control:  lcd_controller  port map(clk => clk, reset_n => '1', lcd_enable => lcd_enable, lcd_bus => lcd_bus, busy => lcd_busy, rw => rw, rs => rs, e => e, lcd_data => lcd_data);
   clock1:       clock_1hz       port map(clk, clk_out);
+  temp:         temperatura     port map(clk, temp_in, buttom_plus_temp, buttom_minus_temp, temp_cem_asc, temp_dez_asc, temp_um_asc, lvl_cem_asc, lvl_dez_asc, lvl_um_asc, turn_on_cooler);
   matriz:       matriz_led      port map(clk, led_8, led_5);
 
 process(clk)
 
 -- Variáveis
 
-  -- Telas
-    variable num_display                                                        : integer := 1;
-    constant max_cont_display_button                                            : integer := 2000000;
-    variable display_cont                                                       : integer;
-    variable x1                                                                 : std_logic_vector(9 downto 0);
-
   -- Botões
-
-
-  -- Temperatura
-    variable  temperature_int, temp_cem_int, temp_dez_int, temp_um_int          : integer;
-    variable  lvl_cem_int, lvl_dez_int, lvl_um_int                              : integer;
-    variable  temp_cem_asc, temp_dez_asc, temp_um_asc                           : character;
-    variable  lvl_cem_asc, lvl_dez_asc, lvl_um_asc                              : character;
-    variable  temp_turn_cool_on                                                 : integer range 1 to 128 := 25;
-    constant  debounce_delay                                                    : integer := 2000000;
-    variable  debounce_cont_plus, debounce_cont_minus                           : integer := 0;
+    constant  buttom_time_clk                                                   : integer := 2000000;
+    variable  buttom_change_cont, buttom_plus_cont, buttom_minus_cont           : integer;                                               
 
   -- Display
-
+    variable  display                                                           : integer := 1;
     variable  char                                                              : integer   range 0 to 34         := 0;
     variable  d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15,d16            : character;
     variable  d18,d19,d20,d21,d22,d23,d24,d25,d26,d27,d28,d29,d30,d31,d32,d33   : character := ' ';
@@ -144,24 +110,9 @@ begin
 
 if(clk'event and clk = '1') then
 
--- Estado Display
-  
-  if(buttom_change = '0') then
-    display_cont := display_cont + 1;
-  else
-    display_cont := 0;
-  end if;
-
-  if(display_cont = max_cont_display_button) then
-    if(num_display = 3) then
-      num_display := 1;
-    else
-      num_display := num_display + 1;
-    end if;
-    display_cont := 0;
-  end if;
-
-  case num_display is
+-- Inforações Display p/ Cada Estado
+  case display is
+  -- Temperatura
     when 1 =>
       d1  := 'T';               d18 := 'N';
       d2  := 'e';               d19 := 'i';
@@ -179,6 +130,7 @@ if(clk'event and clk = '1') then
       d14 := temp_um_asc;       d31 := lvl_um_asc;
       d15 := '*';               d32 := '*';
       d16 := 'C';               d33 := 'C';
+  -- Luminosidade
     when 2 =>
       d1  := 'L'; d18 := 'N';
       d2  := 'u'; d19 := 'i';
@@ -196,6 +148,7 @@ if(clk'event and clk = '1') then
       d14 := ' '; d31 := ' ';
       d15 := ' '; d32 := ' ';
       d16 := ' '; d33 := ' ';
+  -- Matriz LED
     when 3 =>
       d1  := 'E'; d18 := '1';
       d2  := 'f'; d19 := ' ';
@@ -213,81 +166,77 @@ if(clk'event and clk = '1') then
       d14 := 'o'; d31 := ' ';
       d15 := ' '; d32 := ' ';
       d16 := ' '; d33 := ' ';
-    when others =>
-      d1  := ' '; d18 := ' ';
-      d2  := ' '; d19 := ' ';
-      d3  := ' '; d20 := ' ';
-      d4  := ' '; d21 := ' ';
-      d5  := ' '; d22 := ' ';
-      d6  := ' '; d23 := ' ';
-      d7  := ' '; d24 := ' ';
-      d8  := ' '; d25 := ' ';
-      d9  := ' '; d26 := ' ';
-      d10 := ' '; d27 := ' ';
-      d11 := ' '; d28 := ' ';
-      d12 := ' '; d29 := ' ';
-      d13 := ' '; d30 := ' ';
-      d14 := ' '; d31 := ' ';
-      d15 := ' '; d32 := ' ';
-      d16 := ' '; d33 := ' ';
+    when others => d1 := ' ';
   end case;
 
--- Calculos e Conversões da Temperatura com Botões
+-- Botões - Mais, Menos e Alterar 
 
-  -- Temperatura
-    temperature_int     := conv_integer(temp_in);
-    temperature_int     := temperature_int / 2;
-    -- Dividir Decimal
-    temp_cem_int        := temperature_int / 100;         
-    temp_dez_int        := (temperature_int mod 100) / 10;
-    temp_um_int         := (temperature_int mod 100) mod 10;
-    -- Decimal p/ Binário
-    temp_cem_asc        := int_to_asc(temp_cem_int);
-    temp_dez_asc        := int_to_asc(temp_dez_int);
-    temp_um_asc         := int_to_asc(temp_um_int);
-
-  -- Nível de Temperatura
-    -- Dividir Decimal Nível
-    lvl_cem_int         := temp_turn_cool_on / 100;         
-    lvl_dez_int         := (temp_turn_cool_on mod 100) / 10;
-    lvl_um_int          := (temp_turn_cool_on mod 100) mod 10;
-    -- Decimal p/ Binário Nível
-    lvl_cem_asc         := int_to_asc(lvl_cem_int);
-    lvl_dez_asc         := int_to_asc(lvl_dez_int);
-    lvl_um_asc          := int_to_asc(lvl_um_int);
-
-  -- Lógica ligar cooler
-    if(temperature_int > temp_turn_cool_on) then
-      turn_on_cooler <= '1';
-    elsif(temperature_int < temp_turn_cool_on) then
-      turn_on_cooler <= '0';
+  -- Botão Alterar Display / Estado
+    if(buttom_change = '0') then
+      buttom_change_cont := buttom_change_cont + 1;
+    else
+      buttom_change_cont := 0;
     end if;
 
-  -- Botões - Alterar Nível de Temperatura
+    if(buttom_change_cont = buttom_time_clk) then
+      
+      if(display = 3) then
+        display := 1;
+      else
+        display := display + 1;
+      end if;
+
+      buttom_change_cont := 0;
+
+    end if;
     
-    -- Aumentar Temperatura
-      if(buttom_plus = '0') then
-        debounce_cont_plus := debounce_cont_plus + 1;
-      elsif(buttom_plus = '1') then
-        debounce_cont_plus := 0;
-      end if;
+  -- Botão Mais
+    if(buttom_plus = '0') then
+      buttom_plus_cont := buttom_plus_cont + 1;
+    elsif(buttom_plus = '1') then
+      buttom_plus_cont := 0;
+    end if;
 
-      if(debounce_cont_plus = debounce_delay and temp_turn_cool_on < 128) then
-        temp_turn_cool_on := temp_turn_cool_on + 1;
-        debounce_cont_plus := 0;
-      end if;
+    if(buttom_plus_cont = buttom_time_clk) then
 
-    -- Diminuir Temperatura
-      if(buttom_minus = '0') then
-        debounce_cont_minus := debounce_cont_minus + 1;
-      elsif(buttom_minus = '1') then
-        debounce_cont_minus := 0;
-      end if;
+      case display is
+        when 1 =>
+          buttom_plus_temp <= '0';
+        when 2 =>
+          buttom_plus_temp <= '1';
+        when 3 =>
+          buttom_plus_temp <= '1';
+        when others =>
+          buttom_plus_temp <= '1';
+      end case;
+      buttom_plus_cont := 0;
+    else
+      buttom_plus_temp  <=  '1';
+    end if;
 
-      if(debounce_cont_minus = debounce_delay and temp_turn_cool_on > 0) then
-        temp_turn_cool_on := temp_turn_cool_on - 1;
-        debounce_cont_minus := 0;
-      end if;
+  -- Botão Menos
+    if(buttom_minus = '0') then
+      buttom_minus_cont := buttom_minus_cont + 1;
+    elsif(buttom_minus = '1') then
+      buttom_minus_cont := 0;
+    end if;
+
+    if(buttom_minus_cont = buttom_time_clk) then
+
+      case display is
+        when 1 =>
+          buttom_minus_temp <= '0';
+        when 2 =>
+          buttom_minus_temp <= '1';
+        when 3 =>
+          buttom_minus_temp <= '1';
+        when others =>
+          buttom_minus_temp <= '1';
+      end case;
+      buttom_minus_cont := 0;
+    else
+      buttom_minus_temp  <=  '1';
+    end if;
     
 -- Lógica Display
 

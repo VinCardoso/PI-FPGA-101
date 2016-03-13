@@ -1,5 +1,5 @@
 Analysis & Synthesis report for LCD
-Sat Mar 12 20:17:29 2016
+Sat Mar 12 22:42:16 2016
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 
 
@@ -20,14 +20,14 @@ Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
  12. General Register Statistics
  13. Inverted Register Statistics
  14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
- 16. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
- 17. Parameter Settings for Inferred Entity Instance: lpm_divide:Div1
- 18. Parameter Settings for Inferred Entity Instance: lpm_divide:Div2
- 19. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1
- 20. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod2
- 21. Parameter Settings for Inferred Entity Instance: lpm_divide:Div3
- 22. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod3
+ 15. Parameter Settings for Inferred Entity Instance: temperatura:temp|lpm_divide:Div0
+ 16. Parameter Settings for Inferred Entity Instance: temperatura:temp|lpm_divide:Mod0
+ 17. Parameter Settings for Inferred Entity Instance: temperatura:temp|lpm_divide:Div1
+ 18. Parameter Settings for Inferred Entity Instance: temperatura:temp|lpm_divide:Div2
+ 19. Parameter Settings for Inferred Entity Instance: temperatura:temp|lpm_divide:Mod2
+ 20. Parameter Settings for Inferred Entity Instance: temperatura:temp|lpm_divide:Div3
+ 21. Parameter Settings for Inferred Entity Instance: temperatura:temp|lpm_divide:Mod1
+ 22. Parameter Settings for Inferred Entity Instance: temperatura:temp|lpm_divide:Mod3
  23. Port Connectivity Checks: "matriz_led:matriz"
  24. Port Connectivity Checks: "lcd_controller:lcd_control"
  25. Post-Synthesis Netlist Statistics for Top Partition
@@ -59,15 +59,15 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Mar 12 20:17:29 2016       ;
+; Analysis & Synthesis Status        ; Successful - Sat Mar 12 22:42:16 2016       ;
 ; Quartus Prime Version              ; 15.1.0 Build 185 10/21/2015 SJ Lite Edition ;
 ; Revision Name                      ; LCD                                         ;
 ; Top-level Entity Name              ; pi                                          ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 1,156                                       ;
-;     Total combinational functions  ; 1,155                                       ;
-;     Dedicated logic registers      ; 301                                         ;
-; Total registers                    ; 301                                         ;
+; Total logic elements               ; 5,613                                       ;
+;     Total combinational functions  ; 5,612                                       ;
+;     Dedicated logic registers      ; 363                                         ;
+; Total registers                    ; 363                                         ;
 ; Total pins                         ; 38                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -188,6 +188,7 @@ agreement for further details.
 ; pi.vhd                           ; yes             ; User VHDL File               ; //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd                               ;         ;
 ; lcd_controller.vhd               ; yes             ; User VHDL File               ; //Mac/Home/Documents/PI/FPGA/LCD_2/lcd_controller.vhd                   ;         ;
 ; clock_1hz.vhd                    ; yes             ; Auto-Found VHDL File         ; //Mac/Home/Documents/PI/FPGA/LCD_2/clock_1hz.vhd                        ;         ;
+; temperatura.vhd                  ; yes             ; Auto-Found VHDL File         ; //Mac/Home/Documents/PI/FPGA/LCD_2/temperatura.vhd                      ;         ;
 ; matriz_led.vhd                   ; yes             ; Auto-Found VHDL File         ; //Mac/Home/Documents/PI/FPGA/LCD_2/matriz_led.vhd                       ;         ;
 ; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
 ; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/altera_lite/15.1/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
@@ -202,15 +203,18 @@ agreement for further details.
 ; db/lpm_divide_ihm.tdf            ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/PI/FPGA/LCD_2/db/lpm_divide_ihm.tdf                ;         ;
 ; db/sign_div_unsign_akh.tdf       ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/PI/FPGA/LCD_2/db/sign_div_unsign_akh.tdf           ;         ;
 ; db/alt_u_div_84f.tdf             ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/PI/FPGA/LCD_2/db/alt_u_div_84f.tdf                 ;         ;
-; db/lpm_divide_mhm.tdf            ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/PI/FPGA/LCD_2/db/lpm_divide_mhm.tdf                ;         ;
-; db/sign_div_unsign_ekh.tdf       ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/PI/FPGA/LCD_2/db/sign_div_unsign_ekh.tdf           ;         ;
-; db/alt_u_div_g4f.tdf             ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/PI/FPGA/LCD_2/db/alt_u_div_g4f.tdf                 ;         ;
-; db/lpm_divide_q9m.tdf            ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/PI/FPGA/LCD_2/db/lpm_divide_q9m.tdf                ;         ;
-; db/sign_div_unsign_fkh.tdf       ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/PI/FPGA/LCD_2/db/sign_div_unsign_fkh.tdf           ;         ;
-; db/alt_u_div_i4f.tdf             ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/PI/FPGA/LCD_2/db/alt_u_div_i4f.tdf                 ;         ;
-; db/lpm_divide_jhm.tdf            ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/PI/FPGA/LCD_2/db/lpm_divide_jhm.tdf                ;         ;
-; db/sign_div_unsign_bkh.tdf       ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/PI/FPGA/LCD_2/db/sign_div_unsign_bkh.tdf           ;         ;
-; db/alt_u_div_a4f.tdf             ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/PI/FPGA/LCD_2/db/alt_u_div_a4f.tdf                 ;         ;
+; db/lpm_divide_s0p.tdf            ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/PI/FPGA/LCD_2/db/lpm_divide_s0p.tdf                ;         ;
+; db/abs_divider_nbg.tdf           ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/PI/FPGA/LCD_2/db/abs_divider_nbg.tdf               ;         ;
+; db/alt_u_div_c7f.tdf             ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/PI/FPGA/LCD_2/db/alt_u_div_c7f.tdf                 ;         ;
+; db/lpm_abs_5v9.tdf               ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/PI/FPGA/LCD_2/db/lpm_abs_5v9.tdf                   ;         ;
+; db/lpm_abs_i0a.tdf               ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/PI/FPGA/LCD_2/db/lpm_abs_i0a.tdf                   ;         ;
+; db/lpm_divide_cqo.tdf            ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/PI/FPGA/LCD_2/db/lpm_divide_cqo.tdf                ;         ;
+; db/abs_divider_4dg.tdf           ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/PI/FPGA/LCD_2/db/abs_divider_4dg.tdf               ;         ;
+; db/alt_u_div_6af.tdf             ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/PI/FPGA/LCD_2/db/alt_u_div_6af.tdf                 ;         ;
+; db/lpm_divide_p0p.tdf            ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/PI/FPGA/LCD_2/db/lpm_divide_p0p.tdf                ;         ;
+; db/abs_divider_kbg.tdf           ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/PI/FPGA/LCD_2/db/abs_divider_kbg.tdf               ;         ;
+; db/alt_u_div_67f.tdf             ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/PI/FPGA/LCD_2/db/alt_u_div_67f.tdf                 ;         ;
+; db/lpm_abs_2v9.tdf               ; yes             ; Auto-Generated Megafunction  ; //Mac/Home/Documents/PI/FPGA/LCD_2/db/lpm_abs_2v9.tdf                   ;         ;
 +----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------+---------+
 
 
@@ -219,20 +223,20 @@ agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 1,156     ;
+; Estimated Total logic elements              ; 5,613     ;
 ;                                             ;           ;
-; Total combinational functions               ; 1155      ;
+; Total combinational functions               ; 5612      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 375       ;
-;     -- 3 input functions                    ; 219       ;
-;     -- <=2 input functions                  ; 561       ;
+;     -- 4 input functions                    ; 1816      ;
+;     -- 3 input functions                    ; 1615      ;
+;     -- <=2 input functions                  ; 2181      ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 794       ;
-;     -- arithmetic mode                      ; 361       ;
+;     -- normal mode                          ; 3791      ;
+;     -- arithmetic mode                      ; 1821      ;
 ;                                             ;           ;
-; Total registers                             ; 301       ;
-;     -- Dedicated logic registers            ; 301       ;
+; Total registers                             ; 363       ;
+;     -- Dedicated logic registers            ; 363       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 38        ;
@@ -240,50 +244,54 @@ agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 301       ;
-; Total fan-out                               ; 3966      ;
-; Average fan-out                             ; 2.59      ;
+; Maximum fan-out                             ; 363       ;
+; Total fan-out                               ; 17111     ;
+; Average fan-out                             ; 2.83      ;
 +---------------------------------------------+-----------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                     ;
-+----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node             ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                 ; Library Name ;
-+----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+--------------+
-; |pi                                    ; 1155 (521)        ; 301 (173)    ; 0           ; 0            ; 0       ; 0         ; 38   ; 0            ; |pi                                                                                                 ; work         ;
-;    |clock_1hz:clock1|                  ; 70 (70)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|clock_1hz:clock1                                                                                ; work         ;
-;    |lcd_controller:lcd_control|        ; 164 (164)         ; 47 (47)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lcd_controller:lcd_control                                                                      ; work         ;
-;    |lpm_divide:Div1|                   ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lpm_divide:Div1                                                                                 ; work         ;
-;       |lpm_divide_ihm:auto_generated|  ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lpm_divide:Div1|lpm_divide_ihm:auto_generated                                                   ; work         ;
-;          |sign_div_unsign_akh:divider| ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lpm_divide:Div1|lpm_divide_ihm:auto_generated|sign_div_unsign_akh:divider                       ; work         ;
-;             |alt_u_div_84f:divider|    ; 46 (46)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lpm_divide:Div1|lpm_divide_ihm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_84f:divider ; work         ;
-;    |lpm_divide:Div2|                   ; 18 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lpm_divide:Div2                                                                                 ; work         ;
-;       |lpm_divide_mhm:auto_generated|  ; 18 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lpm_divide:Div2|lpm_divide_mhm:auto_generated                                                   ; work         ;
-;          |sign_div_unsign_ekh:divider| ; 18 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lpm_divide:Div2|lpm_divide_mhm:auto_generated|sign_div_unsign_ekh:divider                       ; work         ;
-;             |alt_u_div_g4f:divider|    ; 18 (18)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lpm_divide:Div2|lpm_divide_mhm:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_g4f:divider ; work         ;
-;    |lpm_divide:Div3|                   ; 60 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lpm_divide:Div3                                                                                 ; work         ;
-;       |lpm_divide_jhm:auto_generated|  ; 60 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lpm_divide:Div3|lpm_divide_jhm:auto_generated                                                   ; work         ;
-;          |sign_div_unsign_bkh:divider| ; 60 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lpm_divide:Div3|lpm_divide_jhm:auto_generated|sign_div_unsign_bkh:divider                       ; work         ;
-;             |alt_u_div_a4f:divider|    ; 60 (60)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lpm_divide:Div3|lpm_divide_jhm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_a4f:divider ; work         ;
-;    |lpm_divide:Mod0|                   ; 20 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lpm_divide:Mod0                                                                                 ; work         ;
-;       |lpm_divide_o9m:auto_generated|  ; 20 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lpm_divide:Mod0|lpm_divide_o9m:auto_generated                                                   ; work         ;
-;          |sign_div_unsign_dkh:divider| ; 20 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lpm_divide:Mod0|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider                       ; work         ;
-;             |alt_u_div_e4f:divider|    ; 20 (20)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lpm_divide:Mod0|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider ; work         ;
-;    |lpm_divide:Mod1|                   ; 61 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lpm_divide:Mod1                                                                                 ; work         ;
-;       |lpm_divide_o9m:auto_generated|  ; 61 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lpm_divide:Mod1|lpm_divide_o9m:auto_generated                                                   ; work         ;
-;          |sign_div_unsign_dkh:divider| ; 61 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lpm_divide:Mod1|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider                       ; work         ;
-;             |alt_u_div_e4f:divider|    ; 61 (61)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lpm_divide:Mod1|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider ; work         ;
-;    |lpm_divide:Mod2|                   ; 42 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lpm_divide:Mod2                                                                                 ; work         ;
-;       |lpm_divide_q9m:auto_generated|  ; 42 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lpm_divide:Mod2|lpm_divide_q9m:auto_generated                                                   ; work         ;
-;          |sign_div_unsign_fkh:divider| ; 42 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lpm_divide:Mod2|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider                       ; work         ;
-;             |alt_u_div_i4f:divider|    ; 42 (42)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lpm_divide:Mod2|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider ; work         ;
-;    |lpm_divide:Mod3|                   ; 78 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lpm_divide:Mod3                                                                                 ; work         ;
-;       |lpm_divide_q9m:auto_generated|  ; 78 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lpm_divide:Mod3|lpm_divide_q9m:auto_generated                                                   ; work         ;
-;          |sign_div_unsign_fkh:divider| ; 78 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lpm_divide:Mod3|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider                       ; work         ;
-;             |alt_u_div_i4f:divider|    ; 78 (78)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lpm_divide:Mod3|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider ; work         ;
-;    |matriz_led:matriz|                 ; 75 (75)           ; 49 (49)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|matriz_led:matriz                                                                               ; work         ;
-+----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                         ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                  ; Library Name ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------+--------------+
+; |pi                                       ; 5612 (492)        ; 363 (180)    ; 0           ; 0            ; 0       ; 0         ; 38   ; 0            ; |pi                                                                                                                  ; work         ;
+;    |clock_1hz:clock1|                     ; 70 (70)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|clock_1hz:clock1                                                                                                 ; work         ;
+;    |lcd_controller:lcd_control|           ; 164 (164)         ; 47 (47)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lcd_controller:lcd_control                                                                                       ; work         ;
+;    |matriz_led:matriz|                    ; 75 (75)           ; 49 (49)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|matriz_led:matriz                                                                                                ; work         ;
+;    |temperatura:temp|                     ; 4811 (307)        ; 55 (55)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp                                                                                                 ; work         ;
+;       |lpm_divide:Div1|                   ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Div1                                                                                 ; work         ;
+;          |lpm_divide_ihm:auto_generated|  ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Div1|lpm_divide_ihm:auto_generated                                                   ; work         ;
+;             |sign_div_unsign_akh:divider| ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Div1|lpm_divide_ihm:auto_generated|sign_div_unsign_akh:divider                       ; work         ;
+;                |alt_u_div_84f:divider|    ; 46 (46)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Div1|lpm_divide_ihm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_84f:divider ; work         ;
+;       |lpm_divide:Div2|                   ; 681 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Div2                                                                                 ; work         ;
+;          |lpm_divide_s0p:auto_generated|  ; 681 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Div2|lpm_divide_s0p:auto_generated                                                   ; work         ;
+;             |abs_divider_nbg:divider|     ; 681 (31)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Div2|lpm_divide_s0p:auto_generated|abs_divider_nbg:divider                           ; work         ;
+;                |alt_u_div_c7f:divider|    ; 625 (625)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Div2|lpm_divide_s0p:auto_generated|abs_divider_nbg:divider|alt_u_div_c7f:divider     ; work         ;
+;                |lpm_abs_i0a:my_abs_num|   ; 25 (25)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Div2|lpm_divide_s0p:auto_generated|abs_divider_nbg:divider|lpm_abs_i0a:my_abs_num    ; work         ;
+;       |lpm_divide:Div3|                   ; 483 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Div3                                                                                 ; work         ;
+;          |lpm_divide_p0p:auto_generated|  ; 483 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Div3|lpm_divide_p0p:auto_generated                                                   ; work         ;
+;             |abs_divider_kbg:divider|     ; 483 (34)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Div3|lpm_divide_p0p:auto_generated|abs_divider_kbg:divider                           ; work         ;
+;                |alt_u_div_67f:divider|    ; 449 (449)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Div3|lpm_divide_p0p:auto_generated|abs_divider_kbg:divider|alt_u_div_67f:divider     ; work         ;
+;       |lpm_divide:Mod0|                   ; 20 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod0                                                                                 ; work         ;
+;          |lpm_divide_o9m:auto_generated|  ; 20 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod0|lpm_divide_o9m:auto_generated                                                   ; work         ;
+;             |sign_div_unsign_dkh:divider| ; 20 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod0|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider                       ; work         ;
+;                |alt_u_div_e4f:divider|    ; 20 (20)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod0|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider ; work         ;
+;       |lpm_divide:Mod1|                   ; 61 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod1                                                                                 ; work         ;
+;          |lpm_divide_o9m:auto_generated|  ; 61 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod1|lpm_divide_o9m:auto_generated                                                   ; work         ;
+;             |sign_div_unsign_dkh:divider| ; 61 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod1|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider                       ; work         ;
+;                |alt_u_div_e4f:divider|    ; 61 (61)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod1|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider ; work         ;
+;       |lpm_divide:Mod2|                   ; 1528 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod2                                                                                 ; work         ;
+;          |lpm_divide_cqo:auto_generated|  ; 1528 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod2|lpm_divide_cqo:auto_generated                                                   ; work         ;
+;             |abs_divider_4dg:divider|     ; 1528 (64)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod2|lpm_divide_cqo:auto_generated|abs_divider_4dg:divider                           ; work         ;
+;                |alt_u_div_6af:divider|    ; 1445 (1445)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod2|lpm_divide_cqo:auto_generated|abs_divider_4dg:divider|alt_u_div_6af:divider     ; work         ;
+;                |lpm_abs_i0a:my_abs_num|   ; 19 (19)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod2|lpm_divide_cqo:auto_generated|abs_divider_4dg:divider|lpm_abs_i0a:my_abs_num    ; work         ;
+;       |lpm_divide:Mod3|                   ; 1685 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod3                                                                                 ; work         ;
+;          |lpm_divide_cqo:auto_generated|  ; 1685 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod3|lpm_divide_cqo:auto_generated                                                   ; work         ;
+;             |abs_divider_4dg:divider|     ; 1685 (64)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod3|lpm_divide_cqo:auto_generated|abs_divider_4dg:divider                           ; work         ;
+;                |alt_u_div_6af:divider|    ; 1566 (1566)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod3|lpm_divide_cqo:auto_generated|abs_divider_4dg:divider|alt_u_div_6af:divider     ; work         ;
+;                |lpm_abs_i0a:my_abs_num|   ; 55 (55)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod3|lpm_divide_cqo:auto_generated|abs_divider_4dg:divider|lpm_abs_i0a:my_abs_num    ; work         ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -311,42 +319,214 @@ Encoding Type:  One-Hot
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+---------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                              ;
-+----------------------------------------+----------------------------------------+
-; Register name                          ; Reason for Removal                     ;
-+----------------------------------------+----------------------------------------+
-; temp_cem_asc[6,7]                      ; Stuck at GND due to stuck port data_in ;
-; temp_dez_asc[6,7]                      ; Stuck at GND due to stuck port data_in ;
-; temp_um_asc[6,7]                       ; Stuck at GND due to stuck port data_in ;
-; lvl_cem_asc[6,7]                       ; Stuck at GND due to stuck port data_in ;
-; lvl_dez_asc[6,7]                       ; Stuck at GND due to stuck port data_in ;
-; lvl_um_asc[6,7]                        ; Stuck at GND due to stuck port data_in ;
-; matriz_led:matriz|led_8[0]             ; Stuck at VCC due to stuck port data_in ;
-; lvl_cem_asc[5]                         ; Merged with lvl_cem_asc[4]             ;
-; lvl_dez_asc[4,5]                       ; Merged with lvl_cem_asc[4]             ;
-; lvl_um_asc[4,5]                        ; Merged with lvl_cem_asc[4]             ;
-; temp_cem_asc[4,5]                      ; Merged with lvl_cem_asc[4]             ;
-; temp_dez_asc[4,5]                      ; Merged with lvl_cem_asc[4]             ;
-; temp_um_asc[4,5]                       ; Merged with lvl_cem_asc[4]             ;
-; lcd_bus[8]                             ; Stuck at GND due to stuck port data_in ;
-; lcd_controller:lcd_control|rw          ; Stuck at GND due to stuck port data_in ;
-; temp_cem_asc[1]                        ; Stuck at GND due to stuck port data_in ;
-; lvl_cem_asc[2]                         ; Stuck at GND due to stuck port data_in ;
-; temp_cem_asc[2,3]                      ; Stuck at GND due to stuck port data_in ;
-; lvl_cem_asc[3]                         ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 31 ;                                        ;
-+----------------------------------------+----------------------------------------+
++---------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                    ;
++-----------------------------------------+---------------------------------------------+
+; Register name                           ; Reason for Removal                          ;
++-----------------------------------------+---------------------------------------------+
+; matriz_led:matriz|led_8[0]              ; Stuck at VCC due to stuck port data_in      ;
+; temperatura:temp|temp_cem_asc[6,7]      ; Stuck at GND due to stuck port data_in      ;
+; temperatura:temp|temp_dez_asc[6,7]      ; Stuck at GND due to stuck port data_in      ;
+; temperatura:temp|temp_um_asc[6,7]       ; Stuck at GND due to stuck port data_in      ;
+; temperatura:temp|lvl_cem_asc[6,7]       ; Stuck at GND due to stuck port data_in      ;
+; temperatura:temp|lvl_dez_asc[6,7]       ; Stuck at GND due to stuck port data_in      ;
+; temperatura:temp|lvl_um_asc[6,7]        ; Stuck at GND due to stuck port data_in      ;
+; d24[0]                                  ; Merged with d33[2]                          ;
+; d23[0]                                  ; Merged with d33[2]                          ;
+; d27[6]                                  ; Merged with d33[2]                          ;
+; d25[3]                                  ; Merged with d33[2]                          ;
+; d5[0]                                   ; Merged with d33[2]                          ;
+; d7[0]                                   ; Merged with d33[2]                          ;
+; d15[2]                                  ; Merged with d33[2]                          ;
+; d6[4]                                   ; Merged with d33[2]                          ;
+; d26[0]                                  ; Merged with d33[2]                          ;
+; d4[1]                                   ; Merged with d33[2]                          ;
+; d32[2]                                  ; Merged with d33[2]                          ;
+; d25[7]                                  ; Merged with d33[2]                          ;
+; d27[1]                                  ; Merged with d33[2]                          ;
+; d24[2,4]                                ; Merged with d33[2]                          ;
+; d7[4]                                   ; Merged with d33[2]                          ;
+; d27[0]                                  ; Merged with d33[2]                          ;
+; d23[4]                                  ; Merged with d33[2]                          ;
+; d10[3]                                  ; Merged with d33[2]                          ;
+; d22[1]                                  ; Merged with d33[2]                          ;
+; d15[7]                                  ; Merged with d33[2]                          ;
+; d21[3]                                  ; Merged with d33[2]                          ;
+; d26[4]                                  ; Merged with d33[2]                          ;
+; d19[2]                                  ; Merged with d33[2]                          ;
+; d20[0]                                  ; Merged with d33[2]                          ;
+; d9[7]                                   ; Merged with d33[2]                          ;
+; d2[7]                                   ; Merged with d33[2]                          ;
+; d15[0]                                  ; Merged with d33[2]                          ;
+; d18[7]                                  ; Merged with d33[2]                          ;
+; d33[3]                                  ; Merged with d33[2]                          ;
+; d25[0]                                  ; Merged with d33[2]                          ;
+; d8[4]                                   ; Merged with d33[2]                          ;
+; d24[6]                                  ; Merged with d33[2]                          ;
+; d11[7]                                  ; Merged with d33[2]                          ;
+; d7[2]                                   ; Merged with d33[2]                          ;
+; d27[4]                                  ; Merged with d33[2]                          ;
+; d7[6]                                   ; Merged with d33[2]                          ;
+; d25[6]                                  ; Merged with d33[2]                          ;
+; d23[2]                                  ; Merged with d33[2]                          ;
+; d10[1]                                  ; Merged with d33[2]                          ;
+; d23[6]                                  ; Merged with d33[2]                          ;
+; d6[7]                                   ; Merged with d33[2]                          ;
+; d16[3]                                  ; Merged with d33[2]                          ;
+; d5[7]                                   ; Merged with d33[2]                          ;
+; d26[2]                                  ; Merged with d33[2]                          ;
+; d28[1]                                  ; Merged with d33[2]                          ;
+; d26[6]                                  ; Merged with d33[2]                          ;
+; d3[7]                                   ; Merged with d33[2]                          ;
+; d9[3]                                   ; Merged with d33[2]                          ;
+; d25[1,2]                                ; Merged with d33[2]                          ;
+; d27[3]                                  ; Merged with d33[2]                          ;
+; d25[4]                                  ; Merged with d33[2]                          ;
+; d28[6,7]                                ; Merged with d33[2]                          ;
+; d32[4]                                  ; Merged with d33[2]                          ;
+; d11[0]                                  ; Merged with d33[2]                          ;
+; d8[7]                                   ; Merged with d33[2]                          ;
+; d2[3]                                   ; Merged with d33[2]                          ;
+; d11[4]                                  ; Merged with d33[2]                          ;
+; d8[3]                                   ; Merged with d33[2]                          ;
+; d32[7]                                  ; Merged with d33[2]                          ;
+; d24[1,3]                                ; Merged with d33[2]                          ;
+; d11[3]                                  ; Merged with d33[2]                          ;
+; d7[1]                                   ; Merged with d33[2]                          ;
+; d33[7]                                  ; Merged with d33[2]                          ;
+; d7[3]                                   ; Merged with d33[2]                          ;
+; d27[2]                                  ; Merged with d33[2]                          ;
+; d7[7]                                   ; Merged with d33[2]                          ;
+; d32[0]                                  ; Merged with d33[2]                          ;
+; d23[1]                                  ; Merged with d33[2]                          ;
+; d27[7]                                  ; Merged with d33[2]                          ;
+; d23[3]                                  ; Merged with d33[2]                          ;
+; d15[4]                                  ; Merged with d33[2]                          ;
+; d10[2]                                  ; Merged with d33[2]                          ;
+; d23[7]                                  ; Merged with d33[2]                          ;
+; d16[2]                                  ; Merged with d33[2]                          ;
+; d10[4]                                  ; Merged with d33[2]                          ;
+; d22[0]                                  ; Merged with d33[2]                          ;
+; d15[6]                                  ; Merged with d33[2]                          ;
+; d22[4]                                  ; Merged with d33[4]                          ;
+; d10[7]                                  ; Merged with d33[4]                          ;
+; d22[7]                                  ; Merged with d33[4]                          ;
+; d24[7]                                  ; Merged with d33[4]                          ;
+; d26[1]                                  ; Merged with d33[4]                          ;
+; d21[1]                                  ; Merged with d33[4]                          ;
+; d28[0]                                  ; Merged with d33[4]                          ;
+; d21[4]                                  ; Merged with d33[4]                          ;
+; d26[3]                                  ; Merged with d33[4]                          ;
+; d21[7]                                  ; Merged with d33[4]                          ;
+; d16[4]                                  ; Merged with d33[4]                          ;
+; d4[2,7]                                 ; Merged with d33[4]                          ;
+; d28[2]                                  ; Merged with d33[4]                          ;
+; d20[3]                                  ; Merged with d33[4]                          ;
+; d26[7]                                  ; Merged with d33[4]                          ;
+; d20[7]                                  ; Merged with d33[4]                          ;
+; d9[2]                                   ; Merged with d33[4]                          ;
+; d19[1]                                  ; Merged with d33[4]                          ;
+; d28[4]                                  ; Merged with d33[4]                          ;
+; d19[4,7]                                ; Merged with d33[4]                          ;
+; d32[6]                                  ; Merged with d33[4]                          ;
+; d16[7]                                  ; Merged with d33[4]                          ;
+; d28[3]                                  ; Merged with d33[4]                          ;
+; d9[0]                                   ; Merged with d33[4]                          ;
+; d25[5]                                  ; Merged with d32[5]                          ;
+; d22[5]                                  ; Merged with d32[5]                          ;
+; d21[5]                                  ; Merged with d32[5]                          ;
+; d20[5]                                  ; Merged with d32[5]                          ;
+; d19[5]                                  ; Merged with d32[5]                          ;
+; d28[5]                                  ; Merged with d32[5]                          ;
+; d24[5]                                  ; Merged with d32[5]                          ;
+; d27[5]                                  ; Merged with d32[5]                          ;
+; d23[5]                                  ; Merged with d32[5]                          ;
+; d2[2]                                   ; Merged with d15[5]                          ;
+; d11[5]                                  ; Merged with d15[5]                          ;
+; d10[5]                                  ; Merged with d15[5]                          ;
+; d4[5]                                   ; Merged with d15[5]                          ;
+; d2[5,6]                                 ; Merged with d15[5]                          ;
+; d7[5]                                   ; Merged with d15[5]                          ;
+; d6[5]                                   ; Merged with d15[5]                          ;
+; d5[5]                                   ; Merged with d15[5]                          ;
+; d3[5,6]                                 ; Merged with d9[5]                           ;
+; d33[4]                                  ; Merged with d33[2]                          ;
+; d26[5]                                  ; Merged with d32[5]                          ;
+; d9[5]                                   ; Merged with d15[5]                          ;
+; d10[6]                                  ; Merged with d10[0]                          ;
+; d11[1,2,6]                              ; Merged with d10[0]                          ;
+; d18[0,4]                                ; Merged with d10[0]                          ;
+; d2[1]                                   ; Merged with d10[0]                          ;
+; d4[0,3]                                 ; Merged with d10[0]                          ;
+; d5[4,6]                                 ; Merged with d10[0]                          ;
+; d6[0..3,6]                              ; Merged with d10[0]                          ;
+; d8[0..2,6]                              ; Merged with d10[0]                          ;
+; d9[1,4,6]                               ; Merged with d10[0]                          ;
+; d3[2]                                   ; Merged with d3[0]                           ;
+; d4[6]                                   ; Merged with d3[0]                           ;
+; d5[2]                                   ; Merged with d3[0]                           ;
+; temperatura:temp|lvl_cem_asc[5]         ; Merged with temperatura:temp|lvl_cem_asc[4] ;
+; temperatura:temp|lvl_dez_asc[4,5]       ; Merged with temperatura:temp|lvl_cem_asc[4] ;
+; temperatura:temp|lvl_um_asc[4,5]        ; Merged with temperatura:temp|lvl_cem_asc[4] ;
+; temperatura:temp|temp_cem_asc[4,5]      ; Merged with temperatura:temp|lvl_cem_asc[4] ;
+; temperatura:temp|temp_dez_asc[4,5]      ; Merged with temperatura:temp|lvl_cem_asc[4] ;
+; temperatura:temp|temp_um_asc[4,5]       ; Merged with temperatura:temp|lvl_cem_asc[4] ;
+; d13[4]                                  ; Merged with d12[4]                          ;
+; d14[4]                                  ; Merged with d12[4]                          ;
+; d29[4]                                  ; Merged with d12[4]                          ;
+; d30[4]                                  ; Merged with d12[4]                          ;
+; d31[4]                                  ; Merged with d12[4]                          ;
+; d13[5]                                  ; Merged with d12[5]                          ;
+; d14[5]                                  ; Merged with d12[5]                          ;
+; d13[6]                                  ; Merged with d12[6]                          ;
+; d14[6]                                  ; Merged with d12[6]                          ;
+; d13[7]                                  ; Merged with d12[7]                          ;
+; d14[7]                                  ; Merged with d12[7]                          ;
+; d29[6,7]                                ; Merged with d12[7]                          ;
+; d30[6,7]                                ; Merged with d12[7]                          ;
+; d31[6,7]                                ; Merged with d12[7]                          ;
+; d30[5]                                  ; Merged with d29[5]                          ;
+; d31[5]                                  ; Merged with d29[5]                          ;
+; d18[2,3,6]                              ; Merged with d18[1]                          ;
+; d19[0,3,6]                              ; Merged with d18[1]                          ;
+; d20[1,2,4,6]                            ; Merged with d18[1]                          ;
+; d21[0,2,6]                              ; Merged with d18[1]                          ;
+; d22[2,3,6]                              ; Merged with d18[1]                          ;
+; d2[0]                                   ; Merged with d18[1]                          ;
+; d3[3]                                   ; Merged with d18[1]                          ;
+; d8[5]                                   ; Merged with d18[1]                          ;
+; d15[3]                                  ; Merged with d15[1]                          ;
+; d16[0,1,6]                              ; Merged with d15[1]                          ;
+; d32[1,3]                                ; Merged with d15[1]                          ;
+; d33[0,1,6]                              ; Merged with d15[1]                          ;
+; d4[4]                                   ; Merged with d15[1]                          ;
+; d5[1,3]                                 ; Merged with d15[1]                          ;
+; d3[1,4]                                 ; Merged with d2[4]                           ;
+; d33[2]                                  ; Stuck at GND due to stuck port data_in      ;
+; d32[5]                                  ; Stuck at VCC due to stuck port data_in      ;
+; d12[7]                                  ; Stuck at GND due to stuck port data_in      ;
+; d10[0]                                  ; Merged with d12[6]                          ;
+; lcd_bus[8]                              ; Stuck at GND due to stuck port data_in      ;
+; lcd_controller:lcd_control|rw           ; Stuck at GND due to stuck port data_in      ;
+; temperatura:temp|temp_cem_asc[1..3]     ; Stuck at GND due to stuck port data_in      ;
+; d12[2]                                  ; Merged with d12[1]                          ;
+; d12[1]                                  ; Stuck at GND due to stuck port data_in      ;
+; Total Number of Removed Registers = 243 ;                                             ;
++-----------------------------------------+---------------------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                        ;
-+---------------+---------------------------+----------------------------------------+
-; Register name ; Reason for Removal        ; Registers Removed due to This Register ;
-+---------------+---------------------------+----------------------------------------+
-; lcd_bus[8]    ; Stuck at GND              ; lcd_controller:lcd_control|rw          ;
-;               ; due to stuck port data_in ;                                        ;
-+---------------+---------------------------+----------------------------------------+
++-------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                           ;
++----------------------------------+---------------------------+----------------------------------------+
+; Register name                    ; Reason for Removal        ; Registers Removed due to This Register ;
++----------------------------------+---------------------------+----------------------------------------+
+; temperatura:temp|temp_cem_asc[7] ; Stuck at GND              ; d12[7]                                 ;
+;                                  ; due to stuck port data_in ;                                        ;
+; lcd_bus[8]                       ; Stuck at GND              ; lcd_controller:lcd_control|rw          ;
+;                                  ; due to stuck port data_in ;                                        ;
+; temperatura:temp|temp_cem_asc[1] ; Stuck at GND              ; d12[1]                                 ;
+;                                  ; due to stuck port data_in ;                                        ;
++----------------------------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -354,30 +534,37 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 301   ;
+; Total registers                              ; 363   ;
 ; Number of registers using Synchronous Clear  ; 32    ;
 ; Number of registers using Synchronous Load   ; 7     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 40    ;
+; Number of registers using Clock Enable       ; 71    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; temp_turn_cool_on[4]                   ; 8       ;
-; temp_turn_cool_on[3]                   ; 8       ;
-; temp_turn_cool_on[0]                   ; 5       ;
-; lcd_controller:lcd_control|busy        ; 2       ;
-; display_cont[0]                        ; 1       ;
-; display_cont[31]                       ; 1       ;
-; num_display[0]                         ; 3       ;
-; Total number of inverted registers = 7 ;         ;
-+----------------------------------------+---------+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; temperatura:temp|temp_turn_cool_on[4]   ; 8       ;
+; temperatura:temp|temp_turn_cool_on[3]   ; 13      ;
+; temperatura:temp|temp_turn_cool_on[0]   ; 16      ;
+; lcd_controller:lcd_control|busy         ; 2       ;
+; display[0]                              ; 25      ;
+; d18[5]                                  ; 1       ;
+; d33[5]                                  ; 1       ;
+; d29[5]                                  ; 1       ;
+; buttom_change_cont[0]                   ; 1       ;
+; buttom_change_cont[31]                  ; 1       ;
+; buttom_plus_cont[0]                     ; 1       ;
+; buttom_plus_cont[31]                    ; 1       ;
+; buttom_minus_cont[0]                    ; 1       ;
+; buttom_minus_cont[31]                   ; 1       ;
+; Total number of inverted registers = 14 ;         ;
++-----------------------------------------+---------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -385,194 +572,196 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
-; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |pi|lcd_controller:lcd_control|rs            ;
-; 7:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |pi|lcd_controller:lcd_control|clk_count[29] ;
-; 14:1               ; 8 bits    ; 72 LEs        ; 56 LEs               ; 16 LEs                 ; Yes        ; |pi|lcd_controller:lcd_control|lcd_data[1]   ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |pi|num_display                              ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |pi|lcd_controller:lcd_control|rw            ;
+; 7:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |pi|lcd_controller:lcd_control|clk_count[14] ;
+; 14:1               ; 8 bits    ; 72 LEs        ; 56 LEs               ; 16 LEs                 ; Yes        ; |pi|lcd_controller:lcd_control|lcd_data[4]   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |pi|display                                  ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |pi|Selector57                               ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |pi|Selector62                               ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
 
 
-+------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_divide:Div0 ;
-+------------------------+----------------+------------------------+
-; Parameter Name         ; Value          ; Type                   ;
-+------------------------+----------------+------------------------+
-; LPM_WIDTHN             ; 7              ; Untyped                ;
-; LPM_WIDTHD             ; 7              ; Untyped                ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_PIPELINE           ; 0              ; Untyped                ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
-; CBXI_PARAMETER         ; lpm_divide_lhm ; Untyped                ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
-+------------------------+----------------+------------------------+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: temperatura:temp|lpm_divide:Div0 ;
++------------------------+----------------+-----------------------------------------+
+; Parameter Name         ; Value          ; Type                                    ;
++------------------------+----------------+-----------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                 ;
+; LPM_WIDTHD             ; 7              ; Untyped                                 ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                 ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                                 ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                 ;
+; CBXI_PARAMETER         ; lpm_divide_lhm ; Untyped                                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                          ;
++------------------------+----------------+-----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0 ;
-+------------------------+----------------+------------------------+
-; Parameter Name         ; Value          ; Type                   ;
-+------------------------+----------------+------------------------+
-; LPM_WIDTHN             ; 7              ; Untyped                ;
-; LPM_WIDTHD             ; 7              ; Untyped                ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_PIPELINE           ; 0              ; Untyped                ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
-; CBXI_PARAMETER         ; lpm_divide_o9m ; Untyped                ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
-+------------------------+----------------+------------------------+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: temperatura:temp|lpm_divide:Mod0 ;
++------------------------+----------------+-----------------------------------------+
+; Parameter Name         ; Value          ; Type                                    ;
++------------------------+----------------+-----------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                 ;
+; LPM_WIDTHD             ; 7              ; Untyped                                 ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                 ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                                 ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                 ;
+; CBXI_PARAMETER         ; lpm_divide_o9m ; Untyped                                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                          ;
++------------------------+----------------+-----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_divide:Div1 ;
-+------------------------+----------------+------------------------+
-; Parameter Name         ; Value          ; Type                   ;
-+------------------------+----------------+------------------------+
-; LPM_WIDTHN             ; 7              ; Untyped                ;
-; LPM_WIDTHD             ; 4              ; Untyped                ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_PIPELINE           ; 0              ; Untyped                ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
-; CBXI_PARAMETER         ; lpm_divide_ihm ; Untyped                ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
-+------------------------+----------------+------------------------+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: temperatura:temp|lpm_divide:Div1 ;
++------------------------+----------------+-----------------------------------------+
+; Parameter Name         ; Value          ; Type                                    ;
++------------------------+----------------+-----------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                 ;
+; LPM_WIDTHD             ; 4              ; Untyped                                 ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                 ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                                 ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                 ;
+; CBXI_PARAMETER         ; lpm_divide_ihm ; Untyped                                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                          ;
++------------------------+----------------+-----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_divide:Div2 ;
-+------------------------+----------------+------------------------+
-; Parameter Name         ; Value          ; Type                   ;
-+------------------------+----------------+------------------------+
-; LPM_WIDTHN             ; 8              ; Untyped                ;
-; LPM_WIDTHD             ; 7              ; Untyped                ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_PIPELINE           ; 0              ; Untyped                ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
-; CBXI_PARAMETER         ; lpm_divide_mhm ; Untyped                ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
-+------------------------+----------------+------------------------+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: temperatura:temp|lpm_divide:Div2 ;
++------------------------+----------------+-----------------------------------------+
+; Parameter Name         ; Value          ; Type                                    ;
++------------------------+----------------+-----------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                 ;
+; LPM_WIDTHD             ; 8              ; Untyped                                 ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                 ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                                 ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                 ;
+; CBXI_PARAMETER         ; lpm_divide_s0p ; Untyped                                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                          ;
++------------------------+----------------+-----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1 ;
-+------------------------+----------------+------------------------+
-; Parameter Name         ; Value          ; Type                   ;
-+------------------------+----------------+------------------------+
-; LPM_WIDTHN             ; 7              ; Untyped                ;
-; LPM_WIDTHD             ; 7              ; Untyped                ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_PIPELINE           ; 0              ; Untyped                ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
-; CBXI_PARAMETER         ; lpm_divide_o9m ; Untyped                ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
-+------------------------+----------------+------------------------+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: temperatura:temp|lpm_divide:Mod2 ;
++------------------------+----------------+-----------------------------------------+
+; Parameter Name         ; Value          ; Type                                    ;
++------------------------+----------------+-----------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                 ;
+; LPM_WIDTHD             ; 32             ; Untyped                                 ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                 ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                                 ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                 ;
+; CBXI_PARAMETER         ; lpm_divide_cqo ; Untyped                                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                          ;
++------------------------+----------------+-----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod2 ;
-+------------------------+----------------+------------------------+
-; Parameter Name         ; Value          ; Type                   ;
-+------------------------+----------------+------------------------+
-; LPM_WIDTHN             ; 8              ; Untyped                ;
-; LPM_WIDTHD             ; 8              ; Untyped                ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_PIPELINE           ; 0              ; Untyped                ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
-; CBXI_PARAMETER         ; lpm_divide_q9m ; Untyped                ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
-+------------------------+----------------+------------------------+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: temperatura:temp|lpm_divide:Div3 ;
++------------------------+----------------+-----------------------------------------+
+; Parameter Name         ; Value          ; Type                                    ;
++------------------------+----------------+-----------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                 ;
+; LPM_WIDTHD             ; 5              ; Untyped                                 ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                 ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                                 ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                 ;
+; CBXI_PARAMETER         ; lpm_divide_p0p ; Untyped                                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                          ;
++------------------------+----------------+-----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_divide:Div3 ;
-+------------------------+----------------+------------------------+
-; Parameter Name         ; Value          ; Type                   ;
-+------------------------+----------------+------------------------+
-; LPM_WIDTHN             ; 8              ; Untyped                ;
-; LPM_WIDTHD             ; 4              ; Untyped                ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_PIPELINE           ; 0              ; Untyped                ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
-; CBXI_PARAMETER         ; lpm_divide_jhm ; Untyped                ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
-+------------------------+----------------+------------------------+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: temperatura:temp|lpm_divide:Mod1 ;
++------------------------+----------------+-----------------------------------------+
+; Parameter Name         ; Value          ; Type                                    ;
++------------------------+----------------+-----------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                 ;
+; LPM_WIDTHD             ; 7              ; Untyped                                 ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                 ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                                 ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                 ;
+; CBXI_PARAMETER         ; lpm_divide_o9m ; Untyped                                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                          ;
++------------------------+----------------+-----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod3 ;
-+------------------------+----------------+------------------------+
-; Parameter Name         ; Value          ; Type                   ;
-+------------------------+----------------+------------------------+
-; LPM_WIDTHN             ; 8              ; Untyped                ;
-; LPM_WIDTHD             ; 8              ; Untyped                ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
-; LPM_PIPELINE           ; 0              ; Untyped                ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
-; CBXI_PARAMETER         ; lpm_divide_q9m ; Untyped                ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
-+------------------------+----------------+------------------------+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: temperatura:temp|lpm_divide:Mod3 ;
++------------------------+----------------+-----------------------------------------+
+; Parameter Name         ; Value          ; Type                                    ;
++------------------------+----------------+-----------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                 ;
+; LPM_WIDTHD             ; 32             ; Untyped                                 ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                 ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                                 ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                 ;
+; CBXI_PARAMETER         ; lpm_divide_cqo ; Untyped                                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                          ;
++------------------------+----------------+-----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -600,24 +789,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 38                          ;
-; cycloneiii_ff         ; 301                         ;
-;     ENA               ; 33                          ;
+; cycloneiii_ff         ; 363                         ;
+;     ENA               ; 64                          ;
 ;     ENA SLD           ; 7                           ;
 ;     SCLR              ; 32                          ;
-;     plain             ; 229                         ;
-; cycloneiii_lcell_comb ; 1157                        ;
-;     arith             ; 361                         ;
-;         2 data inputs ; 252                         ;
-;         3 data inputs ; 109                         ;
-;     normal            ; 796                         ;
-;         0 data inputs ; 26                          ;
+;     plain             ; 260                         ;
+; cycloneiii_lcell_comb ; 5614                        ;
+;     arith             ; 1821                        ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 362                         ;
+;         3 data inputs ; 1457                        ;
+;     normal            ; 3793                        ;
+;         0 data inputs ; 126                         ;
 ;         1 data inputs ; 14                          ;
-;         2 data inputs ; 271                         ;
-;         3 data inputs ; 110                         ;
-;         4 data inputs ; 375                         ;
+;         2 data inputs ; 1679                        ;
+;         3 data inputs ; 158                         ;
+;         4 data inputs ; 1816                        ;
 ;                       ;                             ;
-; Max LUT depth         ; 19.40                       ;
-; Average LUT depth     ; 11.47                       ;
+; Max LUT depth         ; 244.80                      ;
+; Average LUT depth     ; 171.09                      ;
 +-----------------------+-----------------------------+
 
 
@@ -626,7 +816,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:04     ;
+; Top            ; 00:00:14     ;
 +----------------+--------------+
 
 
@@ -636,7 +826,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
-    Info: Processing started: Sat Mar 12 20:17:07 2016
+    Info: Processing started: Sat Mar 12 22:41:44 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off LCD -c LCD
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file pi.vhd
@@ -646,30 +836,34 @@ Info (12021): Found 2 design units, including 1 entities, in source file lcd_con
     Info (12022): Found design unit 1: lcd_controller-controller File: //Mac/Home/Documents/PI/FPGA/LCD_2/lcd_controller.vhd Line: 62
     Info (12023): Found entity 1: lcd_controller File: //Mac/Home/Documents/PI/FPGA/LCD_2/lcd_controller.vhd Line: 51
 Info (12127): Elaborating entity "pi" for the top level hierarchy
-Info (12128): Elaborating entity "lcd_controller" for hierarchy "lcd_controller:lcd_control" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 111
+Info (12128): Elaborating entity "lcd_controller" for hierarchy "lcd_controller:lcd_control" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 90
 Warning (12125): Using design file clock_1hz.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: clock_1hz-controller File: //Mac/Home/Documents/PI/FPGA/LCD_2/clock_1hz.vhd Line: 11
     Info (12023): Found entity 1: clock_1hz File: //Mac/Home/Documents/PI/FPGA/LCD_2/clock_1hz.vhd Line: 4
-Info (12128): Elaborating entity "clock_1hz" for hierarchy "clock_1hz:clock1" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 112
+Info (12128): Elaborating entity "clock_1hz" for hierarchy "clock_1hz:clock1" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 91
 Warning (10631): VHDL Process Statement warning at clock_1hz.vhd(15): inferring latch(es) for signal or variable "clk_out", which holds its previous value in one or more paths through the process File: //Mac/Home/Documents/PI/FPGA/LCD_2/clock_1hz.vhd Line: 15
 Info (10041): Inferred latch for "clk_out" at clock_1hz.vhd(15) File: //Mac/Home/Documents/PI/FPGA/LCD_2/clock_1hz.vhd Line: 15
+Warning (12125): Using design file temperatura.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: temperatura-behavior File: //Mac/Home/Documents/PI/FPGA/LCD_2/temperatura.vhd Line: 19
+    Info (12023): Found entity 1: temperatura File: //Mac/Home/Documents/PI/FPGA/LCD_2/temperatura.vhd Line: 8
+Info (12128): Elaborating entity "temperatura" for hierarchy "temperatura:temp" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 92
 Warning (12125): Using design file matriz_led.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: matriz_led-controller File: //Mac/Home/Documents/PI/FPGA/LCD_2/matriz_led.vhd Line: 13
-    Info (12023): Found entity 1: matriz_led File: //Mac/Home/Documents/PI/FPGA/LCD_2/matriz_led.vhd Line: 4
-Info (12128): Elaborating entity "matriz_led" for hierarchy "matriz_led:matriz" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 113
-Warning (10542): VHDL Variable Declaration warning at matriz_led.vhd(21): used initial value expression for variable "max_div_cloc" because variable was never assigned a value File: //Mac/Home/Documents/PI/FPGA/LCD_2/matriz_led.vhd Line: 21
-Warning (10542): VHDL Variable Declaration warning at matriz_led.vhd(22): used initial value expression for variable "alteracoes" because variable was never assigned a value File: //Mac/Home/Documents/PI/FPGA/LCD_2/matriz_led.vhd Line: 22
+    Info (12022): Found design unit 1: matriz_led-controller File: //Mac/Home/Documents/PI/FPGA/LCD_2/matriz_led.vhd Line: 14
+    Info (12023): Found entity 1: matriz_led File: //Mac/Home/Documents/PI/FPGA/LCD_2/matriz_led.vhd Line: 5
+Info (12128): Elaborating entity "matriz_led" for hierarchy "matriz_led:matriz" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 93
+Warning (10542): VHDL Variable Declaration warning at matriz_led.vhd(23): used initial value expression for variable "max_div_cloc" because variable was never assigned a value File: //Mac/Home/Documents/PI/FPGA/LCD_2/matriz_led.vhd Line: 23
+Warning (10542): VHDL Variable Declaration warning at matriz_led.vhd(24): used initial value expression for variable "alteracoes" because variable was never assigned a value File: //Mac/Home/Documents/PI/FPGA/LCD_2/matriz_led.vhd Line: 24
 Info (278001): Inferred 8 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 241
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 242
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 242
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div2" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 251
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 243
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod2" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 252
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div3" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 252
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod3" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 253
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 241
-Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 241
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "temperatura:temp|Div0" File: //Mac/Home/Documents/PI/FPGA/LCD_2/temperatura.vhd Line: 59
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "temperatura:temp|Mod0" File: //Mac/Home/Documents/PI/FPGA/LCD_2/temperatura.vhd Line: 60
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "temperatura:temp|Div1" File: //Mac/Home/Documents/PI/FPGA/LCD_2/temperatura.vhd Line: 60
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "temperatura:temp|Div2" File: //Mac/Home/Documents/PI/FPGA/LCD_2/temperatura.vhd Line: 69
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "temperatura:temp|Mod2" File: //Mac/Home/Documents/PI/FPGA/LCD_2/temperatura.vhd Line: 70
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "temperatura:temp|Div3" File: //Mac/Home/Documents/PI/FPGA/LCD_2/temperatura.vhd Line: 70
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "temperatura:temp|Mod1" File: //Mac/Home/Documents/PI/FPGA/LCD_2/temperatura.vhd Line: 61
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "temperatura:temp|Mod3" File: //Mac/Home/Documents/PI/FPGA/LCD_2/temperatura.vhd Line: 71
+Info (12130): Elaborated megafunction instantiation "temperatura:temp|lpm_divide:Div0" File: //Mac/Home/Documents/PI/FPGA/LCD_2/temperatura.vhd Line: 59
+Info (12133): Instantiated megafunction "temperatura:temp|lpm_divide:Div0" with the following parameter: File: //Mac/Home/Documents/PI/FPGA/LCD_2/temperatura.vhd Line: 59
     Info (12134): Parameter "LPM_WIDTHN" = "7"
     Info (12134): Parameter "LPM_WIDTHD" = "7"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -684,16 +878,16 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/add_
     Info (12023): Found entity 1: add_sub_7pc File: //Mac/Home/Documents/PI/FPGA/LCD_2/db/add_sub_7pc.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
     Info (12023): Found entity 1: add_sub_8pc File: //Mac/Home/Documents/PI/FPGA/LCD_2/db/add_sub_8pc.tdf Line: 23
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 242
-Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter: File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 242
+Info (12130): Elaborated megafunction instantiation "temperatura:temp|lpm_divide:Mod0" File: //Mac/Home/Documents/PI/FPGA/LCD_2/temperatura.vhd Line: 60
+Info (12133): Instantiated megafunction "temperatura:temp|lpm_divide:Mod0" with the following parameter: File: //Mac/Home/Documents/PI/FPGA/LCD_2/temperatura.vhd Line: 60
     Info (12134): Parameter "LPM_WIDTHN" = "7"
     Info (12134): Parameter "LPM_WIDTHD" = "7"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_o9m.tdf
     Info (12023): Found entity 1: lpm_divide_o9m File: //Mac/Home/Documents/PI/FPGA/LCD_2/db/lpm_divide_o9m.tdf Line: 25
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div1" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 242
-Info (12133): Instantiated megafunction "lpm_divide:Div1" with the following parameter: File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 242
+Info (12130): Elaborated megafunction instantiation "temperatura:temp|lpm_divide:Div1" File: //Mac/Home/Documents/PI/FPGA/LCD_2/temperatura.vhd Line: 60
+Info (12133): Instantiated megafunction "temperatura:temp|lpm_divide:Div1" with the following parameter: File: //Mac/Home/Documents/PI/FPGA/LCD_2/temperatura.vhd Line: 60
     Info (12134): Parameter "LPM_WIDTHN" = "7"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -704,55 +898,67 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_akh File: //Mac/Home/Documents/PI/FPGA/LCD_2/db/sign_div_unsign_akh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_84f.tdf
     Info (12023): Found entity 1: alt_u_div_84f File: //Mac/Home/Documents/PI/FPGA/LCD_2/db/alt_u_div_84f.tdf Line: 27
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div2" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 251
-Info (12133): Instantiated megafunction "lpm_divide:Div2" with the following parameter: File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 251
-    Info (12134): Parameter "LPM_WIDTHN" = "8"
-    Info (12134): Parameter "LPM_WIDTHD" = "7"
-    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
-    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_mhm.tdf
-    Info (12023): Found entity 1: lpm_divide_mhm File: //Mac/Home/Documents/PI/FPGA/LCD_2/db/lpm_divide_mhm.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_ekh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_ekh File: //Mac/Home/Documents/PI/FPGA/LCD_2/db/sign_div_unsign_ekh.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_g4f.tdf
-    Info (12023): Found entity 1: alt_u_div_g4f File: //Mac/Home/Documents/PI/FPGA/LCD_2/db/alt_u_div_g4f.tdf Line: 27
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod1" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 243
-Info (12133): Instantiated megafunction "lpm_divide:Mod1" with the following parameter: File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 243
+Info (12130): Elaborated megafunction instantiation "temperatura:temp|lpm_divide:Div2" File: //Mac/Home/Documents/PI/FPGA/LCD_2/temperatura.vhd Line: 69
+Info (12133): Instantiated megafunction "temperatura:temp|lpm_divide:Div2" with the following parameter: File: //Mac/Home/Documents/PI/FPGA/LCD_2/temperatura.vhd Line: 69
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "8"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_s0p.tdf
+    Info (12023): Found entity 1: lpm_divide_s0p File: //Mac/Home/Documents/PI/FPGA/LCD_2/db/lpm_divide_s0p.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_nbg.tdf
+    Info (12023): Found entity 1: abs_divider_nbg File: //Mac/Home/Documents/PI/FPGA/LCD_2/db/abs_divider_nbg.tdf Line: 29
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_c7f.tdf
+    Info (12023): Found entity 1: alt_u_div_c7f File: //Mac/Home/Documents/PI/FPGA/LCD_2/db/alt_u_div_c7f.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_5v9.tdf
+    Info (12023): Found entity 1: lpm_abs_5v9 File: //Mac/Home/Documents/PI/FPGA/LCD_2/db/lpm_abs_5v9.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_i0a.tdf
+    Info (12023): Found entity 1: lpm_abs_i0a File: //Mac/Home/Documents/PI/FPGA/LCD_2/db/lpm_abs_i0a.tdf Line: 25
+Info (12130): Elaborated megafunction instantiation "temperatura:temp|lpm_divide:Mod2" File: //Mac/Home/Documents/PI/FPGA/LCD_2/temperatura.vhd Line: 70
+Info (12133): Instantiated megafunction "temperatura:temp|lpm_divide:Mod2" with the following parameter: File: //Mac/Home/Documents/PI/FPGA/LCD_2/temperatura.vhd Line: 70
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "32"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_cqo.tdf
+    Info (12023): Found entity 1: lpm_divide_cqo File: //Mac/Home/Documents/PI/FPGA/LCD_2/db/lpm_divide_cqo.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_4dg.tdf
+    Info (12023): Found entity 1: abs_divider_4dg File: //Mac/Home/Documents/PI/FPGA/LCD_2/db/abs_divider_4dg.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_6af.tdf
+    Info (12023): Found entity 1: alt_u_div_6af File: //Mac/Home/Documents/PI/FPGA/LCD_2/db/alt_u_div_6af.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "temperatura:temp|lpm_divide:Div3" File: //Mac/Home/Documents/PI/FPGA/LCD_2/temperatura.vhd Line: 70
+Info (12133): Instantiated megafunction "temperatura:temp|lpm_divide:Div3" with the following parameter: File: //Mac/Home/Documents/PI/FPGA/LCD_2/temperatura.vhd Line: 70
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "5"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_p0p.tdf
+    Info (12023): Found entity 1: lpm_divide_p0p File: //Mac/Home/Documents/PI/FPGA/LCD_2/db/lpm_divide_p0p.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_kbg.tdf
+    Info (12023): Found entity 1: abs_divider_kbg File: //Mac/Home/Documents/PI/FPGA/LCD_2/db/abs_divider_kbg.tdf Line: 29
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_67f.tdf
+    Info (12023): Found entity 1: alt_u_div_67f File: //Mac/Home/Documents/PI/FPGA/LCD_2/db/alt_u_div_67f.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_2v9.tdf
+    Info (12023): Found entity 1: lpm_abs_2v9 File: //Mac/Home/Documents/PI/FPGA/LCD_2/db/lpm_abs_2v9.tdf Line: 25
+Info (12130): Elaborated megafunction instantiation "temperatura:temp|lpm_divide:Mod1" File: //Mac/Home/Documents/PI/FPGA/LCD_2/temperatura.vhd Line: 61
+Info (12133): Instantiated megafunction "temperatura:temp|lpm_divide:Mod1" with the following parameter: File: //Mac/Home/Documents/PI/FPGA/LCD_2/temperatura.vhd Line: 61
     Info (12134): Parameter "LPM_WIDTHN" = "7"
     Info (12134): Parameter "LPM_WIDTHD" = "7"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod2" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 252
-Info (12133): Instantiated megafunction "lpm_divide:Mod2" with the following parameter: File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 252
-    Info (12134): Parameter "LPM_WIDTHN" = "8"
-    Info (12134): Parameter "LPM_WIDTHD" = "8"
-    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
-    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_q9m.tdf
-    Info (12023): Found entity 1: lpm_divide_q9m File: //Mac/Home/Documents/PI/FPGA/LCD_2/db/lpm_divide_q9m.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_fkh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_fkh File: //Mac/Home/Documents/PI/FPGA/LCD_2/db/sign_div_unsign_fkh.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_i4f.tdf
-    Info (12023): Found entity 1: alt_u_div_i4f File: //Mac/Home/Documents/PI/FPGA/LCD_2/db/alt_u_div_i4f.tdf Line: 27
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div3" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 252
-Info (12133): Instantiated megafunction "lpm_divide:Div3" with the following parameter: File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 252
-    Info (12134): Parameter "LPM_WIDTHN" = "8"
-    Info (12134): Parameter "LPM_WIDTHD" = "4"
-    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
-    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_jhm.tdf
-    Info (12023): Found entity 1: lpm_divide_jhm File: //Mac/Home/Documents/PI/FPGA/LCD_2/db/lpm_divide_jhm.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_bkh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_bkh File: //Mac/Home/Documents/PI/FPGA/LCD_2/db/sign_div_unsign_bkh.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_a4f.tdf
-    Info (12023): Found entity 1: alt_u_div_a4f File: //Mac/Home/Documents/PI/FPGA/LCD_2/db/alt_u_div_a4f.tdf Line: 27
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod3" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 253
-Info (12133): Instantiated megafunction "lpm_divide:Mod3" with the following parameter: File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 253
-    Info (12134): Parameter "LPM_WIDTHN" = "8"
-    Info (12134): Parameter "LPM_WIDTHD" = "8"
-    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
-    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12130): Elaborated megafunction instantiation "temperatura:temp|lpm_divide:Mod3" File: //Mac/Home/Documents/PI/FPGA/LCD_2/temperatura.vhd Line: 71
+Info (12133): Instantiated megafunction "temperatura:temp|lpm_divide:Mod3" with the following parameter: File: //Mac/Home/Documents/PI/FPGA/LCD_2/temperatura.vhd Line: 71
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "32"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (13014): Ignored 124 buffer(s)
+    Info (13016): Ignored 124 CARRY_SUM buffer(s)
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "rw" is stuck at GND File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 20
     Warning (13410): Pin "led_8[0]" is stuck at VCC File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 26
@@ -761,14 +967,14 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "temp_in[0]" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 23
-Info (21057): Implemented 1291 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 5775 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 12 input pins
     Info (21059): Implemented 26 output pins
-    Info (21061): Implemented 1253 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
-    Info: Peak virtual memory: 846 megabytes
-    Info: Processing ended: Sat Mar 12 20:17:29 2016
-    Info: Elapsed time: 00:00:22
-    Info: Total CPU time (on all processors): 00:00:31
+    Info (21061): Implemented 5737 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
+    Info: Peak virtual memory: 908 megabytes
+    Info: Processing ended: Sat Mar 12 22:42:16 2016
+    Info: Elapsed time: 00:00:32
+    Info: Total CPU time (on all processors): 00:00:39
 
 
