@@ -1,5 +1,5 @@
 Fitter report for LCD
-Sat Mar 12 22:43:10 2016
+Sat Mar 12 23:15:58 2016
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 
 
@@ -66,17 +66,17 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Sat Mar 12 22:43:10 2016       ;
+; Fitter Status                      ; Successful - Sat Mar 12 23:15:58 2016       ;
 ; Quartus Prime Version              ; 15.1.0 Build 185 10/21/2015 SJ Lite Edition ;
 ; Revision Name                      ; LCD                                         ;
 ; Top-level Entity Name              ; pi                                          ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE6E22C8                                 ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 5,615 / 6,272 ( 90 % )                      ;
-;     Total combinational functions  ; 5,613 / 6,272 ( 89 % )                      ;
-;     Dedicated logic registers      ; 363 / 6,272 ( 6 % )                         ;
-; Total registers                    ; 363                                         ;
+; Total logic elements               ; 5,767 / 6,272 ( 92 % )                      ;
+;     Total combinational functions  ; 5,762 / 6,272 ( 92 % )                      ;
+;     Dedicated logic registers      ; 407 / 6,272 ( 6 % )                         ;
+; Total registers                    ; 407                                         ;
 ; Total pins                         ; 38 / 92 ( 41 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 276,480 ( 0 % )                         ;
@@ -154,12 +154,12 @@ agreement for further details.
 ; Number detected on machine ; 2           ;
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.06        ;
+; Average used               ; 1.04        ;
 ; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   6.3%      ;
+;     Processor 2            ;   4.3%      ;
 +----------------------------+-------------+
 
 
@@ -203,8 +203,8 @@ agreement for further details.
 ; Type                ; Total [A + B]       ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+---------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                     ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 6063 ) ; 0.00 % ( 0 / 6063 )        ; 0.00 % ( 0 / 6063 )      ;
-;     -- Achieved     ; 0.00 % ( 0 / 6063 ) ; 0.00 % ( 0 / 6063 )        ; 0.00 % ( 0 / 6063 )      ;
+;     -- Requested    ; 0.00 % ( 0 / 6256 ) ; 0.00 % ( 0 / 6256 )        ; 0.00 % ( 0 / 6256 )      ;
+;     -- Achieved     ; 0.00 % ( 0 / 6256 ) ; 0.00 % ( 0 / 6256 )        ; 0.00 % ( 0 / 6256 )      ;
 ;                     ;                     ;                            ;                          ;
 ; Routing (by net)    ;                     ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )    ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -227,7 +227,7 @@ agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 6053 )   ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 6246 )   ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -243,26 +243,26 @@ The pin-out file can be found in /Documents/PI/FPGA/LCD_2/output_files/LCD.pin.
 +---------------------------------------------+------------------------+
 ; Resource                                    ; Usage                  ;
 +---------------------------------------------+------------------------+
-; Total logic elements                        ; 5,615 / 6,272 ( 90 % ) ;
-;     -- Combinational with no register       ; 5252                   ;
-;     -- Register only                        ; 2                      ;
-;     -- Combinational with a register        ; 361                    ;
+; Total logic elements                        ; 5,767 / 6,272 ( 92 % ) ;
+;     -- Combinational with no register       ; 5360                   ;
+;     -- Register only                        ; 5                      ;
+;     -- Combinational with a register        ; 402                    ;
 ;                                             ;                        ;
 ; Logic element usage by number of LUT inputs ;                        ;
-;     -- 4 input functions                    ; 1816                   ;
-;     -- 3 input functions                    ; 1615                   ;
-;     -- <=2 input functions                  ; 2182                   ;
-;     -- Register only                        ; 2                      ;
+;     -- 4 input functions                    ; 1902                   ;
+;     -- 3 input functions                    ; 1691                   ;
+;     -- <=2 input functions                  ; 2169                   ;
+;     -- Register only                        ; 5                      ;
 ;                                             ;                        ;
 ; Logic elements by mode                      ;                        ;
-;     -- normal mode                          ; 3792                   ;
-;     -- arithmetic mode                      ; 1821                   ;
+;     -- normal mode                          ; 3910                   ;
+;     -- arithmetic mode                      ; 1852                   ;
 ;                                             ;                        ;
-; Total registers*                            ; 363 / 6,684 ( 5 % )    ;
-;     -- Dedicated logic registers            ; 363 / 6,272 ( 6 % )    ;
+; Total registers*                            ; 407 / 6,684 ( 6 % )    ;
+;     -- Dedicated logic registers            ; 407 / 6,272 ( 6 % )    ;
 ;     -- I/O registers                        ; 0 / 412 ( 0 % )        ;
 ;                                             ;                        ;
-; Total LABs:  partially or completely used   ; 392 / 392 ( 100 % )    ;
+; Total LABs:  partially or completely used   ; 391 / 392 ( 100 % )    ;
 ; Virtual pins                                ; 0                      ;
 ; I/O pins                                    ; 38 / 92 ( 41 % )       ;
 ;     -- Clock pins                           ; 1 / 3 ( 33 % )         ;
@@ -280,12 +280,12 @@ The pin-out file can be found in /Documents/PI/FPGA/LCD_2/output_files/LCD.pin.
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )          ;
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )          ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )          ;
-; Average interconnect usage (total/H/V)      ; 19.3% / 17.4% / 21.7%  ;
-; Peak interconnect usage (total/H/V)         ; 26.9% / 23.8% / 31.6%  ;
-; Maximum fan-out                             ; 363                    ;
-; Highest non-global fan-out                  ; 206                    ;
-; Total fan-out                               ; 17119                  ;
-; Average fan-out                             ; 2.82                   ;
+; Average interconnect usage (total/H/V)      ; 19.8% / 16.7% / 24.0%  ;
+; Peak interconnect usage (total/H/V)         ; 26.7% / 22.8% / 37.1%  ;
+; Maximum fan-out                             ; 407                    ;
+; Highest non-global fan-out                  ; 211                    ;
+; Total fan-out                               ; 17757                  ;
+; Average fan-out                             ; 2.84                   ;
 +---------------------------------------------+------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -298,26 +298,26 @@ The pin-out file can be found in /Documents/PI/FPGA/LCD_2/output_files/LCD.pin.
 +---------------------------------------------+----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                  ; Low                            ;
 ;                                             ;                      ;                                ;
-; Total logic elements                        ; 5615 / 6272 ( 90 % ) ; 0 / 6272 ( 0 % )               ;
-;     -- Combinational with no register       ; 5252                 ; 0                              ;
-;     -- Register only                        ; 2                    ; 0                              ;
-;     -- Combinational with a register        ; 361                  ; 0                              ;
+; Total logic elements                        ; 5767 / 6272 ( 92 % ) ; 0 / 6272 ( 0 % )               ;
+;     -- Combinational with no register       ; 5360                 ; 0                              ;
+;     -- Register only                        ; 5                    ; 0                              ;
+;     -- Combinational with a register        ; 402                  ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Logic element usage by number of LUT inputs ;                      ;                                ;
-;     -- 4 input functions                    ; 1816                 ; 0                              ;
-;     -- 3 input functions                    ; 1615                 ; 0                              ;
-;     -- <=2 input functions                  ; 2182                 ; 0                              ;
-;     -- Register only                        ; 2                    ; 0                              ;
+;     -- 4 input functions                    ; 1902                 ; 0                              ;
+;     -- 3 input functions                    ; 1691                 ; 0                              ;
+;     -- <=2 input functions                  ; 2169                 ; 0                              ;
+;     -- Register only                        ; 5                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Logic elements by mode                      ;                      ;                                ;
-;     -- normal mode                          ; 3792                 ; 0                              ;
-;     -- arithmetic mode                      ; 1821                 ; 0                              ;
+;     -- normal mode                          ; 3910                 ; 0                              ;
+;     -- arithmetic mode                      ; 1852                 ; 0                              ;
 ;                                             ;                      ;                                ;
-; Total registers                             ; 363                  ; 0                              ;
-;     -- Dedicated logic registers            ; 363 / 6272 ( 6 % )   ; 0 / 6272 ( 0 % )               ;
+; Total registers                             ; 407                  ; 0                              ;
+;     -- Dedicated logic registers            ; 407 / 6272 ( 6 % )   ; 0 / 6272 ( 0 % )               ;
 ;     -- I/O registers                        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
-; Total LABs:  partially or completely used   ; 392 / 392 ( 100 % )  ; 0 / 392 ( 0 % )                ;
+; Total LABs:  partially or completely used   ; 391 / 392 ( 100 % )  ; 0 / 392 ( 0 % )                ;
 ;                                             ;                      ;                                ;
 ; Virtual pins                                ; 0                    ; 0                              ;
 ; I/O pins                                    ; 38                   ; 0                              ;
@@ -333,8 +333,8 @@ The pin-out file can be found in /Documents/PI/FPGA/LCD_2/output_files/LCD.pin.
 ;     -- Registered Output Connections        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Internal Connections                        ;                      ;                                ;
-;     -- Total Connections                    ; 17114                ; 5                              ;
-;     -- Registered Connections               ; 1083                 ; 0                              ;
+;     -- Total Connections                    ; 17752                ; 5                              ;
+;     -- Registered Connections               ; 1214                 ; 0                              ;
 ;                                             ;                      ;                                ;
 ; External Connections                        ;                      ;                                ;
 ;     -- Top                                  ; 0                    ; 0                              ;
@@ -367,9 +367,9 @@ The pin-out file can be found in /Documents/PI/FPGA/LCD_2/output_files/LCD.pin.
 ; Name          ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +---------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 ; buttom_change ; 138   ; 8        ; 7            ; 24           ; 7            ; 39                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; buttom_minus  ; 55    ; 4        ; 18           ; 0            ; 14           ; 39                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; buttom_minus  ; 55    ; 4        ; 18           ; 0            ; 14           ; 38                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; buttom_plus   ; 54    ; 4        ; 18           ; 0            ; 21           ; 38                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; clk           ; 23    ; 1        ; 0            ; 11           ; 7            ; 363                   ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; clk           ; 23    ; 1        ; 0            ; 11           ; 7            ; 407                   ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; temp_in[0]    ; 39    ; 3        ; 1            ; 0            ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; temp_in[1]    ; 42    ; 3        ; 3            ; 0            ; 0            ; 6                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; temp_in[2]    ; 43    ; 3        ; 5            ; 0            ; 21           ; 7                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
@@ -618,24 +618,24 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +-------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                                                  ; Library Name ;
 +-------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
-; |pi                                       ; 5615 (492)  ; 363 (180)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 38   ; 0            ; 5252 (312)   ; 2 (1)             ; 361 (180)        ; |pi                                                                                                                  ; work         ;
+; |pi                                       ; 5767 (500)  ; 407 (187)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 38   ; 0            ; 5360 (313)   ; 5 (1)             ; 402 (185)        ; |pi                                                                                                                  ; work         ;
 ;    |clock_1hz:clock1|                     ; 70 (70)     ; 32 (32)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 38 (38)      ; 0 (0)             ; 32 (32)          ; |pi|clock_1hz:clock1                                                                                                 ; work         ;
 ;    |lcd_controller:lcd_control|           ; 164 (164)   ; 47 (47)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 117 (117)    ; 0 (0)             ; 47 (47)          ; |pi|lcd_controller:lcd_control                                                                                       ; work         ;
-;    |matriz_led:matriz|                    ; 75 (75)     ; 49 (49)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 26 (26)      ; 0 (0)             ; 49 (49)          ; |pi|matriz_led:matriz                                                                                                ; work         ;
-;    |temperatura:temp|                     ; 4814 (333)  ; 55 (55)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4759 (278)   ; 1 (1)             ; 54 (31)          ; |pi|temperatura:temp                                                                                                 ; work         ;
+;    |matriz_led:matriz|                    ; 232 (232)   ; 87 (87)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 145 (145)    ; 3 (3)             ; 84 (84)          ; |pi|matriz_led:matriz                                                                                                ; work         ;
+;    |temperatura:temp|                     ; 4803 (333)  ; 54 (54)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4747 (279)   ; 1 (1)             ; 55 (29)          ; |pi|temperatura:temp                                                                                                 ; work         ;
 ;       |lpm_divide:Div1|                   ; 46 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 46 (0)       ; 0 (0)             ; 0 (0)            ; |pi|temperatura:temp|lpm_divide:Div1                                                                                 ; work         ;
 ;          |lpm_divide_ihm:auto_generated|  ; 46 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 46 (0)       ; 0 (0)             ; 0 (0)            ; |pi|temperatura:temp|lpm_divide:Div1|lpm_divide_ihm:auto_generated                                                   ; work         ;
 ;             |sign_div_unsign_akh:divider| ; 46 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 46 (0)       ; 0 (0)             ; 0 (0)            ; |pi|temperatura:temp|lpm_divide:Div1|lpm_divide_ihm:auto_generated|sign_div_unsign_akh:divider                       ; work         ;
 ;                |alt_u_div_84f:divider|    ; 46 (46)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 46 (46)      ; 0 (0)             ; 0 (0)            ; |pi|temperatura:temp|lpm_divide:Div1|lpm_divide_ihm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_84f:divider ; work         ;
-;       |lpm_divide:Div2|                   ; 681 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 671 (0)      ; 0 (0)             ; 10 (0)           ; |pi|temperatura:temp|lpm_divide:Div2                                                                                 ; work         ;
-;          |lpm_divide_s0p:auto_generated|  ; 681 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 671 (0)      ; 0 (0)             ; 10 (0)           ; |pi|temperatura:temp|lpm_divide:Div2|lpm_divide_s0p:auto_generated                                                   ; work         ;
-;             |abs_divider_nbg:divider|     ; 681 (31)    ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 671 (31)     ; 0 (0)             ; 10 (0)           ; |pi|temperatura:temp|lpm_divide:Div2|lpm_divide_s0p:auto_generated|abs_divider_nbg:divider                           ; work         ;
-;                |alt_u_div_c7f:divider|    ; 625 (625)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 625 (625)    ; 0 (0)             ; 0 (0)            ; |pi|temperatura:temp|lpm_divide:Div2|lpm_divide_s0p:auto_generated|abs_divider_nbg:divider|alt_u_div_c7f:divider     ; work         ;
-;                |lpm_abs_i0a:my_abs_num|   ; 25 (25)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 15 (15)      ; 0 (0)             ; 10 (10)          ; |pi|temperatura:temp|lpm_divide:Div2|lpm_divide_s0p:auto_generated|abs_divider_nbg:divider|lpm_abs_i0a:my_abs_num    ; work         ;
-;       |lpm_divide:Div3|                   ; 483 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 483 (0)      ; 0 (0)             ; 0 (0)            ; |pi|temperatura:temp|lpm_divide:Div3                                                                                 ; work         ;
-;          |lpm_divide_p0p:auto_generated|  ; 483 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 483 (0)      ; 0 (0)             ; 0 (0)            ; |pi|temperatura:temp|lpm_divide:Div3|lpm_divide_p0p:auto_generated                                                   ; work         ;
-;             |abs_divider_kbg:divider|     ; 483 (34)    ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 483 (34)     ; 0 (0)             ; 0 (0)            ; |pi|temperatura:temp|lpm_divide:Div3|lpm_divide_p0p:auto_generated|abs_divider_kbg:divider                           ; work         ;
-;                |alt_u_div_67f:divider|    ; 449 (449)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 449 (449)    ; 0 (0)             ; 0 (0)            ; |pi|temperatura:temp|lpm_divide:Div3|lpm_divide_p0p:auto_generated|abs_divider_kbg:divider|alt_u_div_67f:divider     ; work         ;
+;       |lpm_divide:Div2|                   ; 683 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 670 (0)      ; 0 (0)             ; 13 (0)           ; |pi|temperatura:temp|lpm_divide:Div2                                                                                 ; work         ;
+;          |lpm_divide_s0p:auto_generated|  ; 683 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 670 (0)      ; 0 (0)             ; 13 (0)           ; |pi|temperatura:temp|lpm_divide:Div2|lpm_divide_s0p:auto_generated                                                   ; work         ;
+;             |abs_divider_nbg:divider|     ; 683 (31)    ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 670 (31)     ; 0 (0)             ; 13 (0)           ; |pi|temperatura:temp|lpm_divide:Div2|lpm_divide_s0p:auto_generated|abs_divider_nbg:divider                           ; work         ;
+;                |alt_u_div_c7f:divider|    ; 625 (625)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 624 (624)    ; 0 (0)             ; 1 (1)            ; |pi|temperatura:temp|lpm_divide:Div2|lpm_divide_s0p:auto_generated|abs_divider_nbg:divider|alt_u_div_c7f:divider     ; work         ;
+;                |lpm_abs_i0a:my_abs_num|   ; 27 (27)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 15 (15)      ; 0 (0)             ; 12 (12)          ; |pi|temperatura:temp|lpm_divide:Div2|lpm_divide_s0p:auto_generated|abs_divider_nbg:divider|lpm_abs_i0a:my_abs_num    ; work         ;
+;       |lpm_divide:Div3|                   ; 483 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 482 (0)      ; 0 (0)             ; 1 (0)            ; |pi|temperatura:temp|lpm_divide:Div3                                                                                 ; work         ;
+;          |lpm_divide_p0p:auto_generated|  ; 483 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 482 (0)      ; 0 (0)             ; 1 (0)            ; |pi|temperatura:temp|lpm_divide:Div3|lpm_divide_p0p:auto_generated                                                   ; work         ;
+;             |abs_divider_kbg:divider|     ; 483 (34)    ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 482 (34)     ; 0 (0)             ; 1 (0)            ; |pi|temperatura:temp|lpm_divide:Div3|lpm_divide_p0p:auto_generated|abs_divider_kbg:divider                           ; work         ;
+;                |alt_u_div_67f:divider|    ; 449 (449)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 448 (448)    ; 0 (0)             ; 1 (1)            ; |pi|temperatura:temp|lpm_divide:Div3|lpm_divide_p0p:auto_generated|abs_divider_kbg:divider|alt_u_div_67f:divider     ; work         ;
 ;       |lpm_divide:Mod0|                   ; 20 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 20 (0)       ; 0 (0)             ; 0 (0)            ; |pi|temperatura:temp|lpm_divide:Mod0                                                                                 ; work         ;
 ;          |lpm_divide_o9m:auto_generated|  ; 20 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 20 (0)       ; 0 (0)             ; 0 (0)            ; |pi|temperatura:temp|lpm_divide:Mod0|lpm_divide_o9m:auto_generated                                                   ; work         ;
 ;             |sign_div_unsign_dkh:divider| ; 20 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 20 (0)       ; 0 (0)             ; 0 (0)            ; |pi|temperatura:temp|lpm_divide:Mod0|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider                       ; work         ;
@@ -644,16 +644,16 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ;          |lpm_divide_o9m:auto_generated|  ; 61 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 61 (0)       ; 0 (0)             ; 0 (0)            ; |pi|temperatura:temp|lpm_divide:Mod1|lpm_divide_o9m:auto_generated                                                   ; work         ;
 ;             |sign_div_unsign_dkh:divider| ; 61 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 61 (0)       ; 0 (0)             ; 0 (0)            ; |pi|temperatura:temp|lpm_divide:Mod1|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider                       ; work         ;
 ;                |alt_u_div_e4f:divider|    ; 61 (61)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 61 (61)      ; 0 (0)             ; 0 (0)            ; |pi|temperatura:temp|lpm_divide:Mod1|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider ; work         ;
-;       |lpm_divide:Mod2|                   ; 1528 (0)    ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1515 (0)     ; 0 (0)             ; 13 (0)           ; |pi|temperatura:temp|lpm_divide:Mod2                                                                                 ; work         ;
-;          |lpm_divide_cqo:auto_generated|  ; 1528 (0)    ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1515 (0)     ; 0 (0)             ; 13 (0)           ; |pi|temperatura:temp|lpm_divide:Mod2|lpm_divide_cqo:auto_generated                                                   ; work         ;
-;             |abs_divider_4dg:divider|     ; 1528 (64)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1515 (64)    ; 0 (0)             ; 13 (0)           ; |pi|temperatura:temp|lpm_divide:Mod2|lpm_divide_cqo:auto_generated|abs_divider_4dg:divider                           ; work         ;
-;                |alt_u_div_6af:divider|    ; 1445 (1445) ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1442 (1442)  ; 0 (0)             ; 3 (3)            ; |pi|temperatura:temp|lpm_divide:Mod2|lpm_divide_cqo:auto_generated|abs_divider_4dg:divider|alt_u_div_6af:divider     ; work         ;
-;                |lpm_abs_i0a:my_abs_num|   ; 19 (19)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 9 (9)        ; 0 (0)             ; 10 (10)          ; |pi|temperatura:temp|lpm_divide:Mod2|lpm_divide_cqo:auto_generated|abs_divider_4dg:divider|lpm_abs_i0a:my_abs_num    ; work         ;
-;       |lpm_divide:Mod3|                   ; 1685 (0)    ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1685 (0)     ; 0 (0)             ; 0 (0)            ; |pi|temperatura:temp|lpm_divide:Mod3                                                                                 ; work         ;
-;          |lpm_divide_cqo:auto_generated|  ; 1685 (0)    ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1685 (0)     ; 0 (0)             ; 0 (0)            ; |pi|temperatura:temp|lpm_divide:Mod3|lpm_divide_cqo:auto_generated                                                   ; work         ;
-;             |abs_divider_4dg:divider|     ; 1685 (64)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1685 (64)    ; 0 (0)             ; 0 (0)            ; |pi|temperatura:temp|lpm_divide:Mod3|lpm_divide_cqo:auto_generated|abs_divider_4dg:divider                           ; work         ;
+;       |lpm_divide:Mod2|                   ; 1521 (0)    ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1509 (0)     ; 0 (0)             ; 12 (0)           ; |pi|temperatura:temp|lpm_divide:Mod2                                                                                 ; work         ;
+;          |lpm_divide_cqo:auto_generated|  ; 1521 (0)    ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1509 (0)     ; 0 (0)             ; 12 (0)           ; |pi|temperatura:temp|lpm_divide:Mod2|lpm_divide_cqo:auto_generated                                                   ; work         ;
+;             |abs_divider_4dg:divider|     ; 1521 (64)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1509 (64)    ; 0 (0)             ; 12 (0)           ; |pi|temperatura:temp|lpm_divide:Mod2|lpm_divide_cqo:auto_generated|abs_divider_4dg:divider                           ; work         ;
+;                |alt_u_div_6af:divider|    ; 1445 (1445) ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1437 (1437)  ; 0 (0)             ; 8 (8)            ; |pi|temperatura:temp|lpm_divide:Mod2|lpm_divide_cqo:auto_generated|abs_divider_4dg:divider|alt_u_div_6af:divider     ; work         ;
+;                |lpm_abs_i0a:my_abs_num|   ; 12 (12)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 4 (4)            ; |pi|temperatura:temp|lpm_divide:Mod2|lpm_divide_cqo:auto_generated|abs_divider_4dg:divider|lpm_abs_i0a:my_abs_num    ; work         ;
+;       |lpm_divide:Mod3|                   ; 1680 (0)    ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1680 (0)     ; 0 (0)             ; 0 (0)            ; |pi|temperatura:temp|lpm_divide:Mod3                                                                                 ; work         ;
+;          |lpm_divide_cqo:auto_generated|  ; 1680 (0)    ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1680 (0)     ; 0 (0)             ; 0 (0)            ; |pi|temperatura:temp|lpm_divide:Mod3|lpm_divide_cqo:auto_generated                                                   ; work         ;
+;             |abs_divider_4dg:divider|     ; 1680 (64)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1680 (64)    ; 0 (0)             ; 0 (0)            ; |pi|temperatura:temp|lpm_divide:Mod3|lpm_divide_cqo:auto_generated|abs_divider_4dg:divider                           ; work         ;
 ;                |alt_u_div_6af:divider|    ; 1566 (1566) ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1566 (1566)  ; 0 (0)             ; 0 (0)            ; |pi|temperatura:temp|lpm_divide:Mod3|lpm_divide_cqo:auto_generated|abs_divider_4dg:divider|alt_u_div_6af:divider     ; work         ;
-;                |lpm_abs_i0a:my_abs_num|   ; 55 (55)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 55 (55)      ; 0 (0)             ; 0 (0)            ; |pi|temperatura:temp|lpm_divide:Mod3|lpm_divide_cqo:auto_generated|abs_divider_4dg:divider|lpm_abs_i0a:my_abs_num    ; work         ;
+;                |lpm_abs_i0a:my_abs_num|   ; 50 (50)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 50 (50)      ; 0 (0)             ; 0 (0)            ; |pi|temperatura:temp|lpm_divide:Mod3|lpm_divide_cqo:auto_generated|abs_divider_4dg:divider|lpm_abs_i0a:my_abs_num    ; work         ;
 +-------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -691,16 +691,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; led_5[3]       ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; led_5[4]       ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; clk            ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
-; temp_in[7]     ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; temp_in[7]     ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; temp_in[6]     ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; temp_in[5]     ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; temp_in[4]     ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
-; temp_in[3]     ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; temp_in[5]     ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; temp_in[4]     ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; temp_in[3]     ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; temp_in[2]     ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; temp_in[1]     ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; temp_in[1]     ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; buttom_change  ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; buttom_plus    ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
-; buttom_minus   ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; buttom_minus   ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 +----------------+----------+---------------+---------------+-----------------------+-----+------+
 
 
@@ -712,14 +712,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; temp_in[0]                                                                                                                                        ;                   ;         ;
 ; clk                                                                                                                                               ;                   ;         ;
 ; temp_in[7]                                                                                                                                        ;                   ;         ;
-;      - temperatura:temp|LessThan0~12                                                                                                              ; 1                 ; 6       ;
-;      - temperatura:temp|LessThan1~12                                                                                                              ; 1                 ; 6       ;
-;      - temperatura:temp|temp_cem_asc[0]~10                                                                                                        ; 1                 ; 6       ;
-;      - temperatura:temp|lpm_divide:Mod0|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider|add_sub_6_result_int[6]~8 ; 1                 ; 6       ;
-;      - temperatura:temp|turn_on_cooler~11                                                                                                         ; 1                 ; 6       ;
-;      - temperatura:temp|lpm_divide:Mod0|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider|StageOut[48]~2            ; 1                 ; 6       ;
-;      - temperatura:temp|lpm_divide:Mod1|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider|StageOut[24]~88           ; 1                 ; 6       ;
-;      - temperatura:temp|lpm_divide:Div1|lpm_divide_ihm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_84f:divider|StageOut[18]~71           ; 1                 ; 6       ;
+;      - temperatura:temp|LessThan0~12                                                                                                              ; 0                 ; 6       ;
+;      - temperatura:temp|LessThan1~12                                                                                                              ; 0                 ; 6       ;
+;      - temperatura:temp|temp_cem_asc[0]~10                                                                                                        ; 0                 ; 6       ;
+;      - temperatura:temp|lpm_divide:Mod0|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider|add_sub_6_result_int[6]~8 ; 0                 ; 6       ;
+;      - temperatura:temp|turn_on_cooler~11                                                                                                         ; 0                 ; 6       ;
+;      - temperatura:temp|lpm_divide:Mod0|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider|StageOut[48]~2            ; 0                 ; 6       ;
+;      - temperatura:temp|lpm_divide:Mod1|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider|StageOut[24]~88           ; 0                 ; 6       ;
+;      - temperatura:temp|lpm_divide:Div1|lpm_divide_ihm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_84f:divider|StageOut[18]~71           ; 0                 ; 6       ;
 ; temp_in[6]                                                                                                                                        ;                   ;         ;
 ;      - temperatura:temp|LessThan0~11                                                                                                              ; 0                 ; 6       ;
 ;      - temperatura:temp|LessThan1~11                                                                                                              ; 0                 ; 6       ;
@@ -730,32 +730,32 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - temperatura:temp|lpm_divide:Mod1|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider|StageOut[23]~89           ; 0                 ; 6       ;
 ;      - temperatura:temp|lpm_divide:Div1|lpm_divide_ihm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_84f:divider|StageOut[17]~72           ; 0                 ; 6       ;
 ; temp_in[5]                                                                                                                                        ;                   ;         ;
-;      - temperatura:temp|LessThan0~9                                                                                                               ; 0                 ; 6       ;
-;      - temperatura:temp|LessThan1~9                                                                                                               ; 0                 ; 6       ;
-;      - temperatura:temp|lpm_divide:Mod0|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider|add_sub_6_result_int[4]~4 ; 0                 ; 6       ;
-;      - temperatura:temp|temp_cem_asc[0]~6                                                                                                         ; 0                 ; 6       ;
-;      - temperatura:temp|turn_on_cooler~10                                                                                                         ; 0                 ; 6       ;
-;      - temperatura:temp|lpm_divide:Mod0|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider|StageOut[46]~6            ; 0                 ; 6       ;
-;      - temperatura:temp|lpm_divide:Mod1|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider|StageOut[22]~90           ; 0                 ; 6       ;
-;      - temperatura:temp|lpm_divide:Div1|lpm_divide_ihm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_84f:divider|StageOut[16]~73           ; 0                 ; 6       ;
+;      - temperatura:temp|LessThan0~9                                                                                                               ; 1                 ; 6       ;
+;      - temperatura:temp|LessThan1~9                                                                                                               ; 1                 ; 6       ;
+;      - temperatura:temp|lpm_divide:Mod0|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider|add_sub_6_result_int[4]~4 ; 1                 ; 6       ;
+;      - temperatura:temp|temp_cem_asc[0]~6                                                                                                         ; 1                 ; 6       ;
+;      - temperatura:temp|turn_on_cooler~10                                                                                                         ; 1                 ; 6       ;
+;      - temperatura:temp|lpm_divide:Mod0|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider|StageOut[46]~6            ; 1                 ; 6       ;
+;      - temperatura:temp|lpm_divide:Mod1|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider|StageOut[22]~90           ; 1                 ; 6       ;
+;      - temperatura:temp|lpm_divide:Div1|lpm_divide_ihm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_84f:divider|StageOut[16]~73           ; 1                 ; 6       ;
 ; temp_in[4]                                                                                                                                        ;                   ;         ;
-;      - temperatura:temp|LessThan0~7                                                                                                               ; 1                 ; 6       ;
-;      - temperatura:temp|LessThan1~7                                                                                                               ; 1                 ; 6       ;
-;      - temperatura:temp|lpm_divide:Mod0|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider|add_sub_6_result_int[3]~2 ; 1                 ; 6       ;
-;      - temperatura:temp|temp_cem_asc[0]~4                                                                                                         ; 1                 ; 6       ;
-;      - temperatura:temp|turn_on_cooler~9                                                                                                          ; 1                 ; 6       ;
-;      - temperatura:temp|lpm_divide:Mod0|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider|StageOut[45]~8            ; 1                 ; 6       ;
-;      - temperatura:temp|lpm_divide:Mod1|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider|StageOut[21]~91           ; 1                 ; 6       ;
-;      - temperatura:temp|lpm_divide:Div1|lpm_divide_ihm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_84f:divider|StageOut[15]~74           ; 1                 ; 6       ;
-; temp_in[3]                                                                                                                                        ;                   ;         ;
-;      - temperatura:temp|LessThan0~5                                                                                                               ; 0                 ; 6       ;
-;      - temperatura:temp|LessThan1~5                                                                                                               ; 0                 ; 6       ;
-;      - temperatura:temp|lpm_divide:Mod0|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider|add_sub_6_result_int[2]~0 ; 0                 ; 6       ;
-;      - temperatura:temp|temp_cem_asc[0]~2                                                                                                         ; 0                 ; 6       ;
+;      - temperatura:temp|LessThan0~7                                                                                                               ; 0                 ; 6       ;
+;      - temperatura:temp|LessThan1~7                                                                                                               ; 0                 ; 6       ;
+;      - temperatura:temp|lpm_divide:Mod0|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider|add_sub_6_result_int[3]~2 ; 0                 ; 6       ;
+;      - temperatura:temp|temp_cem_asc[0]~4                                                                                                         ; 0                 ; 6       ;
 ;      - temperatura:temp|turn_on_cooler~9                                                                                                          ; 0                 ; 6       ;
-;      - temperatura:temp|lpm_divide:Mod0|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider|StageOut[44]~10           ; 0                 ; 6       ;
-;      - temperatura:temp|lpm_divide:Mod1|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider|StageOut[28]~92           ; 0                 ; 6       ;
-;      - temperatura:temp|lpm_divide:Div1|lpm_divide_ihm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_84f:divider|StageOut[20]~75           ; 0                 ; 6       ;
+;      - temperatura:temp|lpm_divide:Mod0|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider|StageOut[45]~8            ; 0                 ; 6       ;
+;      - temperatura:temp|lpm_divide:Mod1|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider|StageOut[21]~91           ; 0                 ; 6       ;
+;      - temperatura:temp|lpm_divide:Div1|lpm_divide_ihm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_84f:divider|StageOut[15]~74           ; 0                 ; 6       ;
+; temp_in[3]                                                                                                                                        ;                   ;         ;
+;      - temperatura:temp|LessThan0~5                                                                                                               ; 1                 ; 6       ;
+;      - temperatura:temp|LessThan1~5                                                                                                               ; 1                 ; 6       ;
+;      - temperatura:temp|lpm_divide:Mod0|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider|add_sub_6_result_int[2]~0 ; 1                 ; 6       ;
+;      - temperatura:temp|temp_cem_asc[0]~2                                                                                                         ; 1                 ; 6       ;
+;      - temperatura:temp|turn_on_cooler~9                                                                                                          ; 1                 ; 6       ;
+;      - temperatura:temp|lpm_divide:Mod0|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider|StageOut[44]~10           ; 1                 ; 6       ;
+;      - temperatura:temp|lpm_divide:Mod1|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider|StageOut[28]~92           ; 1                 ; 6       ;
+;      - temperatura:temp|lpm_divide:Div1|lpm_divide_ihm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_84f:divider|StageOut[20]~75           ; 1                 ; 6       ;
 ; temp_in[2]                                                                                                                                        ;                   ;         ;
 ;      - temperatura:temp|LessThan0~3                                                                                                               ; 0                 ; 6       ;
 ;      - temperatura:temp|LessThan1~3                                                                                                               ; 0                 ; 6       ;
@@ -765,12 +765,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - temperatura:temp|lpm_divide:Mod0|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider|StageOut[43]~13           ; 0                 ; 6       ;
 ;      - temperatura:temp|lpm_divide:Div1|lpm_divide_ihm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_84f:divider|StageOut[25]~63           ; 0                 ; 6       ;
 ; temp_in[1]                                                                                                                                        ;                   ;         ;
-;      - temperatura:temp|LessThan0~1                                                                                                               ; 0                 ; 6       ;
-;      - temperatura:temp|LessThan1~1                                                                                                               ; 0                 ; 6       ;
-;      - temperatura:temp|turn_on_cooler~8                                                                                                          ; 0                 ; 6       ;
-;      - temperatura:temp|lpm_divide:Mod0|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider|StageOut[42]~0            ; 0                 ; 6       ;
-;      - temperatura:temp|lpm_divide:Mod0|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider|StageOut[42]~1            ; 0                 ; 6       ;
-;      - temperatura:temp|Mux11~1                                                                                                                   ; 0                 ; 6       ;
+;      - temperatura:temp|LessThan0~1                                                                                                               ; 1                 ; 6       ;
+;      - temperatura:temp|LessThan1~1                                                                                                               ; 1                 ; 6       ;
+;      - temperatura:temp|turn_on_cooler~8                                                                                                          ; 1                 ; 6       ;
+;      - temperatura:temp|lpm_divide:Mod0|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider|StageOut[42]~0            ; 1                 ; 6       ;
+;      - temperatura:temp|lpm_divide:Mod0|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider|StageOut[42]~1            ; 1                 ; 6       ;
+;      - temperatura:temp|Mux11~1                                                                                                                   ; 1                 ; 6       ;
 ; buttom_change                                                                                                                                     ;                   ;         ;
 ;      - Equal3~0                                                                                                                                   ; 0                 ; 6       ;
 ;      - Equal3~1                                                                                                                                   ; 0                 ; 6       ;
@@ -813,11 +813,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - Add0~88                                                                                                                                    ; 0                 ; 6       ;
 ; buttom_plus                                                                                                                                       ;                   ;         ;
 ;      - Equal5~0                                                                                                                                   ; 1                 ; 6       ;
-;      - Equal5~1                                                                                                                                   ; 1                 ; 6       ;
+;      - Add2~8                                                                                                                                     ; 1                 ; 6       ;
+;      - Add2~11                                                                                                                                    ; 1                 ; 6       ;
+;      - Add2~14                                                                                                                                    ; 1                 ; 6       ;
 ;      - Equal5~2                                                                                                                                   ; 1                 ; 6       ;
-;      - Add2~24                                                                                                                                    ; 1                 ; 6       ;
-;      - Add2~27                                                                                                                                    ; 1                 ; 6       ;
-;      - Add2~30                                                                                                                                    ; 1                 ; 6       ;
+;      - Equal5~3                                                                                                                                   ; 1                 ; 6       ;
 ;      - Add2~31                                                                                                                                    ; 1                 ; 6       ;
 ;      - Equal5~5                                                                                                                                   ; 1                 ; 6       ;
 ;      - Add2~50                                                                                                                                    ; 1                 ; 6       ;
@@ -833,11 +833,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - Add2~76                                                                                                                                    ; 1                 ; 6       ;
 ;      - Add2~77                                                                                                                                    ; 1                 ; 6       ;
 ;      - Add2~78                                                                                                                                    ; 1                 ; 6       ;
+;      - buttom_plus_cont~0                                                                                                                         ; 1                 ; 6       ;
 ;      - Add2~79                                                                                                                                    ; 1                 ; 6       ;
 ;      - Add2~80                                                                                                                                    ; 1                 ; 6       ;
-;      - buttom_plus_cont~0                                                                                                                         ; 1                 ; 6       ;
-;      - Add2~81                                                                                                                                    ; 1                 ; 6       ;
 ;      - buttom_plus_cont~1                                                                                                                         ; 1                 ; 6       ;
+;      - Add2~81                                                                                                                                    ; 1                 ; 6       ;
 ;      - Add2~82                                                                                                                                    ; 1                 ; 6       ;
 ;      - Add2~83                                                                                                                                    ; 1                 ; 6       ;
 ;      - buttom_plus_cont~2                                                                                                                         ; 1                 ; 6       ;
@@ -851,45 +851,44 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - Add2~87                                                                                                                                    ; 1                 ; 6       ;
 ;      - Add2~88                                                                                                                                    ; 1                 ; 6       ;
 ; buttom_minus                                                                                                                                      ;                   ;         ;
-;      - Equal7~0                                                                                                                                   ; 0                 ; 6       ;
-;      - Equal7~1                                                                                                                                   ; 0                 ; 6       ;
-;      - Equal7~2                                                                                                                                   ; 0                 ; 6       ;
-;      - Equal7~3                                                                                                                                   ; 0                 ; 6       ;
-;      - Equal7~5                                                                                                                                   ; 0                 ; 6       ;
-;      - Add3~46                                                                                                                                    ; 0                 ; 6       ;
-;      - Add3~49                                                                                                                                    ; 0                 ; 6       ;
-;      - Add3~52                                                                                                                                    ; 0                 ; 6       ;
-;      - Equal7~7                                                                                                                                   ; 0                 ; 6       ;
-;      - Add3~61                                                                                                                                    ; 0                 ; 6       ;
-;      - Add3~64                                                                                                                                    ; 0                 ; 6       ;
-;      - Add3~67                                                                                                                                    ; 0                 ; 6       ;
-;      - Equal7~9                                                                                                                                   ; 0                 ; 6       ;
-;      - Add3~70                                                                                                                                    ; 0                 ; 6       ;
-;      - Add3~71                                                                                                                                    ; 0                 ; 6       ;
-;      - Add3~72                                                                                                                                    ; 0                 ; 6       ;
-;      - Add3~73                                                                                                                                    ; 0                 ; 6       ;
-;      - Add3~74                                                                                                                                    ; 0                 ; 6       ;
-;      - Add3~75                                                                                                                                    ; 0                 ; 6       ;
-;      - Add3~76                                                                                                                                    ; 0                 ; 6       ;
-;      - Add3~77                                                                                                                                    ; 0                 ; 6       ;
-;      - buttom_minus_cont~0                                                                                                                        ; 0                 ; 6       ;
-;      - Add3~78                                                                                                                                    ; 0                 ; 6       ;
-;      - Add3~79                                                                                                                                    ; 0                 ; 6       ;
-;      - buttom_minus_cont~1                                                                                                                        ; 0                 ; 6       ;
-;      - Add3~80                                                                                                                                    ; 0                 ; 6       ;
-;      - Add3~81                                                                                                                                    ; 0                 ; 6       ;
-;      - Add3~82                                                                                                                                    ; 0                 ; 6       ;
-;      - Add3~83                                                                                                                                    ; 0                 ; 6       ;
-;      - buttom_minus_cont~2                                                                                                                        ; 0                 ; 6       ;
-;      - Add3~84                                                                                                                                    ; 0                 ; 6       ;
-;      - buttom_minus_cont~3                                                                                                                        ; 0                 ; 6       ;
-;      - buttom_minus_cont~4                                                                                                                        ; 0                 ; 6       ;
-;      - buttom_minus_cont~5                                                                                                                        ; 0                 ; 6       ;
-;      - buttom_minus_cont~6                                                                                                                        ; 0                 ; 6       ;
-;      - Add3~85                                                                                                                                    ; 0                 ; 6       ;
-;      - Add3~86                                                                                                                                    ; 0                 ; 6       ;
-;      - Add3~87                                                                                                                                    ; 0                 ; 6       ;
-;      - Add3~88                                                                                                                                    ; 0                 ; 6       ;
+;      - Equal9~0                                                                                                                                   ; 1                 ; 6       ;
+;      - Add3~8                                                                                                                                     ; 1                 ; 6       ;
+;      - Add3~11                                                                                                                                    ; 1                 ; 6       ;
+;      - Add3~14                                                                                                                                    ; 1                 ; 6       ;
+;      - Equal9~2                                                                                                                                   ; 1                 ; 6       ;
+;      - Equal9~3                                                                                                                                   ; 1                 ; 6       ;
+;      - Add3~31                                                                                                                                    ; 1                 ; 6       ;
+;      - Equal9~5                                                                                                                                   ; 1                 ; 6       ;
+;      - Add3~50                                                                                                                                    ; 1                 ; 6       ;
+;      - Add3~53                                                                                                                                    ; 1                 ; 6       ;
+;      - Add3~56                                                                                                                                    ; 1                 ; 6       ;
+;      - Equal9~7                                                                                                                                   ; 1                 ; 6       ;
+;      - Add3~65                                                                                                                                    ; 1                 ; 6       ;
+;      - Add3~68                                                                                                                                    ; 1                 ; 6       ;
+;      - Add3~71                                                                                                                                    ; 1                 ; 6       ;
+;      - Equal9~9                                                                                                                                   ; 1                 ; 6       ;
+;      - Add3~74                                                                                                                                    ; 1                 ; 6       ;
+;      - Add3~75                                                                                                                                    ; 1                 ; 6       ;
+;      - Add3~76                                                                                                                                    ; 1                 ; 6       ;
+;      - Add3~77                                                                                                                                    ; 1                 ; 6       ;
+;      - Add3~78                                                                                                                                    ; 1                 ; 6       ;
+;      - buttom_minus_cont~0                                                                                                                        ; 1                 ; 6       ;
+;      - Add3~79                                                                                                                                    ; 1                 ; 6       ;
+;      - Add3~80                                                                                                                                    ; 1                 ; 6       ;
+;      - buttom_minus_cont~1                                                                                                                        ; 1                 ; 6       ;
+;      - Add3~81                                                                                                                                    ; 1                 ; 6       ;
+;      - Add3~82                                                                                                                                    ; 1                 ; 6       ;
+;      - Add3~83                                                                                                                                    ; 1                 ; 6       ;
+;      - buttom_minus_cont~2                                                                                                                        ; 1                 ; 6       ;
+;      - Add3~84                                                                                                                                    ; 1                 ; 6       ;
+;      - buttom_minus_cont~3                                                                                                                        ; 1                 ; 6       ;
+;      - buttom_minus_cont~4                                                                                                                        ; 1                 ; 6       ;
+;      - buttom_minus_cont~5                                                                                                                        ; 1                 ; 6       ;
+;      - buttom_minus_cont~6                                                                                                                        ; 1                 ; 6       ;
+;      - Add3~85                                                                                                                                    ; 1                 ; 6       ;
+;      - Add3~86                                                                                                                                    ; 1                 ; 6       ;
+;      - Add3~87                                                                                                                                    ; 1                 ; 6       ;
+;      - Add3~88                                                                                                                                    ; 1                 ; 6       ;
 +---------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+---------+
 
 
@@ -898,14 +897,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------+--------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
 ; Name                                     ; Location           ; Fan-Out ; Usage                     ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +------------------------------------------+--------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
-; char~0                                   ; LCCOMB_X16_Y20_N6  ; 12      ; Sync. load                ; no     ; --                   ; --               ; --                        ;
-; clk                                      ; PIN_23             ; 363     ; Clock                     ; yes    ; Global Clock         ; GCLK2            ; --                        ;
-; lcd_bus[6]~18                            ; LCCOMB_X17_Y19_N18 ; 5       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; lcd_bus[9]~44                            ; LCCOMB_X17_Y20_N16 ; 3       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; lcd_controller:lcd_control|lcd_data[4]~1 ; LCCOMB_X19_Y21_N4  ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; matriz_led:matriz|LessThan0~8            ; LCCOMB_X30_Y21_N12 ; 49      ; Clock enable, Sync. clear ; no     ; --                   ; --               ; --                        ;
-; process_0~0                              ; LCCOMB_X17_Y20_N30 ; 9       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; temperatura:temp|temp_turn_cool_on~0     ; LCCOMB_X14_Y13_N12 ; 32      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; char~1                                   ; LCCOMB_X19_Y16_N0  ; 14      ; Sync. load                ; no     ; --                   ; --               ; --                        ;
+; clk                                      ; PIN_23             ; 407     ; Clock                     ; yes    ; Global Clock         ; GCLK2            ; --                        ;
+; lcd_bus[6]~14                            ; LCCOMB_X18_Y16_N28 ; 5       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; lcd_bus[9]~11                            ; LCCOMB_X19_Y17_N24 ; 3       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; lcd_controller:lcd_control|lcd_data[5]~1 ; LCCOMB_X23_Y18_N2  ; 8       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; matriz_led:matriz|LessThan0~8            ; LCCOMB_X16_Y20_N14 ; 50      ; Clock enable, Sync. clear ; no     ; --                   ; --               ; --                        ;
+; process_0~0                              ; LCCOMB_X23_Y18_N22 ; 10      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; temperatura:temp|temp_turn_cool_on~0     ; LCCOMB_X10_Y19_N16 ; 32      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
 +------------------------------------------+--------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -914,7 +913,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 ; Name ; Location ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; clk  ; PIN_23   ; 363     ; 30                                   ; Global Clock         ; GCLK2            ; --                        ;
+; clk  ; PIN_23   ; 407     ; 35                                   ; Global Clock         ; GCLK2            ; --                        ;
 +------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
@@ -923,48 +922,48 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-------------------------+
 ; Routing Resource Type ; Usage                   ;
 +-----------------------+-------------------------+
-; Block interconnects   ; 8,349 / 32,401 ( 26 % ) ;
-; C16 interconnects     ; 80 / 1,326 ( 6 % )      ;
-; C4 interconnects      ; 4,725 / 21,816 ( 22 % ) ;
-; Direct links          ; 1,578 / 32,401 ( 5 % )  ;
+; Block interconnects   ; 8,486 / 32,401 ( 26 % ) ;
+; C16 interconnects     ; 115 / 1,326 ( 9 % )     ;
+; C4 interconnects      ; 5,075 / 21,816 ( 23 % ) ;
+; Direct links          ; 1,546 / 32,401 ( 5 % )  ;
 ; Global clocks         ; 1 / 10 ( 10 % )         ;
-; Local interconnects   ; 2,121 / 10,320 ( 21 % ) ;
+; Local interconnects   ; 2,239 / 10,320 ( 22 % ) ;
 ; R24 interconnects     ; 65 / 1,289 ( 5 % )      ;
-; R4 interconnects      ; 5,035 / 28,186 ( 18 % ) ;
+; R4 interconnects      ; 4,835 / 28,186 ( 17 % ) ;
 +-----------------------+-------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                          ;
 +---------------------------------------------+-------------------------------+
-; Number of Logic Elements  (Average = 14.32) ; Number of LABs  (Total = 392) ;
+; Number of Logic Elements  (Average = 14.75) ; Number of LABs  (Total = 391) ;
 +---------------------------------------------+-------------------------------+
-; 1                                           ; 8                             ;
-; 2                                           ; 5                             ;
-; 3                                           ; 5                             ;
-; 4                                           ; 4                             ;
-; 5                                           ; 5                             ;
+; 1                                           ; 7                             ;
+; 2                                           ; 4                             ;
+; 3                                           ; 3                             ;
+; 4                                           ; 2                             ;
+; 5                                           ; 4                             ;
 ; 6                                           ; 4                             ;
-; 7                                           ; 4                             ;
+; 7                                           ; 1                             ;
 ; 8                                           ; 3                             ;
-; 9                                           ; 4                             ;
-; 10                                          ; 2                             ;
-; 11                                          ; 8                             ;
-; 12                                          ; 8                             ;
-; 13                                          ; 10                            ;
-; 14                                          ; 17                            ;
-; 15                                          ; 23                            ;
-; 16                                          ; 282                           ;
+; 9                                           ; 2                             ;
+; 10                                          ; 0                             ;
+; 11                                          ; 7                             ;
+; 12                                          ; 4                             ;
+; 13                                          ; 11                            ;
+; 14                                          ; 16                            ;
+; 15                                          ; 18                            ;
+; 16                                          ; 305                           ;
 +---------------------------------------------+-------------------------------+
 
 
 +--------------------------------------------------------------------+
 ; LAB-wide Signals                                                   ;
 +------------------------------------+-------------------------------+
-; LAB-wide Signals  (Average = 0.19) ; Number of LABs  (Total = 392) ;
+; LAB-wide Signals  (Average = 0.22) ; Number of LABs  (Total = 391) ;
 +------------------------------------+-------------------------------+
-; 1 Clock                            ; 56                            ;
-; 1 Clock enable                     ; 14                            ;
+; 1 Clock                            ; 68                            ;
+; 1 Clock enable                     ; 16                            ;
 ; 1 Sync. clear                      ; 2                             ;
 ; 1 Sync. load                       ; 1                             ;
 +------------------------------------+-------------------------------+
@@ -973,38 +972,38 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                          ;
 +----------------------------------------------+-------------------------------+
-; Number of Signals Sourced  (Average = 15.03) ; Number of LABs  (Total = 392) ;
+; Number of Signals Sourced  (Average = 15.57) ; Number of LABs  (Total = 391) ;
 +----------------------------------------------+-------------------------------+
 ; 0                                            ; 0                             ;
 ; 1                                            ; 7                             ;
-; 2                                            ; 6                             ;
-; 3                                            ; 6                             ;
-; 4                                            ; 4                             ;
-; 5                                            ; 4                             ;
-; 6                                            ; 5                             ;
-; 7                                            ; 4                             ;
-; 8                                            ; 4                             ;
-; 9                                            ; 4                             ;
+; 2                                            ; 4                             ;
+; 3                                            ; 3                             ;
+; 4                                            ; 2                             ;
+; 5                                            ; 3                             ;
+; 6                                            ; 4                             ;
+; 7                                            ; 2                             ;
+; 8                                            ; 3                             ;
+; 9                                            ; 3                             ;
 ; 10                                           ; 2                             ;
 ; 11                                           ; 9                             ;
-; 12                                           ; 8                             ;
-; 13                                           ; 6                             ;
-; 14                                           ; 16                            ;
-; 15                                           ; 59                            ;
-; 16                                           ; 197                           ;
-; 17                                           ; 8                             ;
-; 18                                           ; 3                             ;
-; 19                                           ; 6                             ;
-; 20                                           ; 2                             ;
-; 21                                           ; 5                             ;
-; 22                                           ; 6                             ;
-; 23                                           ; 2                             ;
-; 24                                           ; 1                             ;
+; 12                                           ; 5                             ;
+; 13                                           ; 8                             ;
+; 14                                           ; 18                            ;
+; 15                                           ; 52                            ;
+; 16                                           ; 207                           ;
+; 17                                           ; 9                             ;
+; 18                                           ; 2                             ;
+; 19                                           ; 4                             ;
+; 20                                           ; 6                             ;
+; 21                                           ; 2                             ;
+; 22                                           ; 8                             ;
+; 23                                           ; 4                             ;
+; 24                                           ; 6                             ;
 ; 25                                           ; 4                             ;
-; 26                                           ; 4                             ;
+; 26                                           ; 5                             ;
 ; 27                                           ; 4                             ;
 ; 28                                           ; 3                             ;
-; 29                                           ; 1                             ;
+; 29                                           ; 0                             ;
 ; 30                                           ; 0                             ;
 ; 31                                           ; 0                             ;
 ; 32                                           ; 2                             ;
@@ -1014,36 +1013,36 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                          ;
 +--------------------------------------------------+-------------------------------+
-; Number of Signals Sourced Out  (Average = 12.08) ; Number of LABs  (Total = 392) ;
+; Number of Signals Sourced Out  (Average = 12.36) ; Number of LABs  (Total = 391) ;
 +--------------------------------------------------+-------------------------------+
 ; 0                                                ; 0                             ;
 ; 1                                                ; 13                            ;
-; 2                                                ; 7                             ;
-; 3                                                ; 6                             ;
-; 4                                                ; 5                             ;
-; 5                                                ; 10                            ;
-; 6                                                ; 13                            ;
-; 7                                                ; 5                             ;
-; 8                                                ; 13                            ;
-; 9                                                ; 22                            ;
-; 10                                               ; 24                            ;
-; 11                                               ; 25                            ;
-; 12                                               ; 32                            ;
-; 13                                               ; 30                            ;
-; 14                                               ; 34                            ;
-; 15                                               ; 48                            ;
-; 16                                               ; 97                            ;
-; 17                                               ; 2                             ;
+; 2                                                ; 6                             ;
+; 3                                                ; 4                             ;
+; 4                                                ; 6                             ;
+; 5                                                ; 6                             ;
+; 6                                                ; 6                             ;
+; 7                                                ; 12                            ;
+; 8                                                ; 17                            ;
+; 9                                                ; 20                            ;
+; 10                                               ; 15                            ;
+; 11                                               ; 33                            ;
+; 12                                               ; 29                            ;
+; 13                                               ; 32                            ;
+; 14                                               ; 32                            ;
+; 15                                               ; 35                            ;
+; 16                                               ; 114                           ;
+; 17                                               ; 4                             ;
 ; 18                                               ; 0                             ;
-; 19                                               ; 3                             ;
-; 20                                               ; 0                             ;
+; 19                                               ; 1                             ;
+; 20                                               ; 2                             ;
 ; 21                                               ; 0                             ;
 ; 22                                               ; 0                             ;
-; 23                                               ; 0                             ;
+; 23                                               ; 1                             ;
 ; 24                                               ; 0                             ;
-; 25                                               ; 1                             ;
+; 25                                               ; 0                             ;
 ; 26                                               ; 1                             ;
-; 27                                               ; 0                             ;
+; 27                                               ; 1                             ;
 ; 28                                               ; 1                             ;
 +--------------------------------------------------+-------------------------------+
 
@@ -1051,45 +1050,44 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                          ;
 +----------------------------------------------+-------------------------------+
-; Number of Distinct Inputs  (Average = 19.93) ; Number of LABs  (Total = 392) ;
+; Number of Distinct Inputs  (Average = 20.42) ; Number of LABs  (Total = 391) ;
 +----------------------------------------------+-------------------------------+
 ; 0                                            ; 0                             ;
 ; 1                                            ; 0                             ;
-; 2                                            ; 8                             ;
-; 3                                            ; 5                             ;
-; 4                                            ; 3                             ;
-; 5                                            ; 4                             ;
-; 6                                            ; 0                             ;
-; 7                                            ; 5                             ;
-; 8                                            ; 5                             ;
-; 9                                            ; 9                             ;
-; 10                                           ; 7                             ;
-; 11                                           ; 5                             ;
+; 2                                            ; 7                             ;
+; 3                                            ; 2                             ;
+; 4                                            ; 5                             ;
+; 5                                            ; 3                             ;
+; 6                                            ; 1                             ;
+; 7                                            ; 3                             ;
+; 8                                            ; 4                             ;
+; 9                                            ; 3                             ;
+; 10                                           ; 8                             ;
+; 11                                           ; 2                             ;
 ; 12                                           ; 12                            ;
-; 13                                           ; 7                             ;
+; 13                                           ; 11                            ;
 ; 14                                           ; 15                            ;
-; 15                                           ; 29                            ;
-; 16                                           ; 23                            ;
-; 17                                           ; 27                            ;
-; 18                                           ; 23                            ;
-; 19                                           ; 15                            ;
-; 20                                           ; 6                             ;
-; 21                                           ; 17                            ;
-; 22                                           ; 12                            ;
-; 23                                           ; 16                            ;
+; 15                                           ; 17                            ;
+; 16                                           ; 34                            ;
+; 17                                           ; 30                            ;
+; 18                                           ; 13                            ;
+; 19                                           ; 21                            ;
+; 20                                           ; 15                            ;
+; 21                                           ; 9                             ;
+; 22                                           ; 18                            ;
+; 23                                           ; 18                            ;
 ; 24                                           ; 14                            ;
-; 25                                           ; 14                            ;
-; 26                                           ; 16                            ;
+; 25                                           ; 12                            ;
+; 26                                           ; 11                            ;
 ; 27                                           ; 11                            ;
-; 28                                           ; 19                            ;
-; 29                                           ; 13                            ;
-; 30                                           ; 16                            ;
-; 31                                           ; 11                            ;
-; 32                                           ; 10                            ;
-; 33                                           ; 11                            ;
-; 34                                           ; 0                             ;
-; 35                                           ; 3                             ;
-; 36                                           ; 1                             ;
+; 28                                           ; 20                            ;
+; 29                                           ; 20                            ;
+; 30                                           ; 13                            ;
+; 31                                           ; 14                            ;
+; 32                                           ; 9                             ;
+; 33                                           ; 12                            ;
+; 34                                           ; 2                             ;
+; 35                                           ; 2                             ;
 +----------------------------------------------+-------------------------------+
 
 
@@ -1262,20 +1260,20 @@ Info (176353): Automatically promoted node clk~input (placed in PIN 23 (CLK1, DI
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:03
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:04
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:02
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:19
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:18
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 15% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 22% of the available device resources in the region that extends from location X23_Y12 to location X34_Y24
+    Info (170196): Router estimated peak interconnect usage is 21% of the available device resources in the region that extends from location X23_Y12 to location X34_Y24
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:16
-Info (11888): Total time spent on timing analysis during the Fitter is 2.99 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:14
+Info (11888): Total time spent on timing analysis during the Fitter is 3.11 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -1283,10 +1281,10 @@ Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:03
 Info (144001): Generated suppressed messages file /Documents/PI/FPGA/LCD_2/output_files/LCD.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 1330 megabytes
-    Info: Processing ended: Sat Mar 12 22:43:11 2016
-    Info: Elapsed time: 00:00:49
-    Info: Total CPU time (on all processors): 00:01:09
+    Info: Peak virtual memory: 1325 megabytes
+    Info: Processing ended: Sat Mar 12 23:16:00 2016
+    Info: Elapsed time: 00:00:48
+    Info: Total CPU time (on all processors): 00:01:06
 
 
 +----------------------------+

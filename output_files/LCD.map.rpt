@@ -1,5 +1,5 @@
 Analysis & Synthesis report for LCD
-Sat Mar 12 22:42:16 2016
+Sat Mar 12 23:15:05 2016
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 
 
@@ -28,11 +28,10 @@ Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
  20. Parameter Settings for Inferred Entity Instance: temperatura:temp|lpm_divide:Div3
  21. Parameter Settings for Inferred Entity Instance: temperatura:temp|lpm_divide:Mod1
  22. Parameter Settings for Inferred Entity Instance: temperatura:temp|lpm_divide:Mod3
- 23. Port Connectivity Checks: "matriz_led:matriz"
- 24. Port Connectivity Checks: "lcd_controller:lcd_control"
- 25. Post-Synthesis Netlist Statistics for Top Partition
- 26. Elapsed Time Per Partition
- 27. Analysis & Synthesis Messages
+ 23. Port Connectivity Checks: "lcd_controller:lcd_control"
+ 24. Post-Synthesis Netlist Statistics for Top Partition
+ 25. Elapsed Time Per Partition
+ 26. Analysis & Synthesis Messages
 
 
 
@@ -59,15 +58,15 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Mar 12 22:42:16 2016       ;
+; Analysis & Synthesis Status        ; Successful - Sat Mar 12 23:15:05 2016       ;
 ; Quartus Prime Version              ; 15.1.0 Build 185 10/21/2015 SJ Lite Edition ;
 ; Revision Name                      ; LCD                                         ;
 ; Top-level Entity Name              ; pi                                          ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 5,613                                       ;
-;     Total combinational functions  ; 5,612                                       ;
-;     Dedicated logic registers      ; 363                                         ;
-; Total registers                    ; 363                                         ;
+; Total logic elements               ; 5,762                                       ;
+;     Total combinational functions  ; 5,761                                       ;
+;     Dedicated logic registers      ; 407                                         ;
+; Total registers                    ; 407                                         ;
 ; Total pins                         ; 38                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -223,20 +222,20 @@ agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 5,613     ;
+; Estimated Total logic elements              ; 5,762     ;
 ;                                             ;           ;
-; Total combinational functions               ; 5612      ;
+; Total combinational functions               ; 5761      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 1816      ;
-;     -- 3 input functions                    ; 1615      ;
-;     -- <=2 input functions                  ; 2181      ;
+;     -- 4 input functions                    ; 1902      ;
+;     -- 3 input functions                    ; 1691      ;
+;     -- <=2 input functions                  ; 2168      ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 3791      ;
-;     -- arithmetic mode                      ; 1821      ;
+;     -- normal mode                          ; 3909      ;
+;     -- arithmetic mode                      ; 1852      ;
 ;                                             ;           ;
-; Total registers                             ; 363       ;
-;     -- Dedicated logic registers            ; 363       ;
+; Total registers                             ; 407       ;
+;     -- Dedicated logic registers            ; 407       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 38        ;
@@ -244,9 +243,9 @@ agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 363       ;
-; Total fan-out                               ; 17111     ;
-; Average fan-out                             ; 2.83      ;
+; Maximum fan-out                             ; 407       ;
+; Total fan-out                               ; 17747     ;
+; Average fan-out                             ; 2.84      ;
 +---------------------------------------------+-----------+
 
 
@@ -255,20 +254,20 @@ agreement for further details.
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                  ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------+--------------+
-; |pi                                       ; 5612 (492)        ; 363 (180)    ; 0           ; 0            ; 0       ; 0         ; 38   ; 0            ; |pi                                                                                                                  ; work         ;
+; |pi                                       ; 5761 (498)        ; 407 (187)    ; 0           ; 0            ; 0       ; 0         ; 38   ; 0            ; |pi                                                                                                                  ; work         ;
 ;    |clock_1hz:clock1|                     ; 70 (70)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|clock_1hz:clock1                                                                                                 ; work         ;
 ;    |lcd_controller:lcd_control|           ; 164 (164)         ; 47 (47)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|lcd_controller:lcd_control                                                                                       ; work         ;
-;    |matriz_led:matriz|                    ; 75 (75)           ; 49 (49)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|matriz_led:matriz                                                                                                ; work         ;
-;    |temperatura:temp|                     ; 4811 (307)        ; 55 (55)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp                                                                                                 ; work         ;
+;    |matriz_led:matriz|                    ; 228 (228)         ; 87 (87)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|matriz_led:matriz                                                                                                ; work         ;
+;    |temperatura:temp|                     ; 4801 (307)        ; 54 (54)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp                                                                                                 ; work         ;
 ;       |lpm_divide:Div1|                   ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Div1                                                                                 ; work         ;
 ;          |lpm_divide_ihm:auto_generated|  ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Div1|lpm_divide_ihm:auto_generated                                                   ; work         ;
 ;             |sign_div_unsign_akh:divider| ; 46 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Div1|lpm_divide_ihm:auto_generated|sign_div_unsign_akh:divider                       ; work         ;
 ;                |alt_u_div_84f:divider|    ; 46 (46)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Div1|lpm_divide_ihm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_84f:divider ; work         ;
-;       |lpm_divide:Div2|                   ; 681 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Div2                                                                                 ; work         ;
-;          |lpm_divide_s0p:auto_generated|  ; 681 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Div2|lpm_divide_s0p:auto_generated                                                   ; work         ;
-;             |abs_divider_nbg:divider|     ; 681 (31)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Div2|lpm_divide_s0p:auto_generated|abs_divider_nbg:divider                           ; work         ;
+;       |lpm_divide:Div2|                   ; 683 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Div2                                                                                 ; work         ;
+;          |lpm_divide_s0p:auto_generated|  ; 683 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Div2|lpm_divide_s0p:auto_generated                                                   ; work         ;
+;             |abs_divider_nbg:divider|     ; 683 (31)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Div2|lpm_divide_s0p:auto_generated|abs_divider_nbg:divider                           ; work         ;
 ;                |alt_u_div_c7f:divider|    ; 625 (625)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Div2|lpm_divide_s0p:auto_generated|abs_divider_nbg:divider|alt_u_div_c7f:divider     ; work         ;
-;                |lpm_abs_i0a:my_abs_num|   ; 25 (25)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Div2|lpm_divide_s0p:auto_generated|abs_divider_nbg:divider|lpm_abs_i0a:my_abs_num    ; work         ;
+;                |lpm_abs_i0a:my_abs_num|   ; 27 (27)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Div2|lpm_divide_s0p:auto_generated|abs_divider_nbg:divider|lpm_abs_i0a:my_abs_num    ; work         ;
 ;       |lpm_divide:Div3|                   ; 483 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Div3                                                                                 ; work         ;
 ;          |lpm_divide_p0p:auto_generated|  ; 483 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Div3|lpm_divide_p0p:auto_generated                                                   ; work         ;
 ;             |abs_divider_kbg:divider|     ; 483 (34)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Div3|lpm_divide_p0p:auto_generated|abs_divider_kbg:divider                           ; work         ;
@@ -281,16 +280,16 @@ agreement for further details.
 ;          |lpm_divide_o9m:auto_generated|  ; 61 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod1|lpm_divide_o9m:auto_generated                                                   ; work         ;
 ;             |sign_div_unsign_dkh:divider| ; 61 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod1|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider                       ; work         ;
 ;                |alt_u_div_e4f:divider|    ; 61 (61)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod1|lpm_divide_o9m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_e4f:divider ; work         ;
-;       |lpm_divide:Mod2|                   ; 1528 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod2                                                                                 ; work         ;
-;          |lpm_divide_cqo:auto_generated|  ; 1528 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod2|lpm_divide_cqo:auto_generated                                                   ; work         ;
-;             |abs_divider_4dg:divider|     ; 1528 (64)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod2|lpm_divide_cqo:auto_generated|abs_divider_4dg:divider                           ; work         ;
+;       |lpm_divide:Mod2|                   ; 1521 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod2                                                                                 ; work         ;
+;          |lpm_divide_cqo:auto_generated|  ; 1521 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod2|lpm_divide_cqo:auto_generated                                                   ; work         ;
+;             |abs_divider_4dg:divider|     ; 1521 (64)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod2|lpm_divide_cqo:auto_generated|abs_divider_4dg:divider                           ; work         ;
 ;                |alt_u_div_6af:divider|    ; 1445 (1445)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod2|lpm_divide_cqo:auto_generated|abs_divider_4dg:divider|alt_u_div_6af:divider     ; work         ;
-;                |lpm_abs_i0a:my_abs_num|   ; 19 (19)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod2|lpm_divide_cqo:auto_generated|abs_divider_4dg:divider|lpm_abs_i0a:my_abs_num    ; work         ;
-;       |lpm_divide:Mod3|                   ; 1685 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod3                                                                                 ; work         ;
-;          |lpm_divide_cqo:auto_generated|  ; 1685 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod3|lpm_divide_cqo:auto_generated                                                   ; work         ;
-;             |abs_divider_4dg:divider|     ; 1685 (64)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod3|lpm_divide_cqo:auto_generated|abs_divider_4dg:divider                           ; work         ;
+;                |lpm_abs_i0a:my_abs_num|   ; 12 (12)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod2|lpm_divide_cqo:auto_generated|abs_divider_4dg:divider|lpm_abs_i0a:my_abs_num    ; work         ;
+;       |lpm_divide:Mod3|                   ; 1680 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod3                                                                                 ; work         ;
+;          |lpm_divide_cqo:auto_generated|  ; 1680 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod3|lpm_divide_cqo:auto_generated                                                   ; work         ;
+;             |abs_divider_4dg:divider|     ; 1680 (64)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod3|lpm_divide_cqo:auto_generated|abs_divider_4dg:divider                           ; work         ;
 ;                |alt_u_div_6af:divider|    ; 1566 (1566)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod3|lpm_divide_cqo:auto_generated|abs_divider_4dg:divider|alt_u_div_6af:divider     ; work         ;
-;                |lpm_abs_i0a:my_abs_num|   ; 55 (55)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod3|lpm_divide_cqo:auto_generated|abs_divider_4dg:divider|lpm_abs_i0a:my_abs_num    ; work         ;
+;                |lpm_abs_i0a:my_abs_num|   ; 50 (50)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pi|temperatura:temp|lpm_divide:Mod3|lpm_divide_cqo:auto_generated|abs_divider_4dg:divider|lpm_abs_i0a:my_abs_num    ; work         ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -319,214 +318,214 @@ Encoding Type:  One-Hot
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+---------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                    ;
-+-----------------------------------------+---------------------------------------------+
-; Register name                           ; Reason for Removal                          ;
-+-----------------------------------------+---------------------------------------------+
-; matriz_led:matriz|led_8[0]              ; Stuck at VCC due to stuck port data_in      ;
-; temperatura:temp|temp_cem_asc[6,7]      ; Stuck at GND due to stuck port data_in      ;
-; temperatura:temp|temp_dez_asc[6,7]      ; Stuck at GND due to stuck port data_in      ;
-; temperatura:temp|temp_um_asc[6,7]       ; Stuck at GND due to stuck port data_in      ;
-; temperatura:temp|lvl_cem_asc[6,7]       ; Stuck at GND due to stuck port data_in      ;
-; temperatura:temp|lvl_dez_asc[6,7]       ; Stuck at GND due to stuck port data_in      ;
-; temperatura:temp|lvl_um_asc[6,7]        ; Stuck at GND due to stuck port data_in      ;
-; d24[0]                                  ; Merged with d33[2]                          ;
-; d23[0]                                  ; Merged with d33[2]                          ;
-; d27[6]                                  ; Merged with d33[2]                          ;
-; d25[3]                                  ; Merged with d33[2]                          ;
-; d5[0]                                   ; Merged with d33[2]                          ;
-; d7[0]                                   ; Merged with d33[2]                          ;
-; d15[2]                                  ; Merged with d33[2]                          ;
-; d6[4]                                   ; Merged with d33[2]                          ;
-; d26[0]                                  ; Merged with d33[2]                          ;
-; d4[1]                                   ; Merged with d33[2]                          ;
-; d32[2]                                  ; Merged with d33[2]                          ;
-; d25[7]                                  ; Merged with d33[2]                          ;
-; d27[1]                                  ; Merged with d33[2]                          ;
-; d24[2,4]                                ; Merged with d33[2]                          ;
-; d7[4]                                   ; Merged with d33[2]                          ;
-; d27[0]                                  ; Merged with d33[2]                          ;
-; d23[4]                                  ; Merged with d33[2]                          ;
-; d10[3]                                  ; Merged with d33[2]                          ;
-; d22[1]                                  ; Merged with d33[2]                          ;
-; d15[7]                                  ; Merged with d33[2]                          ;
-; d21[3]                                  ; Merged with d33[2]                          ;
-; d26[4]                                  ; Merged with d33[2]                          ;
-; d19[2]                                  ; Merged with d33[2]                          ;
-; d20[0]                                  ; Merged with d33[2]                          ;
-; d9[7]                                   ; Merged with d33[2]                          ;
-; d2[7]                                   ; Merged with d33[2]                          ;
-; d15[0]                                  ; Merged with d33[2]                          ;
-; d18[7]                                  ; Merged with d33[2]                          ;
-; d33[3]                                  ; Merged with d33[2]                          ;
-; d25[0]                                  ; Merged with d33[2]                          ;
-; d8[4]                                   ; Merged with d33[2]                          ;
-; d24[6]                                  ; Merged with d33[2]                          ;
-; d11[7]                                  ; Merged with d33[2]                          ;
-; d7[2]                                   ; Merged with d33[2]                          ;
-; d27[4]                                  ; Merged with d33[2]                          ;
-; d7[6]                                   ; Merged with d33[2]                          ;
-; d25[6]                                  ; Merged with d33[2]                          ;
-; d23[2]                                  ; Merged with d33[2]                          ;
-; d10[1]                                  ; Merged with d33[2]                          ;
-; d23[6]                                  ; Merged with d33[2]                          ;
-; d6[7]                                   ; Merged with d33[2]                          ;
-; d16[3]                                  ; Merged with d33[2]                          ;
-; d5[7]                                   ; Merged with d33[2]                          ;
-; d26[2]                                  ; Merged with d33[2]                          ;
-; d28[1]                                  ; Merged with d33[2]                          ;
-; d26[6]                                  ; Merged with d33[2]                          ;
-; d3[7]                                   ; Merged with d33[2]                          ;
-; d9[3]                                   ; Merged with d33[2]                          ;
-; d25[1,2]                                ; Merged with d33[2]                          ;
-; d27[3]                                  ; Merged with d33[2]                          ;
-; d25[4]                                  ; Merged with d33[2]                          ;
-; d28[6,7]                                ; Merged with d33[2]                          ;
-; d32[4]                                  ; Merged with d33[2]                          ;
-; d11[0]                                  ; Merged with d33[2]                          ;
-; d8[7]                                   ; Merged with d33[2]                          ;
-; d2[3]                                   ; Merged with d33[2]                          ;
-; d11[4]                                  ; Merged with d33[2]                          ;
-; d8[3]                                   ; Merged with d33[2]                          ;
-; d32[7]                                  ; Merged with d33[2]                          ;
-; d24[1,3]                                ; Merged with d33[2]                          ;
-; d11[3]                                  ; Merged with d33[2]                          ;
-; d7[1]                                   ; Merged with d33[2]                          ;
-; d33[7]                                  ; Merged with d33[2]                          ;
-; d7[3]                                   ; Merged with d33[2]                          ;
-; d27[2]                                  ; Merged with d33[2]                          ;
-; d7[7]                                   ; Merged with d33[2]                          ;
-; d32[0]                                  ; Merged with d33[2]                          ;
-; d23[1]                                  ; Merged with d33[2]                          ;
-; d27[7]                                  ; Merged with d33[2]                          ;
-; d23[3]                                  ; Merged with d33[2]                          ;
-; d15[4]                                  ; Merged with d33[2]                          ;
-; d10[2]                                  ; Merged with d33[2]                          ;
-; d23[7]                                  ; Merged with d33[2]                          ;
-; d16[2]                                  ; Merged with d33[2]                          ;
-; d10[4]                                  ; Merged with d33[2]                          ;
-; d22[0]                                  ; Merged with d33[2]                          ;
-; d15[6]                                  ; Merged with d33[2]                          ;
-; d22[4]                                  ; Merged with d33[4]                          ;
-; d10[7]                                  ; Merged with d33[4]                          ;
-; d22[7]                                  ; Merged with d33[4]                          ;
-; d24[7]                                  ; Merged with d33[4]                          ;
-; d26[1]                                  ; Merged with d33[4]                          ;
-; d21[1]                                  ; Merged with d33[4]                          ;
-; d28[0]                                  ; Merged with d33[4]                          ;
-; d21[4]                                  ; Merged with d33[4]                          ;
-; d26[3]                                  ; Merged with d33[4]                          ;
-; d21[7]                                  ; Merged with d33[4]                          ;
-; d16[4]                                  ; Merged with d33[4]                          ;
-; d4[2,7]                                 ; Merged with d33[4]                          ;
-; d28[2]                                  ; Merged with d33[4]                          ;
-; d20[3]                                  ; Merged with d33[4]                          ;
-; d26[7]                                  ; Merged with d33[4]                          ;
-; d20[7]                                  ; Merged with d33[4]                          ;
-; d9[2]                                   ; Merged with d33[4]                          ;
-; d19[1]                                  ; Merged with d33[4]                          ;
-; d28[4]                                  ; Merged with d33[4]                          ;
-; d19[4,7]                                ; Merged with d33[4]                          ;
-; d32[6]                                  ; Merged with d33[4]                          ;
-; d16[7]                                  ; Merged with d33[4]                          ;
-; d28[3]                                  ; Merged with d33[4]                          ;
-; d9[0]                                   ; Merged with d33[4]                          ;
-; d25[5]                                  ; Merged with d32[5]                          ;
-; d22[5]                                  ; Merged with d32[5]                          ;
-; d21[5]                                  ; Merged with d32[5]                          ;
-; d20[5]                                  ; Merged with d32[5]                          ;
-; d19[5]                                  ; Merged with d32[5]                          ;
-; d28[5]                                  ; Merged with d32[5]                          ;
-; d24[5]                                  ; Merged with d32[5]                          ;
-; d27[5]                                  ; Merged with d32[5]                          ;
-; d23[5]                                  ; Merged with d32[5]                          ;
-; d2[2]                                   ; Merged with d15[5]                          ;
-; d11[5]                                  ; Merged with d15[5]                          ;
-; d10[5]                                  ; Merged with d15[5]                          ;
-; d4[5]                                   ; Merged with d15[5]                          ;
-; d2[5,6]                                 ; Merged with d15[5]                          ;
-; d7[5]                                   ; Merged with d15[5]                          ;
-; d6[5]                                   ; Merged with d15[5]                          ;
-; d5[5]                                   ; Merged with d15[5]                          ;
-; d3[5,6]                                 ; Merged with d9[5]                           ;
-; d33[4]                                  ; Merged with d33[2]                          ;
-; d26[5]                                  ; Merged with d32[5]                          ;
-; d9[5]                                   ; Merged with d15[5]                          ;
-; d10[6]                                  ; Merged with d10[0]                          ;
-; d11[1,2,6]                              ; Merged with d10[0]                          ;
-; d18[0,4]                                ; Merged with d10[0]                          ;
-; d2[1]                                   ; Merged with d10[0]                          ;
-; d4[0,3]                                 ; Merged with d10[0]                          ;
-; d5[4,6]                                 ; Merged with d10[0]                          ;
-; d6[0..3,6]                              ; Merged with d10[0]                          ;
-; d8[0..2,6]                              ; Merged with d10[0]                          ;
-; d9[1,4,6]                               ; Merged with d10[0]                          ;
-; d3[2]                                   ; Merged with d3[0]                           ;
-; d4[6]                                   ; Merged with d3[0]                           ;
-; d5[2]                                   ; Merged with d3[0]                           ;
-; temperatura:temp|lvl_cem_asc[5]         ; Merged with temperatura:temp|lvl_cem_asc[4] ;
-; temperatura:temp|lvl_dez_asc[4,5]       ; Merged with temperatura:temp|lvl_cem_asc[4] ;
-; temperatura:temp|lvl_um_asc[4,5]        ; Merged with temperatura:temp|lvl_cem_asc[4] ;
-; temperatura:temp|temp_cem_asc[4,5]      ; Merged with temperatura:temp|lvl_cem_asc[4] ;
-; temperatura:temp|temp_dez_asc[4,5]      ; Merged with temperatura:temp|lvl_cem_asc[4] ;
-; temperatura:temp|temp_um_asc[4,5]       ; Merged with temperatura:temp|lvl_cem_asc[4] ;
-; d13[4]                                  ; Merged with d12[4]                          ;
-; d14[4]                                  ; Merged with d12[4]                          ;
-; d29[4]                                  ; Merged with d12[4]                          ;
-; d30[4]                                  ; Merged with d12[4]                          ;
-; d31[4]                                  ; Merged with d12[4]                          ;
-; d13[5]                                  ; Merged with d12[5]                          ;
-; d14[5]                                  ; Merged with d12[5]                          ;
-; d13[6]                                  ; Merged with d12[6]                          ;
-; d14[6]                                  ; Merged with d12[6]                          ;
-; d13[7]                                  ; Merged with d12[7]                          ;
-; d14[7]                                  ; Merged with d12[7]                          ;
-; d29[6,7]                                ; Merged with d12[7]                          ;
-; d30[6,7]                                ; Merged with d12[7]                          ;
-; d31[6,7]                                ; Merged with d12[7]                          ;
-; d30[5]                                  ; Merged with d29[5]                          ;
-; d31[5]                                  ; Merged with d29[5]                          ;
-; d18[2,3,6]                              ; Merged with d18[1]                          ;
-; d19[0,3,6]                              ; Merged with d18[1]                          ;
-; d20[1,2,4,6]                            ; Merged with d18[1]                          ;
-; d21[0,2,6]                              ; Merged with d18[1]                          ;
-; d22[2,3,6]                              ; Merged with d18[1]                          ;
-; d2[0]                                   ; Merged with d18[1]                          ;
-; d3[3]                                   ; Merged with d18[1]                          ;
-; d8[5]                                   ; Merged with d18[1]                          ;
-; d15[3]                                  ; Merged with d15[1]                          ;
-; d16[0,1,6]                              ; Merged with d15[1]                          ;
-; d32[1,3]                                ; Merged with d15[1]                          ;
-; d33[0,1,6]                              ; Merged with d15[1]                          ;
-; d4[4]                                   ; Merged with d15[1]                          ;
-; d5[1,3]                                 ; Merged with d15[1]                          ;
-; d3[1,4]                                 ; Merged with d2[4]                           ;
-; d33[2]                                  ; Stuck at GND due to stuck port data_in      ;
-; d32[5]                                  ; Stuck at VCC due to stuck port data_in      ;
-; d12[7]                                  ; Stuck at GND due to stuck port data_in      ;
-; d10[0]                                  ; Merged with d12[6]                          ;
-; lcd_bus[8]                              ; Stuck at GND due to stuck port data_in      ;
-; lcd_controller:lcd_control|rw           ; Stuck at GND due to stuck port data_in      ;
-; temperatura:temp|temp_cem_asc[1..3]     ; Stuck at GND due to stuck port data_in      ;
-; d12[2]                                  ; Merged with d12[1]                          ;
-; d12[1]                                  ; Stuck at GND due to stuck port data_in      ;
-; Total Number of Removed Registers = 243 ;                                             ;
-+-----------------------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                        ;
++-----------------------------------------+-------------------------------------------------+
+; Register name                           ; Reason for Removal                              ;
++-----------------------------------------+-------------------------------------------------+
+; matriz_led:matriz|num_effect_asc[6,7]   ; Stuck at GND due to stuck port data_in          ;
+; temperatura:temp|temp_cem_asc[6,7]      ; Stuck at GND due to stuck port data_in          ;
+; temperatura:temp|temp_dez_asc[6,7]      ; Stuck at GND due to stuck port data_in          ;
+; temperatura:temp|temp_um_asc[6,7]       ; Stuck at GND due to stuck port data_in          ;
+; temperatura:temp|lvl_cem_asc[6,7]       ; Stuck at GND due to stuck port data_in          ;
+; temperatura:temp|lvl_dez_asc[6,7]       ; Stuck at GND due to stuck port data_in          ;
+; temperatura:temp|lvl_um_asc[6,7]        ; Stuck at GND due to stuck port data_in          ;
+; d24[0]                                  ; Merged with d33[2]                              ;
+; d23[0]                                  ; Merged with d33[2]                              ;
+; d15[2]                                  ; Merged with d33[2]                              ;
+; d25[3]                                  ; Merged with d33[2]                              ;
+; d5[0]                                   ; Merged with d33[2]                              ;
+; d11[4]                                  ; Merged with d33[2]                              ;
+; d7[0,1]                                 ; Merged with d33[2]                              ;
+; d6[4]                                   ; Merged with d33[2]                              ;
+; d26[0]                                  ; Merged with d33[2]                              ;
+; d4[1]                                   ; Merged with d33[2]                              ;
+; d25[6,7]                                ; Merged with d33[2]                              ;
+; d24[4]                                  ; Merged with d33[2]                              ;
+; d32[7]                                  ; Merged with d33[2]                              ;
+; d7[4]                                   ; Merged with d33[2]                              ;
+; d23[3,4]                                ; Merged with d33[2]                              ;
+; d22[1]                                  ; Merged with d33[2]                              ;
+; d15[7]                                  ; Merged with d33[2]                              ;
+; d21[3]                                  ; Merged with d33[2]                              ;
+; d26[4]                                  ; Merged with d33[2]                              ;
+; d19[2]                                  ; Merged with d33[2]                              ;
+; d20[0]                                  ; Merged with d33[2]                              ;
+; d9[7]                                   ; Merged with d33[2]                              ;
+; d2[7]                                   ; Merged with d33[2]                              ;
+; d25[0,4]                                ; Merged with d33[2]                              ;
+; d11[0]                                  ; Merged with d33[2]                              ;
+; d8[3]                                   ; Merged with d33[2]                              ;
+; d11[7]                                  ; Merged with d33[2]                              ;
+; d24[2,6]                                ; Merged with d33[2]                              ;
+; d27[0]                                  ; Merged with d33[2]                              ;
+; d10[4]                                  ; Merged with d33[2]                              ;
+; d27[2]                                  ; Merged with d33[2]                              ;
+; d7[2]                                   ; Merged with d33[2]                              ;
+; d33[3]                                  ; Merged with d33[2]                              ;
+; d10[3]                                  ; Merged with d33[2]                              ;
+; d23[2]                                  ; Merged with d33[2]                              ;
+; d15[4]                                  ; Merged with d33[2]                              ;
+; d6[7]                                   ; Merged with d33[2]                              ;
+; d16[2]                                  ; Merged with d33[2]                              ;
+; d5[7]                                   ; Merged with d33[2]                              ;
+; d26[2]                                  ; Merged with d33[2]                              ;
+; d28[1]                                  ; Merged with d33[2]                              ;
+; d26[6]                                  ; Merged with d33[2]                              ;
+; d3[7]                                   ; Merged with d33[2]                              ;
+; d9[3]                                   ; Merged with d33[2]                              ;
+; d25[1]                                  ; Merged with d33[2]                              ;
+; d28[6]                                  ; Merged with d33[2]                              ;
+; d2[3]                                   ; Merged with d33[2]                              ;
+; d32[2]                                  ; Merged with d33[2]                              ;
+; d28[7]                                  ; Merged with d33[2]                              ;
+; d25[2]                                  ; Merged with d33[2]                              ;
+; d32[4]                                  ; Merged with d33[2]                              ;
+; d11[3]                                  ; Merged with d33[2]                              ;
+; d8[4]                                   ; Merged with d33[2]                              ;
+; d32[0]                                  ; Merged with d33[2]                              ;
+; d24[1,3]                                ; Merged with d33[2]                              ;
+; d10[2]                                  ; Merged with d33[2]                              ;
+; d32[6]                                  ; Merged with d33[2]                              ;
+; d24[7]                                  ; Merged with d33[2]                              ;
+; d8[7]                                   ; Merged with d33[2]                              ;
+; d33[4]                                  ; Merged with d33[2]                              ;
+; d23[7]                                  ; Merged with d33[2]                              ;
+; d27[1]                                  ; Merged with d33[2]                              ;
+; d15[0]                                  ; Merged with d33[2]                              ;
+; d27[3]                                  ; Merged with d33[2]                              ;
+; d7[7]                                   ; Merged with d33[2]                              ;
+; d19[7]                                  ; Merged with d33[2]                              ;
+; d7[6]                                   ; Merged with d33[2]                              ;
+; d27[6,7]                                ; Merged with d33[2]                              ;
+; d23[1]                                  ; Merged with d33[2]                              ;
+; d10[1]                                  ; Merged with d33[2]                              ;
+; d33[7]                                  ; Merged with d33[2]                              ;
+; d15[6]                                  ; Merged with d33[2]                              ;
+; d22[0]                                  ; Merged with d33[2]                              ;
+; d16[3]                                  ; Merged with d33[2]                              ;
+; d22[4]                                  ; Merged with d16[4]                              ;
+; d10[7]                                  ; Merged with d16[4]                              ;
+; d22[7]                                  ; Merged with d16[4]                              ;
+; d27[4]                                  ; Merged with d16[4]                              ;
+; d26[1]                                  ; Merged with d16[4]                              ;
+; d21[1]                                  ; Merged with d16[4]                              ;
+; d28[0]                                  ; Merged with d16[4]                              ;
+; d21[4]                                  ; Merged with d16[4]                              ;
+; d26[3]                                  ; Merged with d16[4]                              ;
+; d21[7]                                  ; Merged with d16[4]                              ;
+; d4[2,7]                                 ; Merged with d16[4]                              ;
+; d28[2]                                  ; Merged with d16[4]                              ;
+; d20[3]                                  ; Merged with d16[4]                              ;
+; d26[7]                                  ; Merged with d16[4]                              ;
+; d20[7]                                  ; Merged with d16[4]                              ;
+; d9[2]                                   ; Merged with d16[4]                              ;
+; d19[1]                                  ; Merged with d16[4]                              ;
+; d28[4]                                  ; Merged with d16[4]                              ;
+; d19[4]                                  ; Merged with d16[4]                              ;
+; d7[3]                                   ; Merged with d16[4]                              ;
+; d23[6]                                  ; Merged with d16[4]                              ;
+; d16[7]                                  ; Merged with d16[4]                              ;
+; d28[3]                                  ; Merged with d16[4]                              ;
+; d9[0]                                   ; Merged with d16[4]                              ;
+; d24[5]                                  ; Merged with d32[5]                              ;
+; d23[5]                                  ; Merged with d32[5]                              ;
+; d22[5]                                  ; Merged with d32[5]                              ;
+; d21[5]                                  ; Merged with d32[5]                              ;
+; d20[5]                                  ; Merged with d32[5]                              ;
+; d19[5]                                  ; Merged with d32[5]                              ;
+; d28[5]                                  ; Merged with d32[5]                              ;
+; d25[5]                                  ; Merged with d32[5]                              ;
+; d27[5]                                  ; Merged with d32[5]                              ;
+; d26[5]                                  ; Merged with d32[5]                              ;
+; d2[2,6]                                 ; Merged with d15[5]                              ;
+; d10[5]                                  ; Merged with d15[5]                              ;
+; d4[5]                                   ; Merged with d15[5]                              ;
+; d2[5]                                   ; Merged with d15[5]                              ;
+; d11[5]                                  ; Merged with d15[5]                              ;
+; d7[5]                                   ; Merged with d15[5]                              ;
+; d6[5]                                   ; Merged with d15[5]                              ;
+; d5[5]                                   ; Merged with d15[5]                              ;
+; d3[5,6]                                 ; Merged with d9[5]                               ;
+; d16[4]                                  ; Merged with d33[2]                              ;
+; d9[5]                                   ; Merged with d15[5]                              ;
+; d19[3,6]                                ; Merged with d19[0]                              ;
+; d20[1,2,4,6]                            ; Merged with d19[0]                              ;
+; d21[0,2,6]                              ; Merged with d19[0]                              ;
+; d22[2,3,6]                              ; Merged with d19[0]                              ;
+; d2[0]                                   ; Merged with d19[0]                              ;
+; d3[3]                                   ; Merged with d19[0]                              ;
+; d8[5]                                   ; Merged with d19[0]                              ;
+; d3[2]                                   ; Merged with d3[0]                               ;
+; d4[6]                                   ; Merged with d3[0]                               ;
+; d5[2]                                   ; Merged with d3[0]                               ;
+; matriz_led:matriz|num_effect_asc[5]     ; Merged with matriz_led:matriz|num_effect_asc[4] ;
+; temperatura:temp|lvl_cem_asc[4,5]       ; Merged with matriz_led:matriz|num_effect_asc[4] ;
+; temperatura:temp|lvl_dez_asc[4,5]       ; Merged with matriz_led:matriz|num_effect_asc[4] ;
+; temperatura:temp|lvl_um_asc[4,5]        ; Merged with matriz_led:matriz|num_effect_asc[4] ;
+; temperatura:temp|temp_cem_asc[4,5]      ; Merged with matriz_led:matriz|num_effect_asc[4] ;
+; temperatura:temp|temp_dez_asc[4,5]      ; Merged with matriz_led:matriz|num_effect_asc[4] ;
+; temperatura:temp|temp_um_asc[4,5]       ; Merged with matriz_led:matriz|num_effect_asc[4] ;
+; d13[4]                                  ; Merged with d12[4]                              ;
+; d14[4]                                  ; Merged with d12[4]                              ;
+; d29[4]                                  ; Merged with d12[4]                              ;
+; d30[4]                                  ; Merged with d12[4]                              ;
+; d31[4]                                  ; Merged with d12[4]                              ;
+; d13[5]                                  ; Merged with d12[5]                              ;
+; d14[5]                                  ; Merged with d12[5]                              ;
+; d13[6]                                  ; Merged with d12[6]                              ;
+; d14[6]                                  ; Merged with d12[6]                              ;
+; d13[7]                                  ; Merged with d12[7]                              ;
+; d14[7]                                  ; Merged with d12[7]                              ;
+; d29[6,7]                                ; Merged with d12[7]                              ;
+; d30[6,7]                                ; Merged with d12[7]                              ;
+; d31[6,7]                                ; Merged with d12[7]                              ;
+; d30[5]                                  ; Merged with d29[5]                              ;
+; d31[5]                                  ; Merged with d29[5]                              ;
+; d10[6]                                  ; Merged with d10[0]                              ;
+; d11[1,2,6]                              ; Merged with d10[0]                              ;
+; d2[1]                                   ; Merged with d10[0]                              ;
+; d4[0,3]                                 ; Merged with d10[0]                              ;
+; d5[4,6]                                 ; Merged with d10[0]                              ;
+; d6[0..3,6]                              ; Merged with d10[0]                              ;
+; d8[0..2,6]                              ; Merged with d10[0]                              ;
+; d9[1,4,6]                               ; Merged with d10[0]                              ;
+; d15[3]                                  ; Merged with d15[1]                              ;
+; d16[0,1,6]                              ; Merged with d15[1]                              ;
+; d32[1,3]                                ; Merged with d15[1]                              ;
+; d33[0,1,6]                              ; Merged with d15[1]                              ;
+; d4[4]                                   ; Merged with d15[1]                              ;
+; d5[1,3]                                 ; Merged with d15[1]                              ;
+; d3[1,4]                                 ; Merged with d2[4]                               ;
+; d33[2]                                  ; Stuck at GND due to stuck port data_in          ;
+; d32[5]                                  ; Stuck at VCC due to stuck port data_in          ;
+; d12[7]                                  ; Stuck at GND due to stuck port data_in          ;
+; d18[7]                                  ; Stuck at GND due to stuck port data_in          ;
+; d10[0]                                  ; Merged with d12[6]                              ;
+; d18[6]                                  ; Merged with d19[0]                              ;
+; lcd_bus[8]                              ; Stuck at GND due to stuck port data_in          ;
+; lcd_controller:lcd_control|rw           ; Stuck at GND due to stuck port data_in          ;
+; temperatura:temp|temp_cem_asc[1..3]     ; Stuck at GND due to stuck port data_in          ;
+; d12[2]                                  ; Merged with d12[1]                              ;
+; d12[1]                                  ; Stuck at GND due to stuck port data_in          ;
+; Total Number of Removed Registers = 241 ;                                                 ;
++-----------------------------------------+-------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                           ;
-+----------------------------------+---------------------------+----------------------------------------+
-; Register name                    ; Reason for Removal        ; Registers Removed due to This Register ;
-+----------------------------------+---------------------------+----------------------------------------+
-; temperatura:temp|temp_cem_asc[7] ; Stuck at GND              ; d12[7]                                 ;
-;                                  ; due to stuck port data_in ;                                        ;
-; lcd_bus[8]                       ; Stuck at GND              ; lcd_controller:lcd_control|rw          ;
-;                                  ; due to stuck port data_in ;                                        ;
-; temperatura:temp|temp_cem_asc[1] ; Stuck at GND              ; d12[1]                                 ;
-;                                  ; due to stuck port data_in ;                                        ;
-+----------------------------------+---------------------------+----------------------------------------+
++----------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                              ;
++-------------------------------------+---------------------------+----------------------------------------+
+; Register name                       ; Reason for Removal        ; Registers Removed due to This Register ;
++-------------------------------------+---------------------------+----------------------------------------+
+; matriz_led:matriz|num_effect_asc[7] ; Stuck at GND              ; d18[7]                                 ;
+;                                     ; due to stuck port data_in ;                                        ;
+; temperatura:temp|temp_cem_asc[7]    ; Stuck at GND              ; d12[7]                                 ;
+;                                     ; due to stuck port data_in ;                                        ;
+; lcd_bus[8]                          ; Stuck at GND              ; lcd_controller:lcd_control|rw          ;
+;                                     ; due to stuck port data_in ;                                        ;
+; temperatura:temp|temp_cem_asc[1]    ; Stuck at GND              ; d12[1]                                 ;
+;                                     ; due to stuck port data_in ;                                        ;
++-------------------------------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -534,12 +533,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 363   ;
+; Total registers                              ; 407   ;
 ; Number of registers using Synchronous Clear  ; 32    ;
 ; Number of registers using Synchronous Load   ; 7     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 71    ;
+; Number of registers using Clock Enable       ; 72    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -552,8 +551,9 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; temperatura:temp|temp_turn_cool_on[4]   ; 8       ;
 ; temperatura:temp|temp_turn_cool_on[3]   ; 13      ;
 ; temperatura:temp|temp_turn_cool_on[0]   ; 16      ;
-; lcd_controller:lcd_control|busy         ; 2       ;
-; display[0]                              ; 25      ;
+; matriz_led:matriz|num_effect[0]         ; 8       ;
+; lcd_controller:lcd_control|busy         ; 1       ;
+; display[0]                              ; 24      ;
 ; d18[5]                                  ; 1       ;
 ; d33[5]                                  ; 1       ;
 ; d29[5]                                  ; 1       ;
@@ -563,7 +563,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; buttom_plus_cont[31]                    ; 1       ;
 ; buttom_minus_cont[0]                    ; 1       ;
 ; buttom_minus_cont[31]                   ; 1       ;
-; Total number of inverted registers = 14 ;         ;
+; Total number of inverted registers = 15 ;         ;
 +-----------------------------------------+---------+
 
 
@@ -572,12 +572,15 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
-; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |pi|lcd_controller:lcd_control|rw            ;
-; 7:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |pi|lcd_controller:lcd_control|clk_count[14] ;
-; 14:1               ; 8 bits    ; 72 LEs        ; 56 LEs               ; 16 LEs                 ; Yes        ; |pi|lcd_controller:lcd_control|lcd_data[4]   ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |pi|matriz_led:matriz|led_8[7]               ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |pi|matriz_led:matriz|led_5[4]               ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |pi|lcd_controller:lcd_control|rs            ;
+; 7:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |pi|lcd_controller:lcd_control|clk_count[11] ;
+; 14:1               ; 8 bits    ; 72 LEs        ; 56 LEs               ; 16 LEs                 ; Yes        ; |pi|lcd_controller:lcd_control|lcd_data[5]   ;
 ; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |pi|display                                  ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |pi|Selector57                               ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |pi|Selector62                               ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |pi|Selector4                                ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |pi|Selector66                               ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |pi|Selector93                               ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
 
 
@@ -765,15 +768,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "matriz_led:matriz"                                                                                                                               ;
-+-----------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port      ; Type  ; Severity ; Details                                                                                                                                      ;
-+-----------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; num_efect ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+-----------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
 +--------------------------------------------------------+
 ; Port Connectivity Checks: "lcd_controller:lcd_control" ;
 +---------+-------+----------+---------------------------+
@@ -789,25 +783,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 38                          ;
-; cycloneiii_ff         ; 363                         ;
-;     ENA               ; 64                          ;
+; cycloneiii_ff         ; 407                         ;
+;     ENA               ; 65                          ;
 ;     ENA SLD           ; 7                           ;
 ;     SCLR              ; 32                          ;
-;     plain             ; 260                         ;
-; cycloneiii_lcell_comb ; 5614                        ;
-;     arith             ; 1821                        ;
+;     plain             ; 303                         ;
+; cycloneiii_lcell_comb ; 5762                        ;
+;     arith             ; 1852                        ;
 ;         1 data inputs ; 2                           ;
-;         2 data inputs ; 362                         ;
-;         3 data inputs ; 1457                        ;
-;     normal            ; 3793                        ;
-;         0 data inputs ; 126                         ;
+;         2 data inputs ; 363                         ;
+;         3 data inputs ; 1487                        ;
+;     normal            ; 3910                        ;
+;         0 data inputs ; 125                         ;
 ;         1 data inputs ; 14                          ;
-;         2 data inputs ; 1679                        ;
-;         3 data inputs ; 158                         ;
-;         4 data inputs ; 1816                        ;
+;         2 data inputs ; 1665                        ;
+;         3 data inputs ; 204                         ;
+;         4 data inputs ; 1902                        ;
 ;                       ;                             ;
-; Max LUT depth         ; 244.80                      ;
-; Average LUT depth     ; 171.09                      ;
+; Max LUT depth         ; 246.70                      ;
+; Average LUT depth     ; 167.66                      ;
 +-----------------------+-----------------------------+
 
 
@@ -826,7 +820,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
-    Info: Processing started: Sat Mar 12 22:41:44 2016
+    Info: Processing started: Sat Mar 12 23:14:34 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off LCD -c LCD
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file pi.vhd
@@ -836,23 +830,23 @@ Info (12021): Found 2 design units, including 1 entities, in source file lcd_con
     Info (12022): Found design unit 1: lcd_controller-controller File: //Mac/Home/Documents/PI/FPGA/LCD_2/lcd_controller.vhd Line: 62
     Info (12023): Found entity 1: lcd_controller File: //Mac/Home/Documents/PI/FPGA/LCD_2/lcd_controller.vhd Line: 51
 Info (12127): Elaborating entity "pi" for the top level hierarchy
-Info (12128): Elaborating entity "lcd_controller" for hierarchy "lcd_controller:lcd_control" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 90
+Info (12128): Elaborating entity "lcd_controller" for hierarchy "lcd_controller:lcd_control" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 95
 Warning (12125): Using design file clock_1hz.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: clock_1hz-controller File: //Mac/Home/Documents/PI/FPGA/LCD_2/clock_1hz.vhd Line: 11
     Info (12023): Found entity 1: clock_1hz File: //Mac/Home/Documents/PI/FPGA/LCD_2/clock_1hz.vhd Line: 4
-Info (12128): Elaborating entity "clock_1hz" for hierarchy "clock_1hz:clock1" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 91
+Info (12128): Elaborating entity "clock_1hz" for hierarchy "clock_1hz:clock1" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 96
 Warning (10631): VHDL Process Statement warning at clock_1hz.vhd(15): inferring latch(es) for signal or variable "clk_out", which holds its previous value in one or more paths through the process File: //Mac/Home/Documents/PI/FPGA/LCD_2/clock_1hz.vhd Line: 15
 Info (10041): Inferred latch for "clk_out" at clock_1hz.vhd(15) File: //Mac/Home/Documents/PI/FPGA/LCD_2/clock_1hz.vhd Line: 15
 Warning (12125): Using design file temperatura.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: temperatura-behavior File: //Mac/Home/Documents/PI/FPGA/LCD_2/temperatura.vhd Line: 19
     Info (12023): Found entity 1: temperatura File: //Mac/Home/Documents/PI/FPGA/LCD_2/temperatura.vhd Line: 8
-Info (12128): Elaborating entity "temperatura" for hierarchy "temperatura:temp" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 92
+Info (12128): Elaborating entity "temperatura" for hierarchy "temperatura:temp" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 97
 Warning (12125): Using design file matriz_led.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: matriz_led-controller File: //Mac/Home/Documents/PI/FPGA/LCD_2/matriz_led.vhd Line: 14
+    Info (12022): Found design unit 1: matriz_led-controller File: //Mac/Home/Documents/PI/FPGA/LCD_2/matriz_led.vhd Line: 15
     Info (12023): Found entity 1: matriz_led File: //Mac/Home/Documents/PI/FPGA/LCD_2/matriz_led.vhd Line: 5
-Info (12128): Elaborating entity "matriz_led" for hierarchy "matriz_led:matriz" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 93
-Warning (10542): VHDL Variable Declaration warning at matriz_led.vhd(23): used initial value expression for variable "max_div_cloc" because variable was never assigned a value File: //Mac/Home/Documents/PI/FPGA/LCD_2/matriz_led.vhd Line: 23
-Warning (10542): VHDL Variable Declaration warning at matriz_led.vhd(24): used initial value expression for variable "alteracoes" because variable was never assigned a value File: //Mac/Home/Documents/PI/FPGA/LCD_2/matriz_led.vhd Line: 24
+Info (12128): Elaborating entity "matriz_led" for hierarchy "matriz_led:matriz" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 98
+Warning (10542): VHDL Variable Declaration warning at matriz_led.vhd(44): used initial value expression for variable "max_div_cloc" because variable was never assigned a value File: //Mac/Home/Documents/PI/FPGA/LCD_2/matriz_led.vhd Line: 44
+Warning (10542): VHDL Variable Declaration warning at matriz_led.vhd(45): used initial value expression for variable "alteracoes" because variable was never assigned a value File: //Mac/Home/Documents/PI/FPGA/LCD_2/matriz_led.vhd Line: 45
 Info (278001): Inferred 8 megafunctions from design logic
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "temperatura:temp|Div0" File: //Mac/Home/Documents/PI/FPGA/LCD_2/temperatura.vhd Line: 59
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "temperatura:temp|Mod0" File: //Mac/Home/Documents/PI/FPGA/LCD_2/temperatura.vhd Line: 60
@@ -956,25 +950,23 @@ Info (12133): Instantiated megafunction "temperatura:temp|lpm_divide:Mod3" with 
     Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
     Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (13014): Ignored 124 buffer(s)
     Info (13016): Ignored 124 CARRY_SUM buffer(s)
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "rw" is stuck at GND File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 20
-    Warning (13410): Pin "led_8[0]" is stuck at VCC File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 26
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "temp_in[0]" File: //Mac/Home/Documents/PI/FPGA/LCD_2/pi.vhd Line: 23
-Info (21057): Implemented 5775 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 5967 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 12 input pins
     Info (21059): Implemented 26 output pins
-    Info (21061): Implemented 5737 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
-    Info: Peak virtual memory: 908 megabytes
-    Info: Processing ended: Sat Mar 12 22:42:16 2016
-    Info: Elapsed time: 00:00:32
+    Info (21061): Implemented 5929 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
+    Info: Peak virtual memory: 905 megabytes
+    Info: Processing ended: Sat Mar 12 23:15:05 2016
+    Info: Elapsed time: 00:00:31
     Info: Total CPU time (on all processors): 00:00:39
 
 

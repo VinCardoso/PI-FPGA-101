@@ -69,8 +69,10 @@ architecture behavior of pi is
     component matriz_led is
       port(
         clk_in                                    : in    std_logic;
+        buttom_plus, buttom_minus                 : in    std_logic;
         led_8                                     : out   std_logic_vector(7 downto 0);
-        led_5                                     : out   std_logic_vector(4 downto 0)
+        led_5                                     : out   std_logic_vector(4 downto 0);
+        num_effect_asc                            : out   character
       );
     end component;
 
@@ -83,6 +85,9 @@ architecture behavior of pi is
   signal  lvl_cem_asc, lvl_dez_asc, lvl_um_asc      : character;
 
   signal  buttom_plus_temp, buttom_minus_temp       : std_logic;
+  signal  buttom_plus_matriz, buttom_minus_matriz   : std_logic;
+
+  signal  num_effect_asc                            : character;
 
 begin
 
@@ -90,7 +95,7 @@ begin
   lcd_control:  lcd_controller  port map(clk => clk, reset_n => '1', lcd_enable => lcd_enable, lcd_bus => lcd_bus, busy => lcd_busy, rw => rw, rs => rs, e => e, lcd_data => lcd_data);
   clock1:       clock_1hz       port map(clk, clk_out);
   temp:         temperatura     port map(clk, temp_in, buttom_plus_temp, buttom_minus_temp, temp_cem_asc, temp_dez_asc, temp_um_asc, lvl_cem_asc, lvl_dez_asc, lvl_um_asc, turn_on_cooler);
-  matriz:       matriz_led      port map(clk, led_8, led_5);
+  matriz:       matriz_led      port map(clk, buttom_plus_matriz, buttom_minus_matriz, led_8, led_5, num_effect_asc);
 
 process(clk)
 
@@ -150,7 +155,7 @@ if(clk'event and clk = '1') then
       d16 := ' '; d33 := ' ';
   -- Matriz LED
     when 3 =>
-      d1  := 'E'; d18 := '1';
+      d1  := 'E'; d18 := num_effect_asc;
       d2  := 'f'; d19 := ' ';
       d3  := 'e'; d20 := ' ';
       d4  := 'i'; d21 := ' ';
@@ -205,13 +210,14 @@ if(clk'event and clk = '1') then
         when 2 =>
           buttom_plus_temp <= '1';
         when 3 =>
-          buttom_plus_temp <= '1';
+          buttom_plus_matriz <= '0';
         when others =>
           buttom_plus_temp <= '1';
       end case;
       buttom_plus_cont := 0;
     else
-      buttom_plus_temp  <=  '1';
+      buttom_plus_temp    <=  '1';
+      buttom_plus_matriz  <=  '1';
     end if;
 
   -- Botão Menos
@@ -229,13 +235,14 @@ if(clk'event and clk = '1') then
         when 2 =>
           buttom_minus_temp <= '1';
         when 3 =>
-          buttom_minus_temp <= '1';
+          buttom_minus_matriz <= '0';
         when others =>
           buttom_minus_temp <= '1';
       end case;
       buttom_minus_cont := 0;
     else
-      buttom_minus_temp  <=  '1';
+      buttom_minus_temp   <=  '1';
+      buttom_minus_matriz <=  '1';
     end if;
     
 -- Lógica Display
