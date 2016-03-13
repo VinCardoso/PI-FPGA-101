@@ -45,7 +45,7 @@ process(clock_in)
 -- Variáveis
   variable  temperature_int, temp_cem_int, temp_dez_int, temp_um_int  : integer;
   variable  lvl_cem_int, lvl_dez_int, lvl_um_int                      : integer;
-  variable  temp_turn_cool_on                                         : integer := 25; 
+  variable  temp_turn_cool_on                                         : integer := 24; 
 
 begin
 

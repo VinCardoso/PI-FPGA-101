@@ -24,7 +24,8 @@
       clk_out                                     : out   std_logic;                      -- Clock para conversores (Temperatura e Luminosidade)
       turn_on_cooler                              : out   std_logic;                      -- Sinal para ligar cooler
       led_8                                       : out   std_logic_vector(7 downto 0);   -- Colunas LED
-      led_5                                       : out   std_logic_vector(4 downto 0)    -- Linhas LED
+      led_5                                       : out   std_logic_vector(4 downto 0);   -- Linhas LED
+      light_in                                    : in    std_logic_vector(7 downto 0)
     );
   end pi;
 
@@ -70,9 +71,21 @@ architecture behavior of pi is
       port(
         clk_in                                    : in    std_logic;
         buttom_plus, buttom_minus                 : in    std_logic;
+        turn_on_matriz                            : in    std_logic;  
         led_8                                     : out   std_logic_vector(7 downto 0);
         led_5                                     : out   std_logic_vector(4 downto 0);
         num_effect_asc                            : out   character
+      );
+    end component;
+
+  -- Luminosidade
+    component luminosidade is
+      port(
+        clock_in                                  : in    std_logic;                      -- Entrade de 12MHz 
+        light_in                                  : in    std_logic_vector(7 downto 0);   -- Entrada luminosidade em biário
+        buttom_plus, buttom_minus                 : in    std_logic;                      -- Botões p/ Aumentar e Diminuir Nível
+        lum_asc, lvl_lum_asc                      : out   character;                      -- Saída de lumiosidade e level em ASCII 
+        turn_on_matriz                            : out   std_logic                       -- Ligar ou Desligar Matriz
       );
     end component;
 
@@ -83,9 +96,13 @@ architecture behavior of pi is
 
   signal  temp_cem_asc, temp_dez_asc, temp_um_asc   : character;
   signal  lvl_cem_asc, lvl_dez_asc, lvl_um_asc      : character;
+  signal  lum_asc, lvl_lum_asc                      : character;
 
   signal  buttom_plus_temp, buttom_minus_temp       : std_logic;
   signal  buttom_plus_matriz, buttom_minus_matriz   : std_logic;
+  signal  buttom_plus_light, buttom_minus_light     : std_logic;
+
+  signal  turn_on_matriz                            : std_logic;
 
   signal  num_effect_asc                            : character;
 
@@ -95,7 +112,8 @@ begin
   lcd_control:  lcd_controller  port map(clk => clk, reset_n => '1', lcd_enable => lcd_enable, lcd_bus => lcd_bus, busy => lcd_busy, rw => rw, rs => rs, e => e, lcd_data => lcd_data);
   clock1:       clock_1hz       port map(clk, clk_out);
   temp:         temperatura     port map(clk, temp_in, buttom_plus_temp, buttom_minus_temp, temp_cem_asc, temp_dez_asc, temp_um_asc, lvl_cem_asc, lvl_dez_asc, lvl_um_asc, turn_on_cooler);
-  matriz:       matriz_led      port map(clk, buttom_plus_matriz, buttom_minus_matriz, led_8, led_5, num_effect_asc);
+  matriz:       matriz_led      port map(clk, buttom_plus_matriz, buttom_minus_matriz, turn_on_matriz, led_8, led_5, num_effect_asc);
+  light:        luminosidade    port map(clk, light_in, buttom_plus_light, buttom_minus_light, lum_asc, lvl_lum_asc, turn_on_matriz);
 
 process(clk)
 
@@ -137,22 +155,22 @@ if(clk'event and clk = '1') then
       d16 := 'C';               d33 := 'C';
   -- Luminosidade
     when 2 =>
-      d1  := 'L'; d18 := 'N';
-      d2  := 'u'; d19 := 'i';
-      d3  := 'z'; d20 := 'v';
-      d4  := ' '; d21 := 'e';
-      d5  := ' '; d22 := 'l';
-      d6  := ' '; d23 := ' ';
-      d7  := ' '; d24 := ' ';
-      d8  := ' '; d25 := ' ';
-      d9  := ' '; d26 := ' ';
-      d10 := ' '; d27 := ' ';
-      d11 := ' '; d28 := ' ';
-      d12 := ' '; d29 := ' ';
-      d13 := ' '; d30 := ' ';
-      d14 := ' '; d31 := ' ';
-      d15 := ' '; d32 := ' ';
-      d16 := ' '; d33 := ' ';
+      d1  := 'L';               d18 := 'N';
+      d2  := 'u';               d19 := 'i';
+      d3  := 'z';               d20 := 'v';
+      d4  := ' ';               d21 := 'e';
+      d5  := ' ';               d22 := 'l';
+      d6  := ' ';               d23 := ' ';
+      d7  := ' ';               d24 := ' ';
+      d8  := ' ';               d25 := ' ';
+      d9  := ' ';               d26 := ' ';
+      d10 := ' ';               d27 := ' ';
+      d11 := ' ';               d28 := ' ';
+      d12 := ' ';               d29 := ' ';
+      d13 := ' ';               d30 := ' ';
+      d14 := ' ';               d31 := ' ';
+      d15 := ' ';               d32 := ' ';
+      d16 := lum_asc;           d33 := lvl_lum_asc;
   -- Matriz LED
     when 3 =>
       d1  := 'E'; d18 := num_effect_asc;
@@ -205,18 +223,17 @@ if(clk'event and clk = '1') then
     if(buttom_plus_cont = buttom_time_clk) then
 
       case display is
-        when 1 =>
-          buttom_plus_temp <= '0';
-        when 2 =>
-          buttom_plus_temp <= '1';
-        when 3 =>
-          buttom_plus_matriz <= '0';
-        when others =>
-          buttom_plus_temp <= '1';
+        when 1      =>  buttom_plus_temp    <= '0';
+        when 2      =>  buttom_plus_light   <= '0';
+        when 3      =>  buttom_plus_matriz  <= '0';
+        when others =>  buttom_plus_temp    <= '1';
       end case;
+
       buttom_plus_cont := 0;
+
     else
       buttom_plus_temp    <=  '1';
+      buttom_plus_light   <=  '1';
       buttom_plus_matriz  <=  '1';
     end if;
 
@@ -230,19 +247,18 @@ if(clk'event and clk = '1') then
     if(buttom_minus_cont = buttom_time_clk) then
 
       case display is
-        when 1 =>
-          buttom_minus_temp <= '0';
-        when 2 =>
-          buttom_minus_temp <= '1';
-        when 3 =>
-          buttom_minus_matriz <= '0';
-        when others =>
-          buttom_minus_temp <= '1';
+        when 1      =>  buttom_minus_temp     <= '0';
+        when 2      =>  buttom_minus_light    <= '0';
+        when 3      =>  buttom_minus_matriz   <= '0';
+        when others =>  buttom_minus_temp     <= '1';
       end case;
+
       buttom_minus_cont := 0;
+
     else
-      buttom_minus_temp   <=  '1';
-      buttom_minus_matriz <=  '1';
+      buttom_minus_temp     <=  '1';
+      buttom_minus_light    <=  '1';
+      buttom_minus_matriz   <=  '1';
     end if;
     
 -- Lógica Display
